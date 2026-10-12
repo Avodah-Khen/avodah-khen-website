@@ -4,7 +4,6 @@ import Footer from "./components/Footer.jsx";
 import { NavLink, useRoute } from "./components/router.jsx";
 import Home from "./pages/Home.jsx";
 import Research from "./pages/Research.jsx";
-import Media from "./pages/Media.jsx";
 import Company from "./pages/Company.jsx";
 import Contact from "./pages/Contact.jsx";
 import Mandate from "./pages/Mandate.jsx";
@@ -17,7 +16,6 @@ import LeasingAndInvestmentAdvisory from "./pages/LeasingAndInvestmentAdvisory.j
 const pages = {
   "/": Home,
   "/research": Research,
-  "/media": Media,
   "/company": Company,
   "/contact": Contact,
   "/mandate": Mandate,

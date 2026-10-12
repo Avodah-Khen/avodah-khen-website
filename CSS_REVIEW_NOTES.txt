@@ -1,0 +1,7 @@
+CSS review notes
+
+- Consolidated site typography at the end of src/index.css so it applies across routes. Uses an Inter/system sans-serif stack with responsive heading/body sizes based on the supplied screenshot.
+- Removed one fully duplicated early footer style block; retained the later fuller footer rules.
+- Preserved other repeated selectors because the large stylesheet uses later declarations as intentional page-specific overrides; deleting them automatically could break layout.
+- Scroll reveal uses IntersectionObserver and toggles the in class on/off-screen, so reveal sections replay in both scroll directions. Staggered cards use .stagger-card selectors in the existing CSS.
+- Please run npm install and npm run build after extracting; visual confirmation still requires checking the running site at desktop and mobile widths.

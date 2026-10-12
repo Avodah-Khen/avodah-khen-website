@@ -69,7 +69,7 @@ export default function Header({ onSearch }) {
       <NavLink className="logo" to="/">
         <img
           src={logo}
-          alt="AVODAH & KHEN LLP"
+          alt="AVODAH & KHEN"
           className="company-logo"
         />
       </NavLink>

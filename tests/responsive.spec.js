@@ -13,21 +13,50 @@ const pages = [
   { name: "Careers", path: "/#/careers" },
 ];
 
+const viewports = [
+  { name: "320", width: 320, height: 568 },
+  { name: "360", width: 360, height: 800 },
+  { name: "375", width: 375, height: 812 },
+  { name: "390", width: 390, height: 844 },
+  { name: "414", width: 414, height: 896 },
+  { name: "768", width: 768, height: 1024 },
+  { name: "820", width: 820, height: 1180 },
+  { name: "1024", width: 1024, height: 768 },
+  { name: "1280", width: 1280, height: 720 },
+  { name: "1366", width: 1366, height: 768 },
+  { name: "1440", width: 1440, height: 900 },
+  { name: "1920", width: 1920, height: 1080 },
+];
+
 test.describe("Responsive layout", () => {
   for (const pageInfo of pages) {
-    test(`${pageInfo.name} page has no horizontal overflow`, async ({ page }) => {
-      await page.goto(pageInfo.path);
-      await page.waitForLoadState("networkidle");
+    for (const viewport of viewports) {
+      test(
+        `${pageInfo.name} - ${viewport.name}px has no horizontal overflow`,
+        async ({ page }) => {
+          await page.setViewportSize({
+            width: viewport.width,
+            height: viewport.height,
+          });
 
-      const dimensions = await page.evaluate(() => ({
-        viewportWidth: document.documentElement.clientWidth,
-        pageWidth: document.documentElement.scrollWidth,
-      }));
+          await page.goto(pageInfo.path);
+          await page.waitForLoadState("networkidle");
 
-      expect(
-        dimensions.pageWidth,
-        `${pageInfo.name} page overflow: page width ${dimensions.pageWidth}px, viewport width ${dimensions.viewportWidth}px`
-      ).toBeLessThanOrEqual(dimensions.viewportWidth);
-    });
+          const dimensions = await page.evaluate(() => ({
+            viewportWidth: document.documentElement.clientWidth,
+            pageWidth: document.documentElement.scrollWidth,
+            viewportHeight: document.documentElement.clientHeight,
+            pageHeight: document.documentElement.scrollHeight,
+          }));
+
+          expect(
+            dimensions.pageWidth,
+            `${pageInfo.name} at ${viewport.width}px has horizontal overflow: ${dimensions.pageWidth}px > ${dimensions.viewportWidth}px`
+          ).toBeLessThanOrEqual(dimensions.viewportWidth);
+
+          expect(dimensions.pageHeight).toBeGreaterThan(0);
+        }
+      );
+    }
   }
 });

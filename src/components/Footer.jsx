@@ -11,7 +11,7 @@ export default function Footer() {
           <NavLink className="footer-brand" to="/">
             <img
               src={logo}
-              alt="AVODAH & KHEN LLP"
+              alt="AVODAH & KHEN"
               className="footer-logo"
             />
           </NavLink>

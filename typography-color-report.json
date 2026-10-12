@@ -1,0 +1,4181 @@
+[
+  {
+    "page": "Home",
+    "route": "/#/",
+    "elements": [
+      {
+        "element": "a",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "☰",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h1",
+        "text": "Technology-driven solutions. Transforming the way real estate moves.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "32px",
+        "fontWeight": "600",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "We combine real estate expertise with technology to make buying, selli",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Talk to our team",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(27, 61, 54)"
+      },
+      {
+        "element": "a",
+        "text": "Explore PropTech",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "600",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h2",
+        "text": "One ecosystem, connected intelligence.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "35.37px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "From property discovery to conversion, our connected capabilities brin",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "17.6px",
+        "fontWeight": "400",
+        "color": "rgb(78, 90, 86)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "EXPLORE OUR ECOSYSTEM",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12.8px",
+        "fontWeight": "700",
+        "color": "rgb(250, 246, 240)",
+        "backgroundColor": "rgb(27, 61, 54)"
+      },
+      {
+        "element": "h3",
+        "text": "PROPERTY PORTAL",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13.6px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Discover properties and explore real estate opportunities.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12.16px",
+        "fontWeight": "400",
+        "color": "rgb(78, 90, 86)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "AI + DATA",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13.6px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Turn property data into meaningful insights and informed decisions.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12.16px",
+        "fontWeight": "400",
+        "color": "rgb(78, 90, 86)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "MANDATES",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13.6px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Structure and represent real estate opportunities.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12.16px",
+        "fontWeight": "400",
+        "color": "rgb(78, 90, 86)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "CRM",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13.6px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Organize leads, relationships and customer journeys.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12.16px",
+        "fontWeight": "400",
+        "color": "rgb(78, 90, 86)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "SALES",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13.6px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Move qualified opportunities through the sales pipeline.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12.16px",
+        "fontWeight": "400",
+        "color": "rgb(78, 90, 86)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "AUTOMATION",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13.6px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Streamline repetitive tasks and connected workflows.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12.16px",
+        "fontWeight": "400",
+        "color": "rgb(78, 90, 86)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "DISCOVER OUR CAPABILITIES",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12.8px",
+        "fontWeight": "600",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h2",
+        "text": "A repeatable model. Measurable outcomes.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "39.3px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "From property acquisition to data-led optimization.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "color": "rgb(78, 90, 86)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Acquire",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "27px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Mandate / inventory",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "color": "rgb(78, 90, 86)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Position",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "27px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Strategy + content",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "color": "rgb(78, 90, 86)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Generate",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "27px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Marketing + demand",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "color": "rgb(78, 90, 86)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Manage",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "27px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "CRM + channels",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "color": "rgb(78, 90, 86)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Convert",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "27px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Visits + sales",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "color": "rgb(78, 90, 86)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Learn",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "27px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Data + optimization",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "color": "rgb(78, 90, 86)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h2",
+        "text": "Technology grounded in real estate execution.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "32px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Built to bridge technology and real estate execution.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(89, 103, 97)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Real-estate first",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Products and workflows designed around property businesses.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13.76px",
+        "fontWeight": "400",
+        "color": "rgb(89, 103, 97)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Technology-led",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Modern digital experiences, automation and AI.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13.76px",
+        "fontWeight": "400",
+        "color": "rgb(89, 103, 97)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Execution focused",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Technology paired with hands-on sales and mandate capabilities.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13.76px",
+        "fontWeight": "400",
+        "color": "rgb(89, 103, 97)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Data connected",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Performance visibility across the customer and sales journey.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13.76px",
+        "fontWeight": "400",
+        "color": "rgb(89, 103, 97)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h2",
+        "text": "Let’s build the future of real estate.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "40px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Partner with us for property mandates, technology, lead generation, CR",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(89, 103, 97)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Contact AVODAH",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.08px",
+        "fontWeight": "700",
+        "color": "rgb(255, 250, 243)",
+        "backgroundColor": "rgb(20, 34, 31)"
+      },
+      {
+        "element": "a",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "color": "rgba(243, 235, 225, 0.72)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Company",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "About us",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Research",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Careers",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Studios",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Mumbai",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "© 2026 AVODAH GROUP. All rights reserved.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12.48px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    ]
+  },
+  {
+    "page": "Company",
+    "route": "/#/company",
+    "elements": [
+      {
+        "element": "a",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "☰",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "AVODAH & KHEN",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "10.88px",
+        "fontWeight": "700",
+        "color": "rgb(229, 182, 141)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h1",
+        "text": "Real Estate. Technology. Intelligence.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "55.02px",
+        "fontWeight": "400",
+        "color": "rgb(255, 250, 243)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "A connected platform for property discovery, mandates, sales, CRM, dat",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgba(255, 250, 243, 0.82)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Connect with us ↗",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.08px",
+        "fontWeight": "700",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(196, 92, 38)"
+      },
+      {
+        "element": "h2",
+        "text": "A technology-led real estate company built around one connected ecosys",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "39.3px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "We bring together property, technology, sales and data to create a sea",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(89, 103, 97)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h2",
+        "text": "The Real Estate Gap",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "37.6px",
+        "fontWeight": "500",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "High-Value Assets. Fragmented Workflows.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "21.6px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Four challenges. One connected opportunity.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.2px",
+        "fontWeight": "400",
+        "color": "rgb(98, 113, 107)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "FRAGMENTED DISCOVERY",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Buyers navigate disconnected listings and channels.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.793px",
+        "fontWeight": "400",
+        "color": "rgb(97, 113, 108)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "LEAD LEAKAGE",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Enquiries can get lost across teams, spreadsheets and messaging.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.793px",
+        "fontWeight": "400",
+        "color": "rgb(97, 113, 108)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "LIMITED INTELLIGENCE",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Decisions often lack a single view of demand, pricing and performance.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.793px",
+        "fontWeight": "400",
+        "color": "rgb(97, 113, 108)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "COMPLEX SALES",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Mandates, channel partners and follow-ups require constant coordinatio",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.793px",
+        "fontWeight": "400",
+        "color": "rgb(97, 113, 108)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "One connected real estate ecosystem.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "23.2px",
+        "fontWeight": "400",
+        "color": "rgb(255, 253, 250)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h2",
+        "text": "Capabilities across the property lifecycle.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "37.335px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "A connected set of services and digital capabilities for property disc",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "PROPERTY PORTAL",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "700",
+        "color": "rgb(146, 83, 55)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Property discovery",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "26px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "A modern digital destination for property discovery and qualified enqu",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Smart property search",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Project and inventory discovery",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Rich property profiles",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Buyer enquiry journeys",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Location-led discovery",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Lead capture and routing",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "AI-POWERED PROPTECH",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "700",
+        "color": "rgb(146, 83, 55)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Intelligence in the workflow",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "26px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Use intelligence to reduce manual work and improve every stage of the ",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "AI recommendations based on preferences, behavior and context",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Lead intelligence to prioritize enquiries and surface intent",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Automation for follow-ups, reporting and repetitive sales workflows",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "PROPERTY MANDATE SERVICES",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "700",
+        "color": "rgb(146, 83, 55)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Representation and sales execution",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "26px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "End-to-end representation and sales execution for selected projects an",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Exclusive mandates and project marketing",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Lead generation and enquiry routing",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Channel management and sales execution",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Performance intelligence across enquiries, visits and conversions",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "DEVELOPER SOLUTIONS",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "700",
+        "color": "rgb(146, 83, 55)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "From launch to sell-through",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "26px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "A technology and execution layer for developers from launch to sell-th",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Launch strategy and market positioning",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Digital marketing around project, location and buyer intent",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Lead generation across digital and partner channels",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Sales enablement with workflows, data and visibility",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "CRM & SALES AUTOMATION",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "700",
+        "color": "rgb(146, 83, 55)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "A structured sales journey",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "26px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Turn every enquiry into a structured, measurable sales journey.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Lead capture and allocation",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Follow-ups and next-step visibility",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Site visit bookings, outcomes and actions",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Conversion funnel monitoring and dashboards",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "DATA & MARKET INTELLIGENCE",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": "700",
+        "color": "rgb(146, 83, 55)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Actionable business visibility",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "26px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Turn property and customer data into actionable business visibility.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Demand signals: understand what buyers are searching for",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Pricing visibility: compare market context and project positioning",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Funnel analytics: see where demand converts or drops",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "rgb(53, 67, 61)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h2",
+        "text": "A more connected, intelligent real estate future.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "40px",
+        "fontWeight": "400",
+        "color": "rgb(255, 250, 243)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "We aim to bring property discovery, market intelligence, customer rela",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgba(255, 250, 243, 0.72)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "LET'S BUILD WHAT'S NEXT",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "10.88px",
+        "fontWeight": "700",
+        "color": "rgb(89, 103, 97)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h2",
+        "text": "Have a property opportunity to explore together?",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "40px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Get in touch ↗",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.08px",
+        "fontWeight": "700",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(196, 92, 38)"
+      },
+      {
+        "element": "a",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "color": "rgba(243, 235, 225, 0.72)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Company",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "About us",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Research",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Careers",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Studios",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Mumbai",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "© 2026 AVODAH GROUP. All rights reserved.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12.48px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    ]
+  },
+  {
+    "page": "Contact",
+    "route": "/#/contact",
+    "elements": [
+      {
+        "element": "a",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "☰",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "CONTACT",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "11.52px",
+        "fontWeight": "700",
+        "color": "rgb(196, 92, 38)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h1",
+        "text": "Tell us the city, the plot, or the problem",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "34.99px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h2",
+        "text": "Request a briefing",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "28.66px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "A 20-minute call. No pitch deck until we have walked the street.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(83, 99, 93)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Our Office",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "17.28px",
+        "fontWeight": "600",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "AVODAH & KHEN Mamta house 304, 3rd Floor, Swami Vivekanand Road, Bandr",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(83, 99, 93)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "Request a briefing",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "500",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(185, 82, 32)"
+      },
+      {
+        "element": "a",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "21px",
+        "fontWeight": "400",
+        "color": "rgb(37, 211, 102)",
+        "backgroundColor": "rgb(255, 255, 255)"
+      },
+      {
+        "element": "a",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "21px",
+        "fontWeight": "400",
+        "color": "rgb(228, 64, 95)",
+        "backgroundColor": "rgb(255, 255, 255)"
+      },
+      {
+        "element": "a",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "21px",
+        "fontWeight": "400",
+        "color": "rgb(10, 102, 194)",
+        "backgroundColor": "rgb(255, 255, 255)"
+      },
+      {
+        "element": "a",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "color": "rgba(243, 235, 225, 0.72)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Company",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "About us",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Research",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Careers",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Studios",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Mumbai",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "© 2026 AVODAH GROUP. All rights reserved.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12.48px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    ]
+  },
+  {
+    "page": "Mandate",
+    "route": "/#/mandate",
+    "elements": [
+      {
+        "element": "a",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "☰",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h1",
+        "text": "Why Should You Appoint Us As Your Sole Selling Partner for Your Projec",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "39.3px",
+        "fontWeight": "600",
+        "color": "rgb(243, 235, 225)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Step-By-Step Guide For Developers In India",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "34px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Launching a real estate project is a major financial decision. Choosin",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "17px",
+        "fontWeight": "400",
+        "color": "rgb(98, 103, 119)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "At Avodah & Khen, backed by 20+ years of experience in sales & brand m",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "17px",
+        "fontWeight": "400",
+        "color": "rgb(98, 103, 119)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "What is a Sole Selling Partner?",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "17.28px",
+        "fontWeight": "600",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "A Sole Selling Partner is appointed under an exclusive sales mandate a",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "17.92px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Our Sole Selling Model Ensures:",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "17.28px",
+        "fontWeight": "600",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Centralized pricing strategy",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Structured inventory allocation",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "A well-established and controlled broker network",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Transparent reporting",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Clear accountability",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "While Appointing Us As Your Sole Selling Partner, You Need To...",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "17.28px",
+        "fontWeight": "600",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Define Your Sales Objectives as Your Sole Selling Partner",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "20px",
+        "fontWeight": "600",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Get clarity on branding objectives, sales targets and achieving the be",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Target buyer segment",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Total inventory size",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Target revenue",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Funding and cash-flow requirements",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Launch timeline",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Sales cycle expectations",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Negotiate the Mandate Agreement",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "20px",
+        "fontWeight": "600",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "We ensure that our agreement with the developer clearly defines:",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Revenue targets",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Commission structure",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Exclusive clause",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Marketing responsibilities under brand mandates",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Duration",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Reporting frequency",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Exit clause",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Note: Legal clarity ensures smooth execution of the sales mandate.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.72px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Set Performance KPIs (Key Performance Indicators)",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "20px",
+        "fontWeight": "600",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "We define measurable KPIs such as:",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Site visit targets",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Monthly booking targets",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Channel partner activation numbers",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Conversion ratios",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Inventory absorption rate",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Revenue milestone tracking",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Coordinate Sales Execution",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "20px",
+        "fontWeight": "600",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "For maximum impact, we ensure that:",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Digital marketing supports on-ground sales",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Branding remains unified",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Messaging stays consistent",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "CRM tracking remains active",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Campaigns align with pricing",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Note: Fragmented marketing can weaken mandate effectiveness.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.72px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Benefits of Appointing Avodah & Khen a Sole Selling Partner",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "17.28px",
+        "fontWeight": "600",
+        "color": "rgb(243, 235, 225)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Unified Brand Positioning",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "18.4px",
+        "fontWeight": "600",
+        "color": "rgb(243, 235, 225)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Strong Pricing Discipline",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "18.4px",
+        "fontWeight": "600",
+        "color": "rgb(243, 235, 225)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Structured Inventory Release",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "18.4px",
+        "fontWeight": "600",
+        "color": "rgb(243, 235, 225)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Data-driven Execution",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "18.4px",
+        "fontWeight": "600",
+        "color": "rgb(243, 235, 225)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Single-point Accountability",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "18.4px",
+        "fontWeight": "600",
+        "color": "rgb(243, 235, 225)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Faster Inventory Absorption",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "18.4px",
+        "fontWeight": "600",
+        "color": "rgb(243, 235, 225)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "When Should You Appoint Avodah & Khen As Your Sole Selling Partner?",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "32px",
+        "fontWeight": "600",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "The right sales strategy, introduced at the right stage, can make a me",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(98, 103, 119)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "New Project Launch",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "17.92px",
+        "fontWeight": "600",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Establish a clear sales strategy, pricing structure and market positio",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.4px",
+        "fontWeight": "400",
+        "color": "rgb(98, 103, 119)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Pre-launch Planning",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "17.92px",
+        "fontWeight": "600",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Prepare your project for launch with structured planning and coordinat",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.4px",
+        "fontWeight": "400",
+        "color": "rgb(98, 103, 119)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Large Township Developments",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "17.92px",
+        "fontWeight": "600",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Coordinate large inventories, channel partners and sales execution thr",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.4px",
+        "fontWeight": "400",
+        "color": "rgb(98, 103, 119)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Redevelopment Projects",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "17.92px",
+        "fontWeight": "600",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Bring clarity, accountability and a defined sales approach to complex ",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.4px",
+        "fontWeight": "400",
+        "color": "rgb(98, 103, 119)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Slow-moving Inventory",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "17.92px",
+        "fontWeight": "600",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Identify sales bottlenecks and strengthen pricing, marketing and conve",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.4px",
+        "fontWeight": "400",
+        "color": "rgb(98, 103, 119)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Expansion into Mumbai Markets",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "17.92px",
+        "fontWeight": "600",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Build a market-focused sales strategy to support expansion across Mumb",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.4px",
+        "fontWeight": "400",
+        "color": "rgb(98, 103, 119)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Sole Selling Partner vs Multiple Channel Partners",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "17.28px",
+        "fontWeight": "600",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Why Should You Appoint a Single Sole Selling Partner?",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "22.4px",
+        "fontWeight": "600",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Strong pricing control",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Unified brand messaging",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Clear accountability",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Structured inventory allocation",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Centralized reporting",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Why Should You Avoid Appointing Multiple Channel Partners?",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "22.4px",
+        "fontWeight": "600",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Pricing inconsistency",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Fragmented brand communication",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Confused accountability",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Inventory conflicts",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "li",
+        "text": "Scattered reporting",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Sales Expertise. Delivered Strategically.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "35.37px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "How we support developers through market intelligence, brand mandates ",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16.8px",
+        "fontWeight": "400",
+        "color": "rgb(82, 96, 90)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Market Expertise Across Mumbai",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "19.2px",
+        "fontWeight": "500",
+        "color": "rgb(20, 47, 39)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Local market understanding to help position projects for the right aud",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.08px",
+        "fontWeight": "400",
+        "color": "rgb(89, 100, 95)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Strategic Brand-Mandate Implementation",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "19.2px",
+        "fontWeight": "500",
+        "color": "rgb(20, 47, 39)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Consistent project positioning, communication and coordinated executio",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.08px",
+        "fontWeight": "400",
+        "color": "rgb(89, 100, 95)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "End-to-End Exclusive Sales Mandates",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "19.2px",
+        "fontWeight": "500",
+        "color": "rgb(20, 47, 39)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "A structured approach to managing the project sales lifecycle.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.08px",
+        "fontWeight": "400",
+        "color": "rgb(89, 100, 95)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Broker Ecosystem Management",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "19.2px",
+        "fontWeight": "500",
+        "color": "rgb(20, 47, 39)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Organised broker coordination to support reach and sales conversion.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.08px",
+        "fontWeight": "400",
+        "color": "rgb(89, 100, 95)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "On-Site Sales Deployment",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "19.2px",
+        "fontWeight": "500",
+        "color": "rgb(20, 47, 39)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Dedicated project-level sales support and coordinated execution.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.08px",
+        "fontWeight": "400",
+        "color": "rgb(89, 100, 95)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "CRM-Driven Reporting",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "19.2px",
+        "fontWeight": "500",
+        "color": "rgb(20, 47, 39)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Structured lead tracking, transparent reporting and sales visibility.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.08px",
+        "fontWeight": "400",
+        "color": "rgb(89, 100, 95)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "We Pride Ourselves With...",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "39.3px",
+        "fontWeight": "500",
+        "color": "rgb(20, 47, 39)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Our approach is built around experience, accountability, structured ex",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(89, 100, 95)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Proven Sales Expertise",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "19.2px",
+        "fontWeight": "500",
+        "color": "rgb(20, 47, 39)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Exclusive sales mandate and brand-mandate experience built around stru",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.4px",
+        "fontWeight": "400",
+        "color": "rgb(89, 100, 95)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Mumbai Market Knowledge",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "19.2px",
+        "fontWeight": "500",
+        "color": "rgb(20, 47, 39)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Local market understanding to help developers position their projects ",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.4px",
+        "fontWeight": "400",
+        "color": "rgb(89, 100, 95)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Dedicated Sales Teams",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "19.2px",
+        "fontWeight": "500",
+        "color": "rgb(20, 47, 39)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "On-ground sales deployment focused on coordination, buyer engagement a",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.4px",
+        "fontWeight": "400",
+        "color": "rgb(89, 100, 95)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "CRM & Reporting Systems",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "19.2px",
+        "fontWeight": "500",
+        "color": "rgb(20, 47, 39)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Organised lead tracking and reporting for improved visibility across t",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.4px",
+        "fontWeight": "400",
+        "color": "rgb(89, 100, 95)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Strong Broker Network",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "19.2px",
+        "fontWeight": "500",
+        "color": "rgb(20, 47, 39)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Broker relationships and channel coordination to support project reach",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.4px",
+        "fontWeight": "400",
+        "color": "rgb(89, 100, 95)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Developer Relationships",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "19.2px",
+        "fontWeight": "500",
+        "color": "rgb(20, 47, 39)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "A relationship-led approach to working with developers and supporting ",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14.4px",
+        "fontWeight": "400",
+        "color": "rgb(89, 100, 95)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Not Just Sales. A Structured Growth System.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "37.6px",
+        "fontWeight": "500",
+        "color": "rgb(20, 47, 39)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Appointing a Sole Selling Partner is not outsourcing sales. It is buil",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16.8px",
+        "fontWeight": "400",
+        "color": "rgb(82, 96, 90)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Ready to appoint us as your Sole Selling Partner?",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "33.6px",
+        "fontWeight": "500",
+        "color": "rgb(20, 47, 39)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Partner with AVODAH & KHEN to bring structure, accountability and stra",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(89, 100, 95)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Contact Us Now ↗",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12.8px",
+        "fontWeight": "600",
+        "color": "rgb(255, 250, 244)",
+        "backgroundColor": "rgb(169, 81, 43)"
+      },
+      {
+        "element": "p",
+        "text": "Planning a new project launch?",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(20, 47, 39)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Looking for structured sales execution in Mumbai?",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(20, 47, 39)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "color": "rgba(243, 235, 225, 0.72)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Company",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "About us",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Research",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Careers",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Studios",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Mumbai",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "© 2026 AVODAH GROUP. All rights reserved.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12.48px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    ]
+  },
+  {
+    "page": "Proptech",
+    "route": "/#/proptech",
+    "elements": [
+      {
+        "element": "a",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "☰",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "PROPTECH DIVISION",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "11.52px",
+        "fontWeight": "700",
+        "color": "rgb(201, 163, 90)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h1",
+        "text": "PROPTECH",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "32px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "“Technology is reshaping the way real estate is discovered, analyzed, ",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "18px",
+        "fontWeight": "400",
+        "color": "rgb(209, 213, 219)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "We are building innovative technology-led solutions for the future of ",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13.44px",
+        "fontWeight": "400",
+        "color": "rgba(243, 235, 225, 0.68)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "SOMETHING SIGNIFICANT IS UNDERWAY AT AVODAH & KHEN",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "10.88px",
+        "fontWeight": "400",
+        "color": "rgba(243, 235, 225, 0.55)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "color": "rgba(243, 235, 225, 0.72)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Company",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "About us",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Research",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Careers",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Studios",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Mumbai",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "© 2026 AVODAH GROUP. All rights reserved.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12.48px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    ]
+  },
+  {
+    "page": "Fintech",
+    "route": "/#/fintech",
+    "elements": [
+      {
+        "element": "a",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "☰",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "FINTECH DIVISION",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "11.52px",
+        "fontWeight": "700",
+        "color": "rgb(201, 163, 90)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h1",
+        "text": "FINTECH",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "32px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "“Building smarter financial possibilities for the real estate ecosyste",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "18px",
+        "fontWeight": "400",
+        "color": "rgb(209, 213, 219)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Our Fintech offering is being developed to bring technology, financial",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13.44px",
+        "fontWeight": "400",
+        "color": "rgba(243, 235, 225, 0.68)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "SOMETHING SIGNIFICANT IS UNDERWAY AT AVODAH & KHEN",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "10.88px",
+        "fontWeight": "400",
+        "color": "rgba(243, 235, 225, 0.55)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "color": "rgba(243, 235, 225, 0.72)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Company",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "About us",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Research",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Careers",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Studios",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Mumbai",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "© 2026 AVODAH GROUP. All rights reserved.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12.48px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    ]
+  },
+  {
+    "page": "Careers",
+    "route": "/#/careers",
+    "elements": [
+      {
+        "element": "a",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "☰",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "CAREERS",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "11.52px",
+        "fontWeight": "700",
+        "color": "rgb(196, 92, 38)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h1",
+        "text": "Build Your Future With Us",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "32px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Join AVODAH & KHEN and be part of a team shaping the future of real es",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "18px",
+        "fontWeight": "400",
+        "color": "rgb(209, 213, 219)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "CURRENT OPPORTUNITIES",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "11.52px",
+        "fontWeight": "700",
+        "color": "rgb(169, 74, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h2",
+        "text": "Find Your Next Opportunity",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "43.23px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Explore current openings and discover where you can build your career ",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(102, 112, 108)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "SEARCH JOBS",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12px",
+        "fontWeight": "500",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(196, 92, 38)"
+      },
+      {
+        "element": "p",
+        "text": "CURRENT OPENINGS",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "11px",
+        "fontWeight": "700",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "All Openings 18",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "Technology 4",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "color": "rgb(114, 123, 119)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "Sales 8",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "color": "rgb(114, 123, 119)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "Product 1",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "color": "rgb(114, 123, 119)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "Marketing 3",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "color": "rgb(114, 123, 119)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "OPPORTUNITIES",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "11.52px",
+        "fontWeight": "700",
+        "color": "rgb(169, 74, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "All Openings",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "34px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "18 positions available",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "400",
+        "color": "rgb(95, 105, 101)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Software Engineer",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "21px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Job Description",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "APPLY NOW",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(196, 92, 38)"
+      },
+      {
+        "element": "h4",
+        "text": "Database Engineer",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "21px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Job Description",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "APPLY NOW",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(196, 92, 38)"
+      },
+      {
+        "element": "h4",
+        "text": "Security Architect",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "21px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Job Description",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "APPLY NOW",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(196, 92, 38)"
+      },
+      {
+        "element": "h4",
+        "text": "Product Manager",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "21px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Job Description",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "APPLY NOW",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(196, 92, 38)"
+      },
+      {
+        "element": "h4",
+        "text": "Research Analyst",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "21px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Job Description",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "APPLY NOW",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(196, 92, 38)"
+      },
+      {
+        "element": "h4",
+        "text": "Salesforce Developer",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "21px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Job Description",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "APPLY NOW",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(196, 92, 38)"
+      },
+      {
+        "element": "h4",
+        "text": "Digital Marketing Executive",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "21px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Job Description",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "APPLY NOW",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(196, 92, 38)"
+      },
+      {
+        "element": "h4",
+        "text": "MIS Analyst",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "21px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Job Description",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "APPLY NOW",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(196, 92, 38)"
+      },
+      {
+        "element": "h4",
+        "text": "Zonal Business Head",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "21px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Job Description",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "APPLY NOW",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(196, 92, 38)"
+      },
+      {
+        "element": "h4",
+        "text": "Zonal Manager",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "21px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Job Description",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "APPLY NOW",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(196, 92, 38)"
+      },
+      {
+        "element": "h4",
+        "text": "Regional Sales Manager",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "21px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Job Description",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "APPLY NOW",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(196, 92, 38)"
+      },
+      {
+        "element": "h4",
+        "text": "Account Manager",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "21px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Job Description",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "APPLY NOW",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(196, 92, 38)"
+      },
+      {
+        "element": "h4",
+        "text": "Sales Executive / Business Development Executive",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "21px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Job Description",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "APPLY NOW",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(196, 92, 38)"
+      },
+      {
+        "element": "h4",
+        "text": "Sales Representative",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "21px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Job Description",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "APPLY NOW",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(196, 92, 38)"
+      },
+      {
+        "element": "h4",
+        "text": "Tele-caller",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "21px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Job Description",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "APPLY NOW",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(196, 92, 38)"
+      },
+      {
+        "element": "h4",
+        "text": "Telesales Executive",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "21px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Job Description",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "APPLY NOW",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(196, 92, 38)"
+      },
+      {
+        "element": "h4",
+        "text": "Anchor",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "21px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Job Description",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "APPLY NOW",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(196, 92, 38)"
+      },
+      {
+        "element": "h4",
+        "text": "Brand Manager",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "21px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Job Description",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "APPLY NOW",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(196, 92, 38)"
+      },
+      {
+        "element": "p",
+        "text": "LIFE AT AVODAH & KHEN",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "11.52px",
+        "fontWeight": "700",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h2",
+        "text": "More than work. A shared journey.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "38px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Celebrating the people, experiences and milestones that bring our team",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "All Memories",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(20, 34, 31)"
+      },
+      {
+        "element": "button",
+        "text": "Celebrations",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "Team Outings",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "Achievements",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgb(228, 221, 210)"
+      },
+      {
+        "element": "button",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgb(228, 221, 210)"
+      },
+      {
+        "element": "button",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgb(228, 221, 210)"
+      },
+      {
+        "element": "button",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgb(228, 221, 210)"
+      },
+      {
+        "element": "button",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgb(228, 221, 210)"
+      },
+      {
+        "element": "button",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgb(228, 221, 210)"
+      },
+      {
+        "element": "button",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgb(228, 221, 210)"
+      },
+      {
+        "element": "button",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgb(228, 221, 210)"
+      },
+      {
+        "element": "button",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgb(228, 221, 210)"
+      },
+      {
+        "element": "p",
+        "text": "JOIN OUR TEAM",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "11.52px",
+        "fontWeight": "700",
+        "color": "rgb(196, 92, 38)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h2",
+        "text": "We would love to hear from you.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "28.66px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Tell us a little about yourself and the opportunity you are interested",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "label",
+        "text": "FIRST NAME",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "11.04px",
+        "fontWeight": "800",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "label",
+        "text": "LAST NAME",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "11.04px",
+        "fontWeight": "800",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "label",
+        "text": "CONTACT NUMBER",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "11.04px",
+        "fontWeight": "800",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "label",
+        "text": "EMAIL ADDRESS",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "11.04px",
+        "fontWeight": "800",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "label",
+        "text": "DEPARTMENT",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "11.04px",
+        "fontWeight": "800",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "label",
+        "text": "JOB APPLIED FOR",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "11.04px",
+        "fontWeight": "800",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "label",
+        "text": "MESSAGE",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "11.04px",
+        "fontWeight": "800",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "We respect your privacy and will only use your information for recruit",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "SUBMIT APPLICATION →",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12.48px",
+        "fontWeight": "800",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(196, 92, 38)"
+      },
+      {
+        "element": "a",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "color": "rgba(243, 235, 225, 0.72)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Company",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "About us",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Research",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Careers",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Studios",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Mumbai",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "© 2026 AVODAH GROUP. All rights reserved.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12.48px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    ]
+  },
+  {
+    "page": "Research",
+    "route": "/#/research",
+    "elements": [
+      {
+        "element": "a",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "button",
+        "text": "☰",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "RESEARCH & INSIGHTS",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "11.52px",
+        "fontWeight": "700",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h1",
+        "text": "Know the Market. See the Opportunity. Make Better Decisions.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "35.37px",
+        "fontWeight": "500",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Real estate decisions are driven by data—but meaningful insights come ",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.68px",
+        "fontWeight": "400",
+        "color": "rgba(255, 255, 255, 0.86)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h2",
+        "text": "Turning Property Data Into Meaningful Market Intelligence",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "28.66px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Our Real Estate Market Research combines technology, property intellig",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16.8px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "We help developers, investors and real estate businesses move beyond a",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16.8px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h2",
+        "text": "What We Analyse",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "28.66px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Location Intelligence",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "18.4px",
+        "fontWeight": "600",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Understand micro-markets through pricing, infrastructure, connectivity",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Market & Price Trends",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "18.4px",
+        "fontWeight": "600",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Track property prices, inventory, absorption, rental trends and changi",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Project & Competitor Intelligence",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "18.4px",
+        "fontWeight": "600",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Analyse competing projects, configurations, pricing, amenities, offers",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Buyer & Demand Insights",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "18.4px",
+        "fontWeight": "600",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Identify buyer preferences, budgets, property requirements and emergin",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Project Positioning",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "18.4px",
+        "fontWeight": "600",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Use market intelligence to identify opportunities for pricing, product",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "Opportunity Identification",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "18.4px",
+        "fontWeight": "600",
+        "color": "rgb(27, 61, 54)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Discover emerging markets, high-potential locations and opportunities ",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h2",
+        "text": "From Property Data to Market Intelligence",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "28.66px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "We bring together technology + data + real estate expertise to turn co",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16.8px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h2",
+        "text": "Our Approach",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "28.66px",
+        "fontWeight": "500",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "COLLECT",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "ANALYSE",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "COMPARE",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "IDENTIFY",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h3",
+        "text": "ACT",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Because in real estate, better information can lead to better decision",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16.8px",
+        "fontWeight": "400",
+        "color": "rgba(255, 255, 255, 0.9)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h2",
+        "text": "Make Better Real Estate Decisions With Better Information.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "28.66px",
+        "fontWeight": "500",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Get a clearer understanding of the market, competition, pricing and em",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(92, 107, 102)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Talk to Our Team",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "500",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(196, 92, 38)"
+      },
+      {
+        "element": "a",
+        "text": "",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "color": "rgba(243, 235, 225, 0.72)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Company",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "About us",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Research",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "a",
+        "text": "Careers",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "h4",
+        "text": "Studios",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "color": "rgb(20, 34, 31)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "Mumbai",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "15.36px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "element": "p",
+        "text": "© 2026 AVODAH GROUP. All rights reserved.",
+        "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "fontSize": "12.48px",
+        "fontWeight": "400",
+        "color": "rgb(89, 99, 94)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    ]
+  }
+]

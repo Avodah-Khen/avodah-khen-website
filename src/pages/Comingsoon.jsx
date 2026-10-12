@@ -55,7 +55,7 @@ export default function ComingSoon({
         <span className="cs-transition-line" />
 
         <p>
-          Something significant is underway at AVODAH &amp; KHEN LLP
+          Something significant is underway at AVODAH &amp; KHEN
         </p>
       </section>
     </main>

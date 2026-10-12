@@ -69,15 +69,15 @@ export default function Contact() {
             <h3>Our Office</h3>
 
             <p>
-              AVODAH &amp; KHEN LLP
+              AVODAH &amp; KHEN
               <br />
               Mamta house 304, 3rd Floor, Swami Vivekanand Road,
               <br />
               Bandra West-Mumbai 400050, Maharashtra, India
               <br />
-              <strong>Contact:</strong> +91 7507607744
+              <strong>Contact:</strong> +91 7507607744, +91 8265073981
               <br />
-              <strong>Email:</strong> sales@avodahgroup.co.in
+              <strong>Email:</strong> sales@avodahgroup.co
             </p>
           </div>
         </div>

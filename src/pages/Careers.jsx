@@ -2,6 +2,8 @@ import { useState } from "react";
 import useReveal from "../hooks/useReveal.js";
 import { NavLink } from "../components/router.jsx";
 import { JOB_OPENINGS } from "../data/jobs.js";
+import careersTeam from "../assets/careers-team.png";
+import CareerGallery from "../components/CareerGallery.jsx";
 
 const DEPARTMENTS = ["Sales", "Marketing", "IT"];
 const INITIAL_FORM = {
@@ -215,7 +217,7 @@ export default function Careers() {
           </h1>
 
           <p className="lede cr-hero-lede anim-3">
-            Join AVODAH &amp; KHEN LLP and be part of a team
+            Join AVODAH &amp; KHEN and be part of a team
             shaping the future of real estate, technology and finance.
           </p>
         </div>
@@ -225,22 +227,30 @@ export default function Careers() {
       <section className="cr-jobs-section">
 
         {/* INTRO */}
-        <div className="cr-jobs-header reveal">
-          <div>
-            <p className="kicker">
-              Current Opportunities
-            </p>
+        
+{/* INTRO */}
+<div className="cr-jobs-header reveal">
+  <div className="cr-jobs-header-content">
+    <p className="kicker">Current Opportunities</p>
 
-            <h2>
-              Find Your Next Opportunity
-            </h2>
+    <h2>Find Your Next Opportunity</h2>
 
-            <p>
-              Explore current openings and discover where you can
-              build your career with AVODAH &amp; KHEN LLP.
-            </p>
-          </div>
-        </div>
+    <p>
+      Explore current openings and discover where you can
+      build your career with AVODAH &amp; KHEN.
+    </p>
+  </div>
+
+  
+<div className="cr-jobs-header-image">
+  <img
+    src={careersTeam}
+    alt="Avodah & Khen team"
+    loading="lazy"
+  />
+</div>
+
+</div>
 
         {/* SEARCH */}
         <div className="cr-job-search reveal">
@@ -591,6 +601,7 @@ export default function Careers() {
         </div>
 
       </section>
+      <CareerGallery />
 
       {/* APPLICATION SECTION */}
       <section className="cr-form-section">
@@ -625,7 +636,7 @@ export default function Careers() {
 
             <p>
               Thank you for your interest in
-              AVODAH &amp; KHEN LLP.
+              AVODAH &amp; KHEN.
             </p>
 
             <p>
