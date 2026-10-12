@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "./router.jsx";
+import { NavLink, getPath } from "./router.jsx";
 import logo from "../assets/avodah-khen-logo.png";
 
 const menus = {
@@ -8,9 +8,9 @@ const menus = {
     { to: "/proptech", label: "Proptech" },
     { to: "/fintech", label: "Fintech" },
     {
-  to: "/leasing-investment-advisory",
-  label: "Leasing and Investment Advisory"
-}
+      to: "/leasing-investment-advisory",
+      label: "Leasing and Investment Advisory"
+    }
   ],
 
   company: [
@@ -26,12 +26,15 @@ export default function Header({ onSearch }) {
   const [open, setOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
   const [activeItem, setActiveItem] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
+  const [path, setPath] = useState(getPath);
 
   useEffect(() => {
     const close = () => {
       setOpen(false);
       setActiveMenu(null);
       setActiveItem(null);
+      setPath(getPath());
     };
 
     window.addEventListener("hashchange", close);
@@ -40,6 +43,33 @@ export default function Header({ onSearch }) {
       window.removeEventListener("hashchange", close);
     };
   }, []);
+
+  /* compact sticky state (rAF-free: a single passive listener toggling one boolean) */
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  /* Escape closes the dropdown / mobile menu */
+  useEffect(() => {
+    if (!open && !activeMenu) return undefined;
+    const onKey = (e) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        setActiveMenu(null);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open, activeMenu]);
+
+  const isCurrent = (key) => {
+    if (key === "company") return path === "/company" || path.startsWith("/careers");
+    if (key === "services") return menus.services.some((i) => i.to === path);
+    return path === `/${key}`;
+  };
 
   const handleMenuClick = (key, e) => {
     const items = menus[key];
@@ -63,7 +93,7 @@ export default function Header({ onSearch }) {
   };
 
   return (
-    <header className="topbar">
+    <header className={`topbar nav-animated${scrolled ? " is-scrolled" : ""}${path === "/" ? " topbar-over" : ""}${path === "/" && !scrolled && !open ? " is-hero" : ""}`}>
 
       {/* Logo */}
       <NavLink className="logo" to="/">
@@ -76,23 +106,19 @@ export default function Header({ onSearch }) {
 
       {/* Mobile Menu */}
       <button
-        className="menu-btn"
+        className="menu-btn nav-menu-btn"
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
       >
-          {open ? "✕" : "☰"}
+        <span className="bars" aria-hidden="true" />
       </button>
 
-      <nav className={open ? "open" : ""}>
+      <nav className={`nav-main ${open ? "open" : ""}`} aria-label="Primary">
 
         {Object.entries(menus).map(([key, items]) => (
           <div
-            className={
-              activeMenu === key
-                ? "drop active"
-                : "drop"
-            }
+            className={`${activeMenu === key ? "drop active nav-drop" : "drop nav-drop"}${isCurrent(key) ? " is-current" : ""}`}
             key={key}
           >
 
@@ -108,10 +134,10 @@ export default function Header({ onSearch }) {
             {items.length > 0 && (
               <div
                 className={
-                  activeMenu === key
-                    ? "mega show"
-                    : "mega"
-                }
+                activeMenu === key
+                ? "mega show nav-mega"
+                : "mega nav-mega"
+            }
               >
                 {items.map((item) => (
                   <NavLink
@@ -139,7 +165,7 @@ export default function Header({ onSearch }) {
 
         {/* Contact */}
         <NavLink
-          className="nav-cta"
+          className="nav-cta nav-cta-animated"
           to="/contact"
           onClick={() => {
             setActiveMenu(null);

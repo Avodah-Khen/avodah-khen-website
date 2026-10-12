@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import { NavLink, useRoute } from "./components/router.jsx";
@@ -12,6 +12,8 @@ import Fintech from "./pages/Fintech.jsx";
 import Careers from "./pages/Careers.jsx";
 import JobDescription from "./pages/JobDescription.jsx";
 import LeasingAndInvestmentAdvisory from "./pages/LeasingAndInvestmentAdvisory.jsx";
+import PageTransition from "./motion/PageTransition.jsx";
+import Cursor from "./motion/Cursor.jsx";
 
 const pages = {
   "/": Home,
@@ -41,6 +43,13 @@ export default function App() {
   const [search, setSearch] = useState(false);
   const [q, setQ] = useState("");
 
+  useEffect(() => {
+    if (!search) return undefined;
+    const onKey = (e) => { if (e.key === "Escape") { setSearch(false); setQ(""); } };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [search]);
+
   const hits = searchIndex.filter((item) =>
     item.title.toLowerCase().includes(q.toLowerCase())
   );
@@ -49,11 +58,12 @@ export default function App() {
     <div className="site site-premium">
       <Header onSearch={() => setSearch(true)} />
 
-      <main id="main-content" key={path} className="page-enter">
+      <PageTransition id="main-content" routeKey={path}>
         <Page />
-      </main>
+      </PageTransition>
 
       <Footer />
+      <Cursor />
 
       {search && (
         <div
