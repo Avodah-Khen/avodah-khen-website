@@ -1,4 +1,4 @@
-
+import { NavLink } from "../components/router.jsx";
 import React from "react";
 
 import {
@@ -469,10 +469,6 @@ function Mandate() {
             <h4>{title}</h4>
             <p>{description}</p>
           </div>
-
-          <span className="mandate-support-arrow" aria-hidden="true">
-            ↗
-          </span>
         </article>
       ))}
     </div>
@@ -517,7 +513,6 @@ function Mandate() {
           Exclusive sales mandate and brand-mandate experience
           built around structured execution.
         </p>
-        <span className="mandate-pride-arrow" aria-hidden="true">↗</span>
       </article>
 
       <article className="mandate-pride-premium-card reveal">
@@ -530,7 +525,6 @@ function Mandate() {
           Local market understanding to help developers position
           their projects more effectively.
         </p>
-        <span className="mandate-pride-arrow" aria-hidden="true">↗</span>
       </article>
 
       <article className="mandate-pride-premium-card reveal">
@@ -543,7 +537,6 @@ function Mandate() {
           On-ground sales deployment focused on coordination,
           buyer engagement and execution.
         </p>
-        <span className="mandate-pride-arrow" aria-hidden="true">↗</span>
       </article>
 
       <article className="mandate-pride-premium-card reveal">
@@ -556,7 +549,6 @@ function Mandate() {
           Organised lead tracking and reporting for improved
           visibility across the sales process.
         </p>
-        <span className="mandate-pride-arrow" aria-hidden="true">↗</span>
       </article>
 
       <article className="mandate-pride-premium-card reveal">
@@ -569,7 +561,6 @@ function Mandate() {
           Broker relationships and channel coordination to
           support project reach and sales opportunities.
         </p>
-        <span className="mandate-pride-arrow" aria-hidden="true">↗</span>
       </article>
 
       <article className="mandate-pride-premium-card reveal">
@@ -582,7 +573,6 @@ function Mandate() {
           A relationship-led approach to working with developers
           and supporting their sales objectives.
         </p>
-        <span className="mandate-pride-arrow" aria-hidden="true">↗</span>
       </article>
     </div>
 
@@ -663,7 +653,6 @@ function Mandate() {
           className="mandate-closing-button"
         >
           Contact Us Now
-          <span aria-hidden="true">↗</span>
         </a>
       </div>
 

@@ -2647,9 +2647,7 @@ h2 {
    NAVBAR HOVER + ACTIVE
    ========================================= */
 
-.drop {
-  position: relative;
-}
+
 
 .drop > a {
   display: inline-flex;
@@ -5634,7 +5632,7 @@ h2 {
 .av-home-hero-shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(8,25,22,.94) 0%, rgba(8,25,22,.78) 48%, rgba(8,25,22,.25) 100%), linear-gradient(0deg, rgba(8,25,22,.42), transparent 50%); }
 .av-company-hero-image { background-image: linear-gradient(90deg, rgba(8,25,22,.9), rgba(8,25,22,.24)), url("/about-real-estate.jpg"); background-position: center, center 52%; }
 .av-home-hero-content, .av-company-hero-content { width: min(1320px, 100%); margin: 0 auto; padding: 100px 6vw 112px; position: relative; z-index: 1; }
-.av-home-hero h1, .av-company-hero h1 { max-width: 950px; margin: 25px 0 22px; font-size: clamp(3.2rem, 7vw, 6.5rem); line-height: .96; letter-spacing: -.065em; }
+.av-home-hero h1, .av-company-hero h1 { max-width: 950px; margin: 25px 0 22px; font-size: clamp(2.8rem, 4.2vw, 3.8rem); line-height: .96; letter-spacing: -.065em; }
 .av-home-hero h1 em, .av-company-hero h1 em { color: #e8b58a; }
 .av-hero-lede, .av-company-hero-content > p:not(.av-eyebrow) { max-width: 590px; color: rgba(255,250,243,.82); font-size: clamp(1rem, 1.45vw, 1.2rem); }
 .av-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
@@ -5896,7 +5894,8 @@ h2 {
   .av-home-hero-image { background-position: 57% center; }
   .av-home-hero-shade { background: linear-gradient(90deg, rgba(8,25,22,.88), rgba(8,25,22,.56)), linear-gradient(0deg, rgba(8,25,22,.42), transparent 70%); }
   .av-home-hero-content, .av-company-hero-content { padding: 80px 6vw 105px; }
-  .av-home-hero h1, .av-company-hero h1 { font-size: clamp(3.15rem, 14vw, 5rem); }
+  .av-home-hero h1, .av-company-hero h1 { font-size: clamp(2.3rem, 8vw, 3.3rem);
+    line-height: 1.05; }
   .av-hero-index { left: 6vw; right: 6vw; bottom: 18px; font-size: .55rem; }
   .av-hero-index span:last-child { max-width: 48%; text-align: right; }
   .av-intro-main, .av-ecosystem-heading, .av-company-overview-grid, .av-company-capabilities-head { grid-template-columns: 1fr; gap: 22px; }
@@ -7868,14 +7867,6 @@ h2 {
   object-position: center;
 }
 
-.mandate-intro-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
 @media (max-width: 760px) {
   .mandate-intro-section {
     padding-block: 48px;
@@ -9442,10 +9433,8 @@ html body .av-company-gap-card p { font-size: clamp(0.92rem, 0.9rem + 0.1vw, 1re
     line-height: 1.5;
   }
 }
-
 /* ==========================================
    HOMEPAGE HERO — REFERENCE DESIGN
-   Scoped only to the homepage hero
 ========================================== */
 
 .av-home-hero-reference {
@@ -9453,77 +9442,222 @@ html body .av-company-gap-card p { font-size: clamp(0.92rem, 0.9rem + 0.1vw, 1re
   isolation: isolate;
   display: flex;
   align-items: center;
-  min-height: clamp(600px, 57vw, 760px);
+  min-height: clamp(560px, 55vw, 720px);
   overflow: hidden;
-  color: var(--ink);
-  background: var(--paper);
+  color: #FAF6F0;
+  background: #14221F;
 }
 
+/* Full-width architectural background */
+
 .av-home-hero-reference .av-home-hero-image {
-  display: block;
-  top: 12%;
-  right: max(5vw, calc((100vw - 1280px) / 2));
-  bottom: 12%;
-  left: auto;
-  width: min(43%, 590px);
-  border-radius: 4px;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/hero-building.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  box-shadow: 0 24px 60px rgba(20, 34, 31, .14);
-  transform: none;
+  border-radius: 0;
+  box-shadow: none;
+  z-index: 0;
 }
 
-/* Keep the architectural image distinct from the readable text area */
+/* Dark forest-green overlay */
+
 .av-home-hero-reference .av-home-hero-shade {
-  display: none;
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(8, 25, 22, 0.88) 0%,
+    rgba(8, 25, 22, 0.70) 45%,
+    rgba(8, 25, 22, 0.25) 100%
+  );
+  pointer-events: none;
 }
+
+/* Hero content */
 
 .av-home-hero-reference .av-home-hero-content {
+  position: relative;
+  z-index: 2;
   width: min(1280px, 100%);
   margin: 0 auto;
-  padding: clamp(10px, 2.5vw, 30px) 5vw;
-  z-index: 1;
+  padding: clamp(60px, 7vw, 100px) 5vw;
 }
 
-/* Yellow New badge */
-.av-home-hero-reference .av-reference-badge {
-  display: inline-block;
-  margin-bottom: 22px;
-  padding: 0;
-  border: none;
-  border-radius: 0;
-  background: transparent;
-  color: var(--teal);
+/* Headline */
 
-  font-size: 11px;
-  font-weight: 700;
-  line-height: 1.5;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-/* Reference headline sizing */
 .av-home-hero-reference h1 {
   max-width: 590px;
   margin: 0 0 18px !important;
-
-  color: var(--ink) !important;
-  font-size: clamp(36px, 4vw, 58px) !important;
+  color: #FAF6F0 !important;
+  font-size: clamp(34px, 3.4vw, 50px) !important;
   font-weight: 600 !important;
   line-height: 1.16 !important;
   letter-spacing: -0.035em !important;
 }
 
-/* Reference paragraph */
+/* Paragraph */
+
 .av-home-hero-reference .av-hero-lede {
   max-width: 470px;
   margin: 0;
-  color: var(--muted) !important;
-  font-size: clamp(15px, 1.35vw, 18px) !important;
+  color: rgba(250, 246, 240, 0.88) !important;
+  font-size: clamp(15px, 1.2vw, 17px) !important;
   font-weight: 400;
-  line-height: 1.5 !important;
+  line-height: 1.6 !important;
 }
+
+/* CTA buttons */
+
+.av-home-hero-reference .av-hero-reference-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+/* Shared hero button styles */
+.av-home-hero-reference .av-hero-primary-button,
+.av-home-hero-reference .av-hero-secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  border-radius: 24px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+/* Talk to our team */
+.av-home-hero-reference .av-hero-primary-button {
+  background: #C45C26 !important;
+  color: #FAF6F0 !important;
+  border-color: #C45C26 !important;
+}
+
+.av-home-hero-reference .av-hero-primary-button:hover {
+  background: #A8491C !important;
+  color: #FAF6F0 !important;
+  border-color: #A8491C !important;
+  transform: translateY(-2px);
+}
+
+/* Explore PropTech */
+.av-home-hero-reference .av-hero-secondary-button {
+  background: #FAF6F0 !important;
+  color: #14221F !important;
+  border-color: #FAF6F0 !important;
+}
+
+.av-home-hero-reference .av-hero-secondary-button:hover {
+  background: #1B3D36 !important;
+  color: #FAF6F0 !important;
+  border-color: #1B3D36 !important;
+  transform: translateY(-2px);
+}
+
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .av-home-hero-reference {
+    min-height: 540px;
+  }
+
+  .av-home-hero-reference .av-home-hero-content {
+    padding: 60px 5vw;
+  }
+
+  .av-home-hero-reference h1 {
+    max-width: 540px;
+    font-size: clamp(34px, 5vw, 44px) !important;
+  }
+
+  .av-home-hero-reference .av-hero-lede {
+    max-width: 430px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .av-home-hero-reference {
+    display: flex;
+    align-items: center;
+    min-height: 540px;
+  }
+
+  .av-home-hero-reference .av-home-hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 0;
+    background-position: 60% center;
+  }
+
+  .av-home-hero-reference .av-home-hero-content {
+    width: 100%;
+    margin: 0;
+    padding: 65px 22px;
+    transform: none;
+  }
+
+  .av-home-hero-reference h1 {
+    max-width: 500px;
+    margin-bottom: 14px !important;
+    font-size: clamp(30px, 7.5vw, 38px) !important;
+    line-height: 1.2 !important;
+  }
+
+  .av-home-hero-reference .av-hero-lede {
+    max-width: 350px;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
+
+  .av-home-hero-reference .av-hero-reference-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 20px;
+  }
+
+  .av-home-hero-reference .av-hero-primary-button,
+  .av-home-hero-reference .av-hero-secondary-button {
+    min-height: 42px;
+    padding: 0 15px;
+    font-size: 12px;
+  }
+}
+
+
+.av-home-hero-reference h1 {
+  max-width: 590px;
+  margin: 0 0 18px !important;
+  color: #FAF6F0 !important;
+  font-size: clamp(34px, 3.4vw, 50px) !important;
+  font-weight: 600 !important;
+  line-height: 1.16 !important;
+  letter-spacing: -0.035em !important;
+}
+
 
 /* Remove old two-button styling */
 .av-home-hero-reference .av-actions {
@@ -9534,14 +9668,6 @@ html body .av-company-gap-card p { font-size: clamp(0.92rem, 0.9rem + 0.1vw, 1re
 .av-home-hero-reference .av-reference-button {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-
-  min-height: 33px;
-  padding: 0 14px;
-  border: 1px solid #e7e5e9;
-  border-radius: 6px;
-
-  background: #ffffff;
   color: #17151b !important;
 
   font-size: 12px;
@@ -9585,88 +9711,6 @@ html body .av-company-gap-card p { font-size: clamp(0.92rem, 0.9rem + 0.1vw, 1re
   }
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-  .av-home-hero-reference {
-    min-height: auto;
-    padding-bottom: 0;
-    display: block;
-  }
-
-  .av-home-hero-reference .av-home-hero-image {
-    position: relative;
-    inset: auto;
-    display: block;
-    width: calc(100% - 44px);
-    height: 230px;
-    margin: 0 22px 28px;
-    border-radius: 4px;
-  }
-
-
-.av-home-hero-reference .av-home-hero-content {
-  width: min(1280px, 100%);
-  margin: 0 auto;
-  padding: clamp(10px, 2.5vw, 30px) 5vw;
-  z-index: 1;
-  transform: translateY(-200px);
-}
-
-
-  
-.av-home-hero-reference h1 {
-  max-width: 600px;
-  margin: 0 0 14px !important;
-  color: var(--ink) !important;
-  font-size: clamp(32px, 7.8vw, 42px) !important;
-  font-weight: 600 !important;
-  line-height: 1.2 !important;
-  letter-spacing: -0.035em !important;
-}
-
-
-  .av-home-hero-reference .av-hero-lede {
-    max-width: 350px;
-    font-size: 15px !important;
-    line-height: 1.6 !important;
-  }
-}
-
-/* Homepage hero — two CTA buttons */
-
-.av-home-hero-reference .av-hero-reference-actions {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 22px;
-}
-
-.av-home-hero-reference .av-hero-primary-button,
-.av-home-hero-reference .av-hero-secondary-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 0 20px;
-  border: 1px solid transparent;
-  border-radius: 24px;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 180ms ease, color 180ms ease,
-    border-color 180ms ease, transform 180ms ease;
-}
-
-.av-home-hero-reference .av-hero-primary-button {
-  background: var(--forest);
-  color: #ffffff !important;
-}
-
-.av-home-hero-reference .av-hero-primary-button:hover {
-  background: var(--teal);
-  transform: translateY(-2px);
-}
 
 .av-home-hero-reference .av-hero-secondary-button {
   background: transparent;
@@ -9678,19 +9722,6 @@ html body .av-company-gap-card p { font-size: clamp(0.92rem, 0.9rem + 0.1vw, 1re
   background: rgba(255, 255, 255, 0.1);
   border-color: #ffffff;
   transform: translateY(-2px);
-}
-
-@media (max-width: 600px) {
-  .av-home-hero-reference .av-hero-reference-actions {
-    gap: 10px;
-  }
-
-  .av-home-hero-reference .av-hero-primary-button,
-  .av-home-hero-reference .av-hero-secondary-button {
-    min-height: 42px;
-    padding: 0 15px;
-    font-size: 12px;
-  }
 }
 
 /* Compact Why Avodah section */
@@ -10548,4 +10579,294 @@ html body .av-company-gap-card p { font-size: clamp(0.92rem, 0.9rem + 0.1vw, 1re
     top: 0 !important;
   }
 }
+
+/* Force spacing between hero buttons */
+.av-home-hero-reference .av-actions.av-hero-reference-actions {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  column-gap: 20px !important;
+  gap: 10px !important;
+}
+
+/* Prevent buttons from touching */
+.av-home-hero-reference .av-actions.av-hero-reference-actions
+.av-hero-primary-button {
+  margin-right: 0 !important;
+}
+
+.av-home-hero-reference .av-actions.av-hero-reference-actions
+.av-hero-secondary-button {
+  margin-left: 0 !important;
+}
+
+/* Change the complete hero badge sentence color */
+.av-home-hero-reference .av-reference-badge,
+.av-home-hero-reference .av-reference-badge .av-badge-accent {
+  color: #E8B58A !important;
+}
+
+/* Keep the full heading cream */
+.av-home-hero-reference h1,
+.av-home-hero-reference .hero-heading-line {
+  color: #FAF6F0 !important;
+}
+
+/* Highlight only "real estate moves." */
+.av-home-hero-reference .hero-heading-accent {
+  color: #E8B58A !important;
+}
+
+/* Footer logo — mobile size */
+@media (max-width: 768px) {
+  .footer-logo {
+    width: 150px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .footer-logo-wrapper {
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* FIX: Homepage hero layout on mobile */
+@media (max-width: 600px) {
+  .av-home-hero-reference {
+    display: flex;
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    min-height: 620px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .av-home-hero-reference .av-home-hero-image {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .av-home-hero-reference .av-home-hero-shade {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .av-home-hero-reference .av-home-hero-content {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 48px 18px 60px;
+    box-sizing: border-box;
+    transform: none;
+  }
+
+  .av-home-hero-reference .av-reference-badge,
+  .av-home-hero-reference h1,
+  .av-home-hero-reference .av-hero-lede,
+  .av-home-hero-reference .av-hero-reference-actions {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .av-home-hero-reference h1 {
+    font-size: clamp(30px, 8vw, 36px) !important;
+    line-height: 1.12 !important;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .av-home-hero-reference .av-hero-lede {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
+
+  .av-home-hero-reference .av-hero-reference-actions {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+/* FIX: Mobile hamburger menu icon */
+@media (max-width: 768px) {
+  .topbar .menu-btn.nav-menu-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative;
+    z-index: 1005;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .topbar .menu-btn .bars {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative;
+    width: 22px;
+    height: 2px;
+    background-color: #1b3d36;
+    border-radius: 2px;
+  }
+
+  .topbar .menu-btn .bars::before,
+  .topbar .menu-btn .bars::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 18px;
+    height: 2px;
+    background-color: #1b3d36;
+    border-radius: 2px;
+  }
+
+  .topbar .menu-btn .bars::before {
+    top: -6px;
+  }
+
+  .topbar .menu-btn .bars::after {
+    top: 6px;
+  }
+}
+@media (min-width: 769px) {
+  .av-home-hero-reference {
+    position: relative;
+    min-height: 550px;
+    height: 550px;
+    overflow: hidden;
+  }
+
+  .av-home-hero-reference .av-home-hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .av-home-hero-reference .av-home-hero-shade {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .av-home-hero-reference .av-home-hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding-top: 170px;
+    transform: none;
+    box-sizing: border-box;
+  }
+}
+
+/* =========================================
+   AVODAH & KHEN — MOBILE + DESKTOP REVEALS
+   Replays on scroll up and down
+   ========================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.reveal-stagger > .stagger-card {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-stagger.in > .stagger-card {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.reveal-stagger.in > .stagger-card:nth-child(1) {
+  transition-delay: 60ms;
+}
+
+.reveal-stagger.in > .stagger-card:nth-child(2) {
+  transition-delay: 140ms;
+}
+
+.reveal-stagger.in > .stagger-card:nth-child(3) {
+  transition-delay: 220ms;
+}
+
+.reveal-stagger.in > .stagger-card:nth-child(4) {
+  transition-delay: 300ms;
+}
+
+.reveal-stagger.in > .stagger-card:nth-child(5) {
+  transition-delay: 380ms;
+}
+
+.reveal-stagger.in > .stagger-card:nth-child(6) {
+  transition-delay: 460ms;
+}
+
+/* Mobile: smaller movement, smoother animation */
+@media (max-width: 767px) {
+  .reveal {
+    transform: translate3d(0, 16px, 0);
+    transition-duration: 0.55s;
+  }
+
+  .reveal-stagger > .stagger-card {
+    transform: translate3d(0, 14px, 0);
+    transition-duration: 0.5s;
+  }
+}
+
+/* Respect accessibility settings */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.in,
+  .reveal-stagger > .stagger-card,
+  .reveal-stagger.in > .stagger-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+}
+
+
+
+
 

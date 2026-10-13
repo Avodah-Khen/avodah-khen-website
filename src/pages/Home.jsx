@@ -154,13 +154,14 @@ export default function Home() {
   REAL ESTATE. REIMAGINED WITH PROPTECH
 </span>
 
-
-    
 <h1>
   Technology-driven solutions.
   <br />
   <span className="hero-heading-line">
-    Transforming the way real estate moves.
+    Transforming the way{" "}
+    <span className="hero-heading-accent">
+      real estate moves.
+    </span>
   </span>
 </h1>
 
