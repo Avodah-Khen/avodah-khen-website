@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NavLink, getPath } from "./router.jsx";
 import logo from "../assets/avodah-khen-logo.png";
 
@@ -28,6 +28,7 @@ export default function Header({ onSearch }) {
   const [activeItem, setActiveItem] = useState(null);
   const [scrolled, setScrolled] = useState(false);
   const [path, setPath] = useState(getPath);
+  const headerRef = useRef(null);
 
   useEffect(() => {
     const close = () => {
@@ -64,6 +65,25 @@ export default function Header({ onSearch }) {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [open, activeMenu]);
+  // Close dropdown when clicking outside the navbar
+useEffect(() => {
+  const handleOutsideClick = (event) => {
+    if (
+      headerRef.current &&
+      !headerRef.current.contains(event.target)
+    ) {
+      setActiveMenu(null);
+      setActiveItem(null);
+      setOpen(false);
+    }
+  };
+
+  document.addEventListener("pointerdown", handleOutsideClick);
+
+  return () => {
+    document.removeEventListener("pointerdown", handleOutsideClick);
+  };
+}, []);
 
   const isCurrent = (key) => {
     if (key === "company") return path === "/company" || path.startsWith("/careers");
@@ -93,7 +113,10 @@ export default function Header({ onSearch }) {
   };
 
   return (
-    <header className={`topbar nav-animated${scrolled ? " is-scrolled" : ""}${path === "/" ? " topbar-over" : ""}${path === "/" && !scrolled && !open ? " is-hero" : ""}`}>
+    <header
+  ref={headerRef}
+  className={`topbar nav-animated${scrolled ? " is-scrolled" : ""}${path === "/" ? " topbar-over" : ""}${path === "/" && !scrolled && !open ? " is-hero" : ""}`}
+>
 
       {/* Logo */}
       <NavLink className="logo" to="/">

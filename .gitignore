@@ -1,3 +1,8 @@
-node_modules/ 
-dist/ 
+node_modules/
+dist/
 .env
+.env.*
+!.env.example
+*.merge-backup
+playwright-report/
+test-results/backup-root-files/
