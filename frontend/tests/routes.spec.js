@@ -2,9 +2,7 @@ import { test, expect } from "@playwright/test";
 
 const pages = [
   { name: "Home", path: "/" },
-  { name: "Services", path: "/#/services" },
   { name: "Research", path: "/#/research" },
-  { name: "Media", path: "/#/media" },
   { name: "Company", path: "/#/company" },
   { name: "Contact", path: "/#/contact" },
   { name: "Mandate", path: "/#/mandate" },

@@ -43,25 +43,51 @@ test.describe("Functional navigation", () => {
     await link.first().click();
   }
 
-  test("Services navigation works", async ({ page }) => {
-    await clickNavigationLink(page, "Services");
-    await expect(page).toHaveURL(/#\/services\/?$/);
-  });
+  test("Services dropdown opens correctly", async ({ page }) => {
+  await clickNavigationLink(page, "Services");
+
+  await expect(page.locator(".nav-mega.show")).toBeVisible();
+
+  await expect(
+    page.locator(".nav-mega.show").getByRole("link", { name: "Mandate" })
+  ).toBeVisible();
+
+  await expect(
+    page.locator(".nav-mega.show").getByRole("link", { name: "Proptech" })
+  ).toBeVisible();
+
+  await expect(
+    page.locator(".nav-mega.show").getByRole("link", { name: "Fintech" })
+  ).toBeVisible();
+
+  await expect(
+    page.locator(".nav-mega.show").getByRole("link", {
+      name: "Leasing and Investment Advisory",
+    })
+  ).toBeVisible();
+});
 
   test("Research navigation works", async ({ page }) => {
     await clickNavigationLink(page, "Research");
     await expect(page).toHaveURL(/#\/research\/?$/);
   });
+  test("Company dropdown opens correctly", async ({ page }) => {
+  await clickNavigationLink(page, "Company");
 
-  test("Media navigation works", async ({ page }) => {
-    await clickNavigationLink(page, "Media");
-    await expect(page).toHaveURL(/#\/media\/?$/);
-  });
+  await expect(page.locator(".nav-mega.show")).toBeVisible();
 
-  test("Company navigation works", async ({ page }) => {
-    await clickNavigationLink(page, "Company");
-    await expect(page).toHaveURL(/#\/company\/?$/);
-  });
+  await expect(
+    page.locator(".nav-mega.show").getByRole("link", { name: "Who we are" })
+  ).toBeVisible();
+
+  await expect(
+    page.locator(".nav-mega.show").getByRole("link", { name: "Leadership" })
+  ).toBeVisible();
+
+  await expect(
+    page.locator(".nav-mega.show").getByRole("link", { name: "Careers" })
+  ).toBeVisible();
+});
 
   test("Contact navigation works", async ({ page }) => {
     await clickNavigationLink(page, "Contact");

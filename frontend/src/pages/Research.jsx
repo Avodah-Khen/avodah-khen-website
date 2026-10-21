@@ -1,47 +1,82 @@
 import useReveal from "../hooks/useReveal.js";
 import { NavLink } from "../components/router.jsx";
 
+import {
+  FiMapPin,
+  FiTrendingUp,
+  FiLayers,
+  FiUsers,
+  FiTarget,
+  FiBarChart2,
+} from "react-icons/fi";
+
 const analyses = [
   {
-    icon: "📍",
+    icon: FiMapPin,
     title: "Location Intelligence",
     text: "Understand micro-markets through pricing, infrastructure, connectivity, development activity and growth indicators.",
   },
   {
-    icon: "📊",
+    icon: FiTrendingUp,
     title: "Market & Price Trends",
     text: "Track property prices, inventory, absorption, rental trends and changing market conditions.",
   },
   {
-    icon: "🏗️",
+    icon: FiLayers,
     title: "Project & Competitor Intelligence",
     text: "Analyse competing projects, configurations, pricing, amenities, offers, positioning and sales strategies.",
   },
   {
-    icon: "👥",
+    icon: FiUsers,
     title: "Buyer & Demand Insights",
     text: "Identify buyer preferences, budgets, property requirements and emerging demand patterns.",
   },
   {
-    icon: "🎯",
+    icon: FiTarget,
     title: "Project Positioning",
     text: "Use market intelligence to identify opportunities for pricing, product configuration, positioning and go-to-market strategy.",
   },
   {
-    icon: "📈",
+    icon: FiBarChart2,
     title: "Opportunity Identification",
     text: "Discover emerging markets, high-potential locations and opportunities that may otherwise remain hidden within large volumes of property data.",
   },
 ];
 
+
 const decisions = [
-  "Acquisition",
-  "Development",
-  "Pricing",
-  "Sales",
-  "Marketing",
-  "Investment",
+  {
+    icon: FiMapPin,
+    title: "Acquisition",
+    text: "Evaluate locations, market potential and property opportunities.",
+  },
+  {
+    icon: FiLayers,
+    title: "Development",
+    text: "Understand project potential, demand and product requirements.",
+  },
+  {
+    icon: FiTrendingUp,
+    title: "Pricing",
+    text: "Compare market rates, competition and pricing trends.",
+  },
+  {
+    icon: FiUsers,
+    title: "Sales",
+    text: "Understand buyer demand and sales opportunities.",
+  },
+  {
+    icon: FiTarget,
+    title: "Marketing",
+    text: "Refine project positioning and target audiences.",
+  },
+  {
+    icon: FiBarChart2,
+    title: "Investment",
+    text: "Assess market opportunities and potential risks.",
+  },
 ];
+
 
 const approach = [
   "COLLECT",
@@ -80,34 +115,45 @@ export default function Research() {
           </p>
         </div>
       </header>
-
+      
       {/* ================= INTRODUCTION ================= */}
       <section className="research-section research-intro-section">
-        <div className="research-intro reveal">
+        <div className="research-intro-layout">
 
-          <span className="research-label">
-            REAL ESTATE MARKET RESEARCH
-          </span>
+          <div className="research-intro reveal">
+            <span className="research-label">
+              REAL ESTATE MARKET RESEARCH
+            </span>
 
-          <h2>
-            Turning Property Data Into Meaningful Market Intelligence
-          </h2>
+            <h2>
+              Turning Property Data Into Meaningful Market Intelligence
+            </h2>
 
-          <p>
-            Our Real Estate Market Research combines technology, property
-            intelligence and on-ground market understanding to provide a
-            clearer view of locations, projects, pricing, competition and
-            buyer demand.
-          </p>
+            <p>
+              Our Real Estate Market Research combines technology, property
+              intelligence and on-ground market understanding to provide a
+              clearer view of locations, projects, pricing, competition and
+              buyer demand.
+            </p>
 
-          <p>
-            We help developers, investors and real estate businesses move
-            beyond assumptions and make data-informed decisions with greater
-            confidence.
-          </p>
+            <p>
+              We help developers, investors and real estate businesses move
+              beyond assumptions and make data-informed decisions with greater
+              confidence.
+            </p>
+          </div>
+
+          <div className="research-intro-visual reveal">
+            <img
+              src="/images/market-research.jpg"
+              alt="Modern real estate development and market research"
+              loading="lazy"
+            />
+          </div>
 
         </div>
       </section>
+
 
       {/* ================= WHAT WE ANALYSE ================= */}
       <section className="research-section research-light">
@@ -119,61 +165,91 @@ export default function Research() {
 
           <h2>What We Analyse</h2>
         </div>
+        
+<div className="research-grid">
+  {analyses.map((item, index) => {
+    const Icon = item.icon;
 
-        <div className="research-grid">
+    return (
+      <article
+        className={`research-card reveal research-card-${index + 1}`}
+        key={item.title}
+      >
+        <div className="research-card-heading">
+          <div className="research-icon">
+            <Icon aria-hidden="true" />
+          </div>
 
-          {analyses.map((item, index) => (
-            <article
-              className={`research-card reveal research-card-${index + 1}`}
-              key={item.title}
-            >
-              <div className="research-icon">
-                {item.icon}
-              </div>
-
-              <h3>{item.title}</h3>
-
-              <p>{item.text}</p>
-            </article>
-          ))}
-
+          <h3>{item.title}</h3>
         </div>
+
+        <p>{item.text}</p>
+      </article>
+    );
+  })}
+</div>
+
       </section>
+      
+      {/* ================= MARKET INTELLIGENCE ================= */}
+      <section className="research-section research-intelligence-section">
 
-      {/* ================= FROM DATA TO INTELLIGENCE ================= */}
-      <section className="research-section">
+        <div className="research-intelligence-layout">
 
-        <div className="research-intelligence reveal">
+          <div className="research-intelligence reveal">
+            <span className="research-label">
+              MARKET INTELLIGENCE
+            </span>
 
-          <span className="research-label">
-            MARKET INTELLIGENCE
-          </span>
+            <h2>
+              From Property Data to Market Intelligence
+            </h2>
 
-          <h2>
-            From Property Data to Market Intelligence
-          </h2>
+            <p>
+              We bring together technology, data and real estate expertise
+              to turn complex market information into insights that support
+              better decisions.
+            </p>
 
-          <p>
-            We bring together technology + data + real estate expertise to
-            turn complex market information into insights that can support
-            better decisions across:
-          </p>
+            <p>
+              From evaluating opportunities to refining pricing and sales
+              strategies, our research helps businesses move forward with
+              greater clarity.
+            </p>
+          </div>
 
-          <div className="research-decision-list">
-
-            {decisions.map((item) => (
-              <span
-                className="research-decision reveal"
-                key={item}
-              >
-                {item}
-              </span>
-            ))}
-
+          <div className="research-intelligence-visual reveal">
+            <img
+              src="/images/market-intelligence.jpg"
+              alt="Real estate market intelligence and property analysis"
+              loading="lazy"
+            />
           </div>
 
         </div>
+
+        <div className="research-decision-grid">
+          {decisions.map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <article
+                className="research-decision-card reveal"
+                key={item.title}
+              >
+                <div className="research-decision-card-icon">
+                  <Icon aria-hidden="true" />
+                </div>
+
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            );
+          })}
+        </div>
+
       </section>
+
 
       {/* ================= OUR APPROACH ================= */}
       <section className="research-section research-dark">

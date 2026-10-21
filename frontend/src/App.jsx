@@ -29,7 +29,6 @@ const pages = {
 
 const searchIndex = [
   { to: "/research", title: "Heat-ready housing report" },
-  { to: "/media", title: "Street Talk podcast" },
   { to: "/company", title: "Leadership team" },
   { to: "/contact", title: "Request a briefing" },
 ];

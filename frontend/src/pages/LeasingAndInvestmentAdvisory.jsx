@@ -1,8 +1,22 @@
 import useReveal from "../hooks/useReveal.js";
 import { NavLink } from "../components/router.jsx";
+import advisoryBuilding from "../assets/real-estate-advisory.jpg";
+import leasingImage from "../assets/leasing-advisory.jpg";
+import investmentImage from "../assets/investment-advisory.jpg";
+import portfolioImage from "../assets/portfolio-advisory.jpg";
+import marketImage from "../assets/market-intelligence.jpg";
+import { useState } from "react";
+import {
+  FiTarget,
+  FiBarChart2,
+  FiSearch,
+  FiZap,
+  FiCheckCircle,
+} from "react-icons/fi";
 
 export default function LeasingAndInvestmentAdvisory() {
   useReveal();
+  const [expandedServices, setExpandedServices] = useState({});
 
   return (
     <main className="inner li-page">
@@ -31,8 +45,14 @@ export default function LeasingAndInvestmentAdvisory() {
 
       {/* INTRODUCTION */}
       <section className="li-intro">
-        <div className="li-section-label reveal">
-          <p className="kicker">Strategic Real Estate Advisory</p>
+         <div className="li-section-label reveal">
+            <p className="kicker">Strategic Real Estate Advisory</p>
+
+            <img
+              src={advisoryBuilding}
+              alt="Modern commercial real estate skyline"
+              className="li-advisory-image"
+            />
         </div>
 
         <div className="li-intro-content reveal">
@@ -55,7 +75,7 @@ export default function LeasingAndInvestmentAdvisory() {
           </p>
         </div>
       </section>
-
+      
       {/* SERVICES */}
       <section className="li-services">
         <div className="li-services-heading reveal">
@@ -67,90 +87,193 @@ export default function LeasingAndInvestmentAdvisory() {
         </div>
 
         <div className="li-service-grid">
-
+          {/* LEASING ADVISORY */}
           <article className="li-service-card reveal">
-            <span className="li-number">01</span>
+            <img
+              src={leasingImage}
+              alt="Commercial leasing advisory"
+              className="li-service-image"
+            />
 
             <h3>Leasing Advisory</h3>
-
             <p>
               Helping occupiers and property owners navigate commercial
               leasing opportunities with greater clarity.
             </p>
 
-            <ul>
-              <li>Location and market assessment</li>
-              <li>Property identification and shortlisting</li>
-              <li>Rental benchmarking</li>
-              <li>Lease structuring support</li>
-              <li>Commercial evaluation</li>
-              <li>Negotiation support</li>
-              <li>Transaction coordination</li>
-            </ul>
+            <div
+              className={`li-service-points ${
+                expandedServices.leasing ? "is-expanded" : ""
+              }`}
+            >
+              <ul>
+                <li>Location and market assessment</li>
+                <li>Property identification and shortlisting</li>
+                <li>Rental benchmarking</li>
+                <li>Lease structuring support</li>
+                <li>Commercial evaluation</li>
+                <li>Negotiation support</li>
+                <li>Transaction coordination</li>
+              </ul>
+
+              <button
+                type="button"
+                className="li-show-more"
+                aria-expanded={!!expandedServices.leasing}
+                onClick={() =>
+                  setExpandedServices((prev) => ({
+                    ...prev,
+                    leasing: !prev.leasing,
+                  }))
+                }
+              >
+                {expandedServices.leasing
+                  ? "Show Less −"
+                  : "Show More +"}
+              </button>
+            </div>
           </article>
 
+          {/* INVESTMENT ADVISORY */}
           <article className="li-service-card reveal">
-            <span className="li-number">02</span>
+            <img
+              src={investmentImage}
+              alt="Real estate investment advisory"
+              className="li-service-image"
+            />
 
             <h3>Investment Advisory</h3>
-
             <p>
               Identifying and evaluating real estate opportunities aligned
               with investment objectives.
             </p>
 
-            <ul>
-              <li>Market and asset assessment</li>
-              <li>Investment opportunity identification</li>
-              <li>Location analysis</li>
-              <li>Asset evaluation</li>
-              <li>Rental and yield assessment</li>
-              <li>Risk and opportunity analysis</li>
-              <li>Investment decision support</li>
-            </ul>
+            <div
+              className={`li-service-points ${
+                expandedServices.investment ? "is-expanded" : ""
+              }`}
+            >
+              <ul>
+                <li>Market and asset assessment</li>
+                <li>Investment opportunity identification</li>
+                <li>Location analysis</li>
+                <li>Asset evaluation</li>
+                <li>Rental and yield assessment</li>
+                <li>Risk and opportunity analysis</li>
+                <li>Investment decision support</li>
+              </ul>
+
+              <button
+                type="button"
+                className="li-show-more"
+                aria-expanded={!!expandedServices.investment}
+                onClick={() =>
+                  setExpandedServices((prev) => ({
+                    ...prev,
+                    investment: !prev.investment,
+                  }))
+                }
+              >
+                {expandedServices.investment
+                  ? "Show Less −"
+                  : "Show More +"}
+              </button>
+            </div>
           </article>
 
+          {/* PORTFOLIO ADVISORY */}
           <article className="li-service-card reveal">
-            <span className="li-number">03</span>
+            <img
+              src={portfolioImage}
+              alt="Real estate portfolio advisory"
+              className="li-service-image"
+            />
 
             <h3>Portfolio Advisory</h3>
-
             <p>
               Helping clients understand and optimize their existing real
               estate portfolios.
             </p>
 
-            <ul>
-              <li>Portfolio assessment</li>
-              <li>Asset performance analysis</li>
-              <li>Market benchmarking</li>
-              <li>Hold / exit evaluation</li>
-              <li>Portfolio expansion opportunities</li>
-              <li>Strategic repositioning</li>
-            </ul>
+            <div
+              className={`li-service-points ${
+                expandedServices.portfolio ? "is-expanded" : ""
+              }`}
+            >
+              <ul>
+                <li>Portfolio assessment</li>
+                <li>Asset performance analysis</li>
+                <li>Market benchmarking</li>
+                <li>Hold / exit evaluation</li>
+                <li>Portfolio expansion opportunities</li>
+                <li>Strategic repositioning</li>
+              </ul>
+
+              <button
+                type="button"
+                className="li-show-more"
+                aria-expanded={!!expandedServices.portfolio}
+                onClick={() =>
+                  setExpandedServices((prev) => ({
+                    ...prev,
+                    portfolio: !prev.portfolio,
+                  }))
+                }
+              >
+                {expandedServices.portfolio
+                  ? "Show Less −"
+                  : "Show More +"}
+              </button>
+            </div>
           </article>
 
+          {/* MARKET INTELLIGENCE */}
           <article className="li-service-card reveal">
-            <span className="li-number">04</span>
+            <img
+              src={marketImage}
+              alt="Real estate market intelligence"
+              className="li-service-image"
+            />
 
             <h3>Market Intelligence</h3>
-
             <p>
               Turning real estate data into actionable insights.
             </p>
 
-            <ul>
-              <li>Market condition analysis</li>
-              <li>Emerging location analysis</li>
-              <li>Rental trend analysis</li>
-              <li>Supply and demand assessment</li>
-              <li>Development activity tracking</li>
-              <li>Opportunity identification</li>
-            </ul>
-          </article>
+            <div
+              className={`li-service-points ${
+                expandedServices.market ? "is-expanded" : ""
+              }`}
+            >
+              <ul>
+                <li>Market condition analysis</li>
+                <li>Emerging location analysis</li>
+                <li>Rental trend analysis</li>
+                <li>Supply and demand assessment</li>
+                <li>Development activity tracking</li>
+                <li>Opportunity identification</li>
+              </ul>
 
+              <button
+                type="button"
+                className="li-show-more"
+                aria-expanded={!!expandedServices.market}
+                onClick={() =>
+                  setExpandedServices((prev) => ({
+                    ...prev,
+                    market: !prev.market,
+                  }))
+                }
+              >
+                {expandedServices.market
+                  ? "Show Less −"
+                  : "Show More +"}
+              </button>
+            </div>
+          </article>
         </div>
       </section>
+
 
       {/* APPROACH */}
       <section className="li-approach">
@@ -166,7 +289,9 @@ export default function LeasingAndInvestmentAdvisory() {
         <div className="li-process">
 
           <div className="li-process-item reveal">
-            <span>01</span>
+            <div className="li-process-icon">
+              <FiTarget />
+            </div>
             <div>
               <h3>Understand</h3>
               <p>
@@ -177,7 +302,9 @@ export default function LeasingAndInvestmentAdvisory() {
           </div>
 
           <div className="li-process-item reveal">
-            <span>02</span>
+            <div className="li-process-icon">
+              <FiBarChart2 />
+            </div>
             <div>
               <h3>Analyse</h3>
               <p>
@@ -188,7 +315,9 @@ export default function LeasingAndInvestmentAdvisory() {
           </div>
 
           <div className="li-process-item reveal">
-            <span>03</span>
+            <div className="li-process-icon">
+              <FiSearch />
+            </div>
             <div>
               <h3>Identify</h3>
               <p>
@@ -199,7 +328,9 @@ export default function LeasingAndInvestmentAdvisory() {
           </div>
 
           <div className="li-process-item reveal">
-            <span>04</span>
+            <div className="li-process-icon">
+              <FiZap />
+            </div>
             <div>
               <h3>Advise</h3>
               <p>
@@ -210,7 +341,9 @@ export default function LeasingAndInvestmentAdvisory() {
           </div>
 
           <div className="li-process-item reveal">
-            <span>05</span>
+            <div className="li-process-icon">
+                <FiCheckCircle />
+            </div>
             <div>
               <h3>Execute</h3>
               <p>

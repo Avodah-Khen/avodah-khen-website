@@ -11,10 +11,7 @@ export default function useReveal() {
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
-    if (
-      reduceMotion ||
-      !("IntersectionObserver" in window)
-    ) {
+    if (reduceMotion || !("IntersectionObserver" in window)) {
       items.forEach((item) => item.classList.add("in"));
       return;
     }
@@ -22,15 +19,16 @@ export default function useReveal() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          entry.target.classList.toggle(
-            "in",
-            entry.isIntersecting
-          );
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+          } else {
+            entry.target.classList.remove("in");
+          }
         });
       },
       {
-        threshold: 0,
-        rootMargin: "0px 0px -5% 0px",
+        threshold: 0.05,
+        rootMargin: "0px 0px -8% 0px",
       }
     );
 

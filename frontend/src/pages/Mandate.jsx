@@ -1,5 +1,5 @@
 import { NavLink } from "../components/router.jsx";
-import React from "react";
+import React, { useState } from "react";
 
 import {
   FiLayers,
@@ -187,6 +187,7 @@ const support = [
 
 function Mandate() {
   useReveal();
+  const [expandedSteps, setExpandedSteps] = useState({});
 
   return (
     <main className="mandate-page">
@@ -196,11 +197,12 @@ function Mandate() {
           <span className="mandate-eyebrow anim-1">
             AVODAH &amp; KHEN
           </span>
-
+          
           <h1 className="anim-2">
-            Why Should You Appoint Us As Your Sole Selling Partner
-            <span> for Your Project</span>
+            Why Should You Appoint Us As Your{" "}
+            <span>Sole Selling Partner</span> for Your Project
           </h1>
+
         </div>
       </section>
 
@@ -275,56 +277,75 @@ function Mandate() {
       {/* STEP-BY-STEP GUIDE */}
       <section className="mandate-section">
         <div className="mandate-container">
-          <div className="mandate-heading reveal">
-            <span className="mandate-label">
-              STEP-BY-STEP GUIDE
-            </span>
+          
+<div className="mandate-guide-heading reveal">
+  <span>STEP-BY-STEP GUIDE</span>
 
-            <h3>
-              While Appointing Us As Your Sole Selling Partner, You Need
-              To...
-            </h3>
-          </div>
+  <h2>
+    While appointing us as your
+    <br />
+    <em>Sole Selling Partner, You Need
+    To...</em>
+  </h2>
+</div>
 
-          <div className="mandate-steps">
-            {steps.map((step, index) => (
-              <article
-                className="mandate-step mandate-step-with-image reveal"
-                key={step.title}
-              >
-                <div className="mandate-step-image">
-                  <img
-                    src={step.image}
-                    alt={step.title}
-                    loading="lazy"
-                  />
-                </div>
+          
+<div className="mandate-steps">
+  {steps.map((step, index) => (
+    <article
+      className="mandate-step mandate-step-with-image reveal"
+      key={step.title}
+    >
+      <div className="mandate-step-image">
+        <img
+          src={step.image}
+          alt={step.title}
+          loading="lazy"
+        />
+      </div>
 
-                <div className="mandate-step-content">
-                  <h3>{step.title}</h3>
+      <div className="mandate-step-content">
+        <h3>{step.title}</h3>
 
-                  {step.intro && <p>{step.intro}</p>}
+        {step.intro && <p>{step.intro}</p>}
 
-                  <ul>
-                    {step.items.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-
-                  {step.notes && (
-                    <div className="mandate-notes">
-                      {step.notes.map((note) => (
-                        <p key={note}>
-                          <strong>Note: </strong>
-                          {note}
-                        </p>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </article>
+        <div className={`mandate-step-details ${expandedSteps[index] ? "is-expanded" : ""}`}>
+          <ul>
+            {step.items.map((item) => (
+              <li key={item}>{item}</li>
             ))}
-          </div>
+          </ul>
+
+          {step.notes && (
+            <div className="mandate-notes">
+              {step.notes.map((note) => (
+                <p key={note}>
+                  <strong>Note: </strong>
+                  {note}
+                </p>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <button
+          type="button"
+          className="mandate-show-more"
+          aria-expanded={Boolean(expandedSteps[index])}
+          onClick={() =>
+            setExpandedSteps((prev) => ({
+              ...prev,
+              [index]: !prev[index],
+            }))
+          }
+        >
+          {expandedSteps[index] ? "Show Less −" : "Show More +"}
+        </button>
+      </div>
+    </article>
+  ))}
+</div>
+
         </div>
       </section>
 
@@ -504,76 +525,90 @@ function Mandate() {
 
     <div className="mandate-pride-premium-grid">
       <article className="mandate-pride-premium-card reveal">
-        <span className="mandate-pride-number">01</span>
+        
+      <div className="mandate-pride-heading">
         <div className="mandate-pride-icon">
           <FiShield aria-hidden="true" />
         </div>
-        <h4>Proven Sales Expertise</h4>
+         <h4>Proven Sales Expertise</h4>
+      </div>
+
         <p>
           Exclusive sales mandate and brand-mandate experience
           built around structured execution.
         </p>
       </article>
+      
+<article className="mandate-pride-premium-card reveal">
+  <div className="mandate-pride-heading">
+    <div className="mandate-pride-icon">
+      <FiMapPin aria-hidden="true" />
+    </div>
+    <h4>Mumbai Market Knowledge</h4>
+  </div>
 
-      <article className="mandate-pride-premium-card reveal">
-        <span className="mandate-pride-number">02</span>
-        <div className="mandate-pride-icon">
-          <FiMapPin aria-hidden="true" />
-        </div>
-        <h4>Mumbai Market Knowledge</h4>
-        <p>
-          Local market understanding to help developers position
-          their projects more effectively.
-        </p>
-      </article>
+  <p>
+    Local market understanding to help developers position
+    their projects more effectively.
+  </p>
+</article>
 
-      <article className="mandate-pride-premium-card reveal">
-        <span className="mandate-pride-number">03</span>
-        <div className="mandate-pride-icon">
-          <FiUsers aria-hidden="true" />
-        </div>
-        <h4>Dedicated Sales Teams</h4>
-        <p>
-          On-ground sales deployment focused on coordination,
-          buyer engagement and execution.
-        </p>
-      </article>
+<article className="mandate-pride-premium-card reveal">
+  <div className="mandate-pride-heading">
+    <div className="mandate-pride-icon">
+      <FiUsers aria-hidden="true" />
+    </div>
+    <h4>Dedicated Sales Teams</h4>
+  </div>
 
-      <article className="mandate-pride-premium-card reveal">
-        <span className="mandate-pride-number">04</span>
-        <div className="mandate-pride-icon">
-          <FiMonitor aria-hidden="true" />
-        </div>
-        <h4>CRM &amp; Reporting Systems</h4>
-        <p>
-          Organised lead tracking and reporting for improved
-          visibility across the sales process.
-        </p>
-      </article>
+  <p>
+    On-ground sales deployment focused on coordination,
+    buyer engagement and execution.
+  </p>
+</article>
 
-      <article className="mandate-pride-premium-card reveal">
-        <span className="mandate-pride-number">05</span>
-        <div className="mandate-pride-icon">
-          <FiBriefcase aria-hidden="true" />
-        </div>
-        <h4>Strong Broker Network</h4>
-        <p>
-          Broker relationships and channel coordination to
-          support project reach and sales opportunities.
-        </p>
-      </article>
+<article className="mandate-pride-premium-card reveal">
+  <div className="mandate-pride-heading">
+    <div className="mandate-pride-icon">
+      <FiMonitor aria-hidden="true" />
+    </div>
+    <h4>CRM &amp; Reporting Systems</h4>
+  </div>
 
-      <article className="mandate-pride-premium-card reveal">
-        <span className="mandate-pride-number">06</span>
-        <div className="mandate-pride-icon">
-          <FiHome aria-hidden="true" />
-        </div>
-        <h4>Developer Relationships</h4>
-        <p>
-          A relationship-led approach to working with developers
-          and supporting their sales objectives.
-        </p>
-      </article>
+  <p>
+    Organised lead tracking and reporting for improved
+    visibility across the sales process.
+  </p>
+</article>
+
+<article className="mandate-pride-premium-card reveal">
+  <div className="mandate-pride-heading">
+    <div className="mandate-pride-icon">
+      <FiBriefcase aria-hidden="true" />
+    </div>
+    <h4>Strong Broker Network</h4>
+  </div>
+
+  <p>
+    Broker relationships and channel coordination to
+    support project reach and sales opportunities.
+  </p>
+</article>
+
+<article className="mandate-pride-premium-card reveal">
+  <div className="mandate-pride-heading">
+    <div className="mandate-pride-icon">
+      <FiHome aria-hidden="true" />
+    </div>
+    <h4>Developer Relationships</h4>
+  </div>
+
+  <p>
+    A relationship-led approach to working with developers
+    and supporting their sales objectives.
+  </p>
+</article>
+
     </div>
 
     <div className="mandate-pride-footer">

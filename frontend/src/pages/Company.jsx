@@ -1,8 +1,14 @@
 
 import { NavLink } from "../components/router.jsx";
 import useReveal from "../hooks/useReveal.js";
-import whoWeAreImage from "../assets/whoweare.jpg";
-
+import whoWeAreImage from "../assets/marketintelligence.jpg";
+import { useState } from "react";
+import propertyPortalImage from "../assets/propertyportal.jpg";
+import aiProptechImage from "../assets/ai.jpg";
+import mandateServicesImage from "../assets/mandate.jpg";
+import developerSolutionsImage from "../assets/developersolution.jpg";
+import crmAutomationImage from "../assets/crm.jpg";
+import marketIntelligenceImage from "../assets/Market_Intelligence.jpg";
 import {
   Search,
   Users,
@@ -54,9 +60,9 @@ const gaps = [
     icon: Workflow,
   },
 ];
-
 const capabilities = [
   {
+    image: propertyPortalImage,
     label: "PROPERTY PORTAL",
     title: "Property discovery",
     intro:
@@ -71,6 +77,7 @@ const capabilities = [
     ],
   },
   {
+    image: aiProptechImage,
     label: "AI-POWERED PROPTECH",
     title: "Intelligence in the workflow",
     intro:
@@ -82,6 +89,7 @@ const capabilities = [
     ],
   },
   {
+    image: mandateServicesImage,
     label: "PROPERTY MANDATE SERVICES",
     title: "Representation and sales execution",
     intro:
@@ -94,6 +102,7 @@ const capabilities = [
     ],
   },
   {
+    image: developerSolutionsImage,
     label: "DEVELOPER SOLUTIONS",
     title: "From launch to sell-through",
     intro:
@@ -106,6 +115,7 @@ const capabilities = [
     ],
   },
   {
+    image: crmAutomationImage,
     label: "CRM & SALES AUTOMATION",
     title: "A structured sales journey",
     intro:
@@ -118,6 +128,7 @@ const capabilities = [
     ],
   },
   {
+    image: marketIntelligenceImage,
     label: "DATA & MARKET INTELLIGENCE",
     title: "Actionable business visibility",
     intro:
@@ -157,9 +168,18 @@ const distinctions = [
     "Performance can be measured across the customer and sales journey.",
   ],
 ];
-
 export default function Company() {
   useReveal();
+
+  const [expandedCapabilities, setExpandedCapabilities] = useState([]);
+
+  const toggleCapability = (label) => {
+    setExpandedCapabilities((current) =>
+      current.includes(label)
+        ? current.filter((item) => item !== label)
+        : [...current, label]
+    );
+  };
 
   return (
     <main className="av-company">
@@ -297,22 +317,21 @@ export default function Company() {
                   className="av-company-gap-card stagger-card"
                   key={gap.number}
                 >
-                  <div className="av-company-gap-card-top">
-                    <span className="av-company-gap-number">
-                      {gap.number}
-                    </span>
+                  
+<div className="av-company-gap-card-top">
+  <div className="av-company-gap-icon">
+    <GapIcon
+      size={30}
+      strokeWidth={1.5}
+      aria-hidden="true"
+    />
+  </div>
 
-                    <div className="av-company-gap-icon">
-                      <GapIcon
-                        size={30}
-                        strokeWidth={1.5}
-                        aria-hidden="true"
-                      />
-                    </div>
-                  </div>
+  <h3>{gap.title}</h3>
+</div>
 
-                  <h3>{gap.title}</h3>
-                  <p>{gap.text}</p>
+<p>{gap.text}</p>
+
 
                   <div className="av-company-gap-card-rule" />
                 </article>
@@ -338,6 +357,7 @@ export default function Company() {
           </div>
         </div>
       </section>
+      
       {/* CAPABILITIES */}
       <section className="av-company-section av-company-capabilities reveal">
         <div className="av-company-label">WHAT WE DO</div>
@@ -356,31 +376,57 @@ export default function Company() {
         </div>
 
         <div className="av-company-capability-grid reveal-stagger">
-          {capabilities.map((capability, index) => (
-            <article
-              className="av-company-capability-card stagger-card"
-              key={capability.label}
-            >
-              <span className="av-company-capability-number">
-                {String(index + 1).padStart(2, "0")}
-              </span>
+          {capabilities.map((capability) => {
+            const isExpanded = expandedCapabilities.includes(
+              capability.label
+            );
 
-              <p className="av-company-capability-label">
-                {capability.label}
-              </p>
+            return (
+              <article
+                className="av-company-capability-card stagger-card"
+                key={capability.label}
+              >
+                <div className="av-company-capability-image">
+                  <img
+                    src={capability.image}
+                    alt={capability.title}
+                    loading="lazy"
+                  />
+                </div>
 
-              <h3>{capability.title}</h3>
-              <p>{capability.intro}</p>
+                <p className="av-company-capability-label">
+                  {capability.label}
+                </p>
 
-              <ul>
-                {capability.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
+                <h3>{capability.title}</h3>
+
+                <p>{capability.intro}</p>
+
+                {isExpanded && (
+                  <ul>
+                    {capability.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                )}
+
+                <button
+                  type="button"
+                  className="av-company-capability-toggle"
+                  aria-expanded={isExpanded}
+                  onClick={() => toggleCapability(capability.label)}
+                >
+                  {isExpanded ? "Show less" : "Show more"}
+                  <span aria-hidden="true">
+                    {isExpanded ? "−" : "+"}
+                  </span>
+                </button>
+              </article>
+            );
+          })}
         </div>
       </section>
+
       {/* VISION */}
       <section className="av-company-section av-company-vision reveal">
         <div className="av-company-label">OUR VISION</div>
