@@ -1,10 +1,12 @@
 "use client";
 
-import React, { useState, useRef, useCallback, useEffect } from "react";
+import React, { useState, useRef, useCallback, useEffect, useSyncExternalStore } from "react";
 import { JellyBlobMascot, BlobSpeech, type JellyBlobMood } from "feral-blob";
 import "feral-blob/blob.css";
 
-export type FeralTheme = "proptech" | "fintech" | "voicebot";
+const emptySubscribe = () => () => {};
+
+export type FeralTheme ="proptech" | "fintech" | "voicebot" | "notfound";
 
 interface FeralBlobShowcaseProps {
   theme?: FeralTheme;
@@ -78,6 +80,22 @@ const VOICEBOT_SPEECHES: Record<JellyBlobMood, string> = {
   neutral: "AVODAH AI Voice Bot: Coming Soon.",
 };
 
+const NOT_FOUND_SPEECHES: Record<JellyBlobMood, string> = {
+  curious: "Hmm... this address isn't on any of our maps.",
+  happy: "Good news: the homepage is just one click away!",
+  wave: "Hello! You seem to have wandered off the floor plan.",
+  surprised: "Whoa — you've found an unbuilt plot!",
+  love: "Lost? Our advisors love giving directions.",
+  hmm: "Checking every floor... still no sign of this page.",
+  sideEye: "Typed that URL by hand, didn't you?",
+  password: "Some doors here need a key...",
+  shy: "Sorry, this page never made it past the blueprint.",
+  sleepy: "This page moved out a while ago...",
+  angry: "Who removed this page?!",
+  sad: "This page doesn't exist anymore...",
+  neutral: "Error 404 — let's get you home.",
+};
+
 export default function FeralBlobShowcase({
   theme = "proptech",
   className = "",
@@ -87,28 +105,34 @@ export default function FeralBlobShowcase({
   customSpeeches,
 }: FeralBlobShowcaseProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [mounted, setMounted] = useState<boolean>(false);
+  // true only in the browser, so the server render shows the static placeholder
+  const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
   const [moodIndex, setMoodIndex] = useState<number>(0);
   const [mood, setMood] = useState<JellyBlobMood>(MOOD_SEQUENCE[0]);
-  const [gaze, setGaze] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [pointerGaze, setGaze] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [sparkle, setSparkle] = useState<boolean>(false);
   const [celebrateCount, setCelebrateCount] = useState<number>(0);
   const [isPaused, setIsPaused] = useState<boolean>(false);
+  const [prevExternalMood, setPrevExternalMood] = useState(externalMood);
+  const [prevCelebrate, setPrevCelebrate] = useState(celebrate);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // An external gaze target (e.g. a focused form input) overrides pointer tracking
+  const gaze = gazeTarget ?? pointerGaze;
 
   const baseSpeeches =
-    theme === "voicebot"
+    theme === "notfound"
+      ? NOT_FOUND_SPEECHES
+      : theme === "voicebot"
       ? VOICEBOT_SPEECHES
       : theme === "fintech"
       ? FINTECH_SPEECHES
       : PROPTECH_SPEECHES;
   const speeches = customSpeeches ? { ...baseSpeeches, ...customSpeeches } : baseSpeeches;
 
-  // Sync external mood when provided (e.g. from whitelist form interactions)
-  useEffect(() => {
+  // Sync external mood when provided (e.g. from whitelist form interactions).
+  // Adjusted during render rather than in an effect, so there is no extra render pass.
+  if (externalMood !== prevExternalMood) {
+    setPrevExternalMood(externalMood);
     if (externalMood) {
       setMood(externalMood);
       const foundIdx = MOOD_SEQUENCE.indexOf(externalMood);
@@ -116,23 +140,22 @@ export default function FeralBlobShowcase({
         setMoodIndex(foundIdx);
       }
     }
-  }, [externalMood]);
-
-  // Sync external gaze target when user focuses on inputs
-  useEffect(() => {
-    if (gazeTarget) {
-      setGaze(gazeTarget);
-    }
-  }, [gazeTarget]);
+  }
 
   // Sync celebration bursts from external actions
-  useEffect(() => {
-    if (celebrate && celebrate > 0) {
+  if (celebrate !== prevCelebrate) {
+    setPrevCelebrate(celebrate);
+    if (celebrate > 0) {
       setCelebrateCount((c) => c + 1);
       setSparkle(true);
-      const timer = setTimeout(() => setSparkle(false), 2200);
-      return () => clearTimeout(timer);
     }
+  }
+
+  // End the celebration sparkle after a moment
+  useEffect(() => {
+    if (!celebrate) return;
+    const timer = setTimeout(() => setSparkle(false), 2200);
+    return () => clearTimeout(timer);
   }, [celebrate]);
 
   // Advance mood and speech cloud synchronously to the next narrative state
@@ -157,7 +180,29 @@ export default function FeralBlobShowcase({
 
   // Custom luxury theme palette CSS variables for Feral-Blob
   const themeStyles =
-    theme === "voicebot"
+    theme === "notfound"
+      ? ({
+          // Built from the site's gold accents: #A8875B (accent), #C9A97C (accent-light), #8C6D41 (light-mode accent)
+          "--jelly-body-top": "#F3E4C8",
+          "--jelly-body-mid": "#A8875B",
+          "--jelly-body-deep": "#8C6D41",
+          "--jelly-body-rim": "#C9A97C",
+          "--jelly-outline": "#5E4627",
+          "--jelly-outline-light": "#A8875B",
+          "--jelly-arm-light": "#E6D3B0",
+          "--jelly-arm-mid": "#C9A97C",
+          "--jelly-arm-deep": "#8C6D41",
+          "--jelly-cheek": "#E8A27A",
+          "--jelly-cheek-light": "#FBE3D2",
+          "--jelly-cheek-deep": "#C97B4E",
+          "--jelly-eye": "#141513",
+          "--jelly-eye-light": "#2A231C",
+          "--jelly-eye-deep": "#0C0D0C",
+          "--jelly-belly-glow": "#FBF1DE",
+          "--jelly-eye-sparkle": "#C9A97C",
+          "--jelly-shadow": "#1A150E",
+        } as React.CSSProperties)
+      : theme === "voicebot"
       ? ({
           "--jelly-body-top": "#D1FAE5",
           "--jelly-body-mid": "#34D399",

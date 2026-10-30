@@ -20,7 +20,8 @@ import {
   Zap,
   CheckCircle2
 } from "lucide-react";
-import WobblyCard from "@/components/WobblyCard";
+import { contactRequestSchema, firstIssue, HONEYPOT_FIELD, readHoneypot } from "@/lib/validation";
+import HoneypotField from "@/components/HoneypotField";
 
 export default function ResearchClient() {
   const [activeStep, setActiveStep] = useState<number>(0);
@@ -38,8 +39,18 @@ export default function ResearchClient() {
 
   const handleResearchSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!researchForm.fullName.trim() || !researchForm.email.trim()) {
-      setResearchError("Please enter your full name and corporate email.");
+    const honeypot = readHoneypot(e.currentTarget as HTMLFormElement);
+    const parsed = contactRequestSchema.safeParse({
+      fullName: researchForm.fullName,
+      email: researchForm.email,
+      phone: researchForm.phone.trim() || "+91 99999 99999",
+      service: "Investment Advisory",
+      organization: "Market Research Desk",
+      message: `Inquiry for Market Intelligence: ${researchForm.areaOfInterest}`,
+      source: "research_intelligence",
+    });
+    if (!parsed.success) {
+      setResearchError(firstIssue(parsed.error));
       return;
     }
     setIsSubmittingResearch(true);
@@ -49,15 +60,7 @@ export default function ResearchClient() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          fullName: researchForm.fullName.trim(),
-          email: researchForm.email.trim(),
-          phone: researchForm.phone.trim() || "+91 99999 99999",
-          service: "Investment Advisory",
-          organization: "Market Research Desk",
-          message: `Inquiry for Market Intelligence: ${researchForm.areaOfInterest}`,
-          source: "research_intelligence",
-        }),
+        body: JSON.stringify({ ...parsed.data, [HONEYPOT_FIELD]: honeypot }),
       });
 
       const data = await res.json();
@@ -326,10 +329,9 @@ export default function ResearchClient() {
             {analysisPillars.map((pillar) => {
               const Icon = pillar.icon;
               return (
-                <WobblyCard
+                <div
                   key={pillar.title}
-                  wobbleIntensity={8}
-                  className="p-6 sm:p-8 flex flex-col justify-between h-full bg-[var(--theme-card-bg)] border border-[var(--theme-border)] hover:border-[var(--theme-accent)]/60 rounded-2xl transition-colors duration-300 shadow-md group relative overflow-hidden"
+                  className="relative p-6 sm:p-8 flex flex-col justify-between h-full bg-[var(--theme-card-bg)] border border-[var(--theme-border)] hover:border-[var(--theme-accent)]/60 rounded-2xl transition-colors duration-300 shadow-md group relative overflow-hidden"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-5">
@@ -362,7 +364,7 @@ export default function ResearchClient() {
                       ))}
                     </div>
                   </div>
-                </WobblyCard>
+                </div>
               );
             })}
           </div>
@@ -542,6 +544,7 @@ export default function ResearchClient() {
                   </div>
 
                   <form onSubmit={handleResearchSubmit} className="space-y-4">
+                    <HoneypotField />
                     {researchError && (
                       <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-xs">
                         {researchError}

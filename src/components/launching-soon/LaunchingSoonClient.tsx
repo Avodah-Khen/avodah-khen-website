@@ -5,6 +5,8 @@ import Link from "next/link";
 import { Terminal, ArrowRight, CheckCircle2, ChevronRight } from "lucide-react";
 import FeralBlobShowcase, { FeralTheme } from "@/components/feral/FeralBlobShowcase";
 import { type JellyBlobMood } from "feral-blob";
+import { waitlistSchema, firstIssue, HONEYPOT_FIELD, readHoneypot } from "@/lib/validation";
+import HoneypotField from "@/components/HoneypotField";
 
 interface LaunchingSoonClientProps {
   type: "proptech" | "fintech" | "voicebot";
@@ -24,8 +26,10 @@ export default function LaunchingSoonClient({ type }: LaunchingSoonClientProps) 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !email.includes("@")) {
-      setErrorMessage("Please enter a valid corporate email address.");
+    const honeypot = readHoneypot(e.currentTarget as HTMLFormElement);
+    const parsed = waitlistSchema.safeParse({ email, type, interest: "early_access" });
+    if (!parsed.success) {
+      setErrorMessage(firstIssue(parsed.error));
       return;
     }
 
@@ -36,11 +40,7 @@ export default function LaunchingSoonClient({ type }: LaunchingSoonClientProps) 
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: email.trim().toLowerCase(),
-          type,
-          interest: "early_access",
-        }),
+        body: JSON.stringify({ ...parsed.data, [HONEYPOT_FIELD]: honeypot }),
       });
 
       const data = await res.json();
@@ -164,6 +164,7 @@ export default function LaunchingSoonClient({ type }: LaunchingSoonClientProps) 
               ) : (
                 <div className="w-full">
                   <form onSubmit={handleSubmit} className="flex gap-2 w-full">
+                    <HoneypotField />
                     <input
                       type="email"
                       name="email"

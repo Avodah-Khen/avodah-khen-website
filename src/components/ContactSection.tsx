@@ -3,7 +3,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Globe, ArrowRight, CheckCircle2 } from "lucide-react";
-import Card3DTilt from "./Card3DTilt";
+import { contactRequestSchema, firstIssue, HONEYPOT_FIELD, readHoneypot } from "@/lib/validation";
+import HoneypotField from "@/components/HoneypotField";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -20,23 +21,26 @@ export default function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    const honeypot = readHoneypot(e.currentTarget as HTMLFormElement);
     setFormError(null);
 
-    const payload = {
-      fullName: formData.fullName.trim(),
-      email: formData.email.trim(),
-      phone: formData.phone.trim(),
+    const parsed = contactRequestSchema.safeParse({
+      ...formData,
       service: formData.service || "Sole Selling Mandate",
-      message: formData.message.trim(),
       source: "homepage",
-    };
+    });
+    if (!parsed.success) {
+      setFormError(firstIssue(parsed.error));
+      return;
+    }
+    const payload = parsed.data;
 
+    setIsSubmitting(true);
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ ...payload, [HONEYPOT_FIELD]: honeypot }),
       });
 
       const data = await res.json();
@@ -155,7 +159,7 @@ export default function ContactSection() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7"
           >
-            <Card3DTilt intensity={8}>
+            <div>
               <div className="p-8 sm:p-12 rounded-sm bg-[var(--theme-surface-glass)] border border-[var(--theme-border)] shadow-[var(--theme-card-shadow)] relative">
                 <h3 className="font-serif text-2xl sm:text-3xl text-[var(--theme-text)] font-normal mb-2">
                   Start a Conversation
@@ -165,6 +169,7 @@ export default function ContactSection() {
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  <HoneypotField />
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                       <label
@@ -300,13 +305,13 @@ export default function ContactSection() {
                         </span>
                       )}
                       <p className="text-xs text-[var(--theme-text)] font-light leading-relaxed mt-1">
-                        Thank you. An advisory principal from Avodah &amp; Khen LLP will review your requirements and respond shortly.
+                        Thank you. An advisory principal from Avodah will review your requirements and respond shortly.
                       </p>
                     </div>
                   )}
                 </form>
               </div>
-            </Card3DTilt>
+            </div>
           </motion.div>
 
         </div>

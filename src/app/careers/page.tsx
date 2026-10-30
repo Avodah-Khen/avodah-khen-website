@@ -7,9 +7,10 @@ import CareersClient from "@/components/careers/CareersClient";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Careers — AVODAH & KHEN LLP | High-Value Real Estate & PropTech Advisory",
+  title: "Careers — AVODAH | High-Value Real Estate & PropTech Advisory",
   description:
-    "Explore executive and engineering opportunities at AVODAH & KHEN LLP in Mumbai. Lead Category A developer sole selling mandates, commercial leasing advisory, and proprietary PropTech development.",
+    "Build your career at AVODAH in Mumbai, with roles in developer sole selling mandates, commercial leasing advisory and PropTech engineering.",
+  alternates: { canonical: "/careers" },
   keywords: [
     "Avodah Careers",
     "Real Estate Jobs Mumbai",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     "BKC Real Estate Advisory Careers",
   ],
   openGraph: {
-    title: "Careers at AVODAH & KHEN LLP — Shape the Skyline of Indian Real Estate",
+    title: "Careers at AVODAH — Shape the Skyline of Indian Real Estate",
     description:
       "Join our discreet cadre of institutional dealmakers, commercial leasing advisors, and PropTech engineers in Mumbai.",
     type: "website",

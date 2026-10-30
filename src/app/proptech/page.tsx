@@ -6,19 +6,20 @@ import Navigation from "@/components/Navigation";
 import LaunchingSoonClient from "@/components/launching-soon/LaunchingSoonClient";
 
 export const metadata: Metadata = {
-  title: "PropTech Ecosystem — Launching Soon — AVODAH & KHEN LLP",
+  title: "PropTech Ecosystem — Launching Soon — AVODAH",
   description:
-    "Next-generation real estate technology ecosystem. An intelligent connected platform for property discovery, automated developer mandates, CRM, and spatial AI intelligence.",
+    "AVODAH PropTech, launching soon: a connected real estate platform for property discovery, developer mandates, CRM and AI-driven market intelligence.",
+  alternates: { canonical: "/proptech" },
   keywords: [
     "PropTech Mumbai",
     "Real Estate Technology India",
     "AI Property Discovery",
     "Developer Mandate CRM",
     "Real Estate Digital Twin",
-    "Avodah & Khen PropTech",
+    "Avodah PropTech",
   ],
   openGraph: {
-    title: "PropTech Ecosystem — Launching Soon — AVODAH & KHEN LLP",
+    title: "PropTech Ecosystem — Launching Soon — AVODAH",
     description:
       "A connected platform for property discovery, automated developer mandates, high-velocity CRM, and spatial AI intelligence.",
     type: "website",

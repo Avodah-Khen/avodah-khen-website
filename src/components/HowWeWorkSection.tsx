@@ -12,7 +12,6 @@ import {
   ArrowRight,
   Sparkles,
 } from "lucide-react";
-import Card3DTilt from "./Card3DTilt";
 import Link from "next/link";
 
 interface WorkStep {
@@ -116,7 +115,7 @@ export default function HowWeWorkSection() {
                 onMouseEnter={() => setActiveStep(idx)}
                 className="h-full"
               >
-                <Card3DTilt intensity={10} className="h-full">
+                <div className="h-full">
                   <div
                     className={`h-full flex flex-col justify-between p-6 rounded-2xl border transition-all duration-300 relative group cursor-pointer ${
                       isCurrent
@@ -159,7 +158,7 @@ export default function HowWeWorkSection() {
                       />
                     </div>
                   </div>
-                </Card3DTilt>
+                </div>
               </motion.div>
             );
           })}

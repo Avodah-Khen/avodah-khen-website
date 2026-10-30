@@ -6,9 +6,10 @@ import Navigation from "@/components/Navigation";
 import LaunchingSoonClient from "@/components/launching-soon/LaunchingSoonClient";
 
 export const metadata: Metadata = {
-  title: "AI Voice Bot — Launching Soon — AVODAH & KHEN LLP",
+  title: "AI Voice Bot — Launching Soon — AVODAH",
   description:
-    "Autonomous conversational voice AI built for real estate developers and sole selling mandates. Instant lead response in under 10 seconds, multi-dialect qualification, and automated site visit scheduling.",
+    "AVODAH AI Voice Bot, launching soon: voice AI for developers that answers leads in under 10 seconds, qualifies buyers and books site visits.",
+  alternates: { canonical: "/ai-voice-bot" },
   keywords: [
     "AI Voice Bot Real Estate",
     "Real Estate Voice Agent Mumbai",
@@ -16,11 +17,11 @@ export const metadata: Metadata = {
     "PropTech Voice AI",
     "Lead Qualification Voice Bot",
     "Automated Site Visit Scheduling",
-    "Avodah & Khen AI Voice Bot",
+    "Avodah AI Voice Bot",
     "Developer Sales Automation",
   ],
   openGraph: {
-    title: "AI Voice Bot — Launching Soon — AVODAH & KHEN LLP",
+    title: "AI Voice Bot — Launching Soon — AVODAH",
     description:
       "Transforming cold inquiries into qualified site visits with human-parity voice AI, sub-450ms latency, and direct CRM synchronization.",
     type: "website",

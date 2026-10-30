@@ -4,7 +4,6 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Cpu, Database, Landmark, ArrowRight } from "lucide-react";
-import Card3DTilt from "./Card3DTilt";
 import { useTheme } from "@/context/ThemeContext";
 
 export default function EcosystemSection() {
@@ -100,7 +99,7 @@ export default function EcosystemSection() {
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1], delay: idx * 0.12 }}
                 >
-                  <Card3DTilt intensity={8}>
+                  <div>
                     <div className="p-8 rounded-sm bg-[var(--theme-surface-glass)] backdrop-blur-xl border border-[var(--theme-border)] hover:border-[var(--theme-accent)] transition-all duration-300 shadow-[var(--theme-card-shadow)] group">
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-3">
@@ -123,7 +122,7 @@ export default function EcosystemSection() {
                         {mod.desc}
                       </p>
                     </div>
-                  </Card3DTilt>
+                  </div>
                 </motion.div>
               );
             })}

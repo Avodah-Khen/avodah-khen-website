@@ -5,7 +5,6 @@ import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motio
 import Link from "next/link";
 import { ArrowRight, ChevronDown, Sparkles, FileCheck, Wallet, PhoneCall } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
-import WobblyCard from "./WobblyCard";
 
 const TOTAL_FRAMES = 300;
 const FRAME_PREFIX = "/assets/video-frames/ezgif-frame-";
@@ -123,7 +122,7 @@ const STAGES: StageInfo[] = [
     subtitle:
       "We built a 360° proptech Platform that is the core funnel the way, Real Estate is Discovered, Distributed and Sold through our Portal and App",
     tags: ["PropTech Discovery", "Smart Portals", "Connected Workflows"],
-    secondaryCtaText: "Explore Market Intelligence",
+    secondaryCtaText: "Explore PropTech Platform",
     secondaryCtaHref: "/proptech",
     alignment: "left",
   },
@@ -137,8 +136,8 @@ const STAGES: StageInfo[] = [
     title: "Fintech",
     subtitle:
       "A comprehensive Fintech Platform that simplifies access to loans and financials products through a Single Digital Destination.",
-    tags: ["PropTech Discovery", "Smart Portals", "Connected Workflows"],
-    secondaryCtaText: "Explore PropTech Ecosystem",
+    tags: ["Property Loans", "Financial Products", "Single Digital Destination"],
+    secondaryCtaText: "Explore FinTech Platform",
     secondaryCtaHref: "/fintech",
     alignment: "right",
   },
@@ -151,7 +150,7 @@ const STAGES: StageInfo[] = [
     phaseTitle: "THE COMPLETE HORIZON",
     title: "Let's Shape\nWhat Comes Next.",
     subtitle:
-      "Connect with Avodah & Khen LLP to explore exclusive mandate opportunities, portfolio acquisitions, and institutional partnerships across the Mumbai Metropolitan Region.",
+      "Connect with Avodah to explore exclusive mandate opportunities, portfolio acquisitions, and institutional partnerships across the Mumbai Metropolitan Region.",
     tags: ["Sole Selling Mandates", "Leasing & Investments", "PropTech Advisory"],
     primaryCtaText: "Schedule Institutional Consultation",
     primaryCtaHref: "/contact",
@@ -438,10 +437,7 @@ export default function ArchitecturalCanvasSequence() {
               <div className="w-12 h-12 rounded-full border border-[var(--theme-accent)]/20 border-t-[var(--theme-accent)] animate-spin" />
               <div className="flex flex-col items-center">
                 <span className="font-serif text-2xl tracking-[0.2em] text-[var(--theme-text)]">
-                  AVODAH &amp; KHEN
-                </span>
-                <span className="text-[10px] tracking-[0.3em] uppercase text-[var(--theme-accent)] mt-1 font-semibold">
-                  LLP • Real Estate Advisory
+                  AVODAH
                 </span>
               </div>
               <div className="w-56 h-[2px] bg-[var(--theme-border)] relative overflow-hidden rounded-full">
@@ -499,10 +495,6 @@ export default function ArchitecturalCanvasSequence() {
               <span className="hidden md:inline">•</span>
               <span className="hidden md:inline">MUMBAI MMR</span>
             </div>
-
-            <div className="px-3 py-1 bg-[var(--theme-surface-glass)] border border-[var(--theme-border)] rounded-sm backdrop-blur-md text-[9px] sm:text-xs font-semibold tracking-[0.16em] text-[var(--theme-text)] uppercase shadow-md">
-              {activeStage.phaseNumber} / {activeStage.phaseTitle}
-            </div>
           </div>
 
           {/* HUD Bottom Bar */}
@@ -546,7 +538,7 @@ export default function ArchitecturalCanvasSequence() {
                 className="w-full max-w-xl mx-auto pointer-events-auto relative px-2 my-auto"
               >
                 {/* Wobbly Elastic Physics Card Wrapper */}
-                <WobblyCard wobbleIntensity={12} className="w-full">
+                <div className="relative w-full">
                   <div className="relative rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface-glass)]/92 backdrop-blur-2xl p-3 sm:p-4.5 md:p-5 shadow-[0_20px_45px_-12px_rgba(0,0,0,0.5)] overflow-hidden transition-all duration-300 hover:border-[var(--theme-accent)]/60 hover:shadow-[0_25px_50px_-10px_rgba(0,0,0,0.6)]">
                     {/* Specular hairline top accent */}
                     <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[var(--theme-accent)] to-transparent opacity-85" />
@@ -665,7 +657,7 @@ export default function ArchitecturalCanvasSequence() {
                       </div>
                     </div>
                   </div>
-                </WobblyCard>
+                </div>
               </motion.div>
             ) : (
               /* =========================================================================
@@ -684,7 +676,7 @@ export default function ArchitecturalCanvasSequence() {
                     : "mx-auto text-center"
                   }`}
               >
-                <WobblyCard wobbleIntensity={8} className="w-full">
+                <div className="relative w-full">
                   <div className="p-4 sm:p-7 md:p-8 rounded-2xl bg-[var(--theme-surface-glass)]/92 backdrop-blur-2xl border border-[var(--theme-border)] shadow-[var(--theme-shadow)] relative group hover:border-[var(--theme-accent)]/50 transition-all duration-300">
                     {/* Accent top rule */}
                     <div className="absolute top-0 left-0 w-14 h-[2px] bg-[var(--theme-accent)]" />
@@ -693,7 +685,7 @@ export default function ArchitecturalCanvasSequence() {
                     <div className="inline-flex items-center gap-2 mb-2 sm:mb-3">
                       <span className="w-1.5 h-1.5 rounded-full bg-[var(--theme-accent)]" />
                       <span className="text-[9px] sm:text-[10px] font-semibold tracking-[0.2em] uppercase text-[var(--theme-accent)]">
-                        AVODAH &amp; KHEN LLP • STAGE {activeStage.phaseNumber}
+                        AVODAH • STAGE {activeStage.phaseNumber}
                       </span>
                     </div>
 
@@ -753,7 +745,7 @@ export default function ArchitecturalCanvasSequence() {
                       )}
                     </div>
                   </div>
-                </WobblyCard>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>

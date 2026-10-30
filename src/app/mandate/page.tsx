@@ -7,22 +7,23 @@ import MandateClient from "@/components/mandate/MandateClient";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Sole Selling Partner & Developer Mandates — AVODAH & KHEN LLP",
+  title: "Sole Selling Partner & Developer Mandates — AVODAH",
   description:
-    "Why appoint Avodah & Khen as your Sole Selling Partner for your real estate project in Mumbai. Step-by-step guide, exclusive sales mandates, brand strategy, and pricing discipline.",
+    "Appoint AVODAH as your Sole Selling Partner in Mumbai. Exclusive sales mandates, brand strategy and pricing discipline, backed by 20+ years of experience.",
+  alternates: { canonical: "/mandate" },
   keywords: [
     "Sole Selling Partner Mumbai",
     "Real Estate Mandates India",
     "Developer Sales Mandates",
     "Brand Mandates Real Estate",
     "Exclusive Project Marketing Mumbai",
-    "Avodah & Khen Mandates",
+    "Avodah Mandates",
     "Real Estate Pricing Strategy",
   ],
   openGraph: {
-    title: "Sole Selling Partner & Developer Mandates — AVODAH & KHEN LLP",
+    title: "Sole Selling Partner & Developer Mandates — AVODAH",
     description:
-      "Backed by 20+ years of domain experience, Avodah & Khen supports real estate developers across Mumbai with structured exclusive mandate models.",
+      "Backed by 20+ years of domain experience, Avodah supports real estate developers across Mumbai with structured exclusive mandate models.",
     type: "website",
   },
 };

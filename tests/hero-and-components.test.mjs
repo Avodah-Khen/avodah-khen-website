@@ -7,27 +7,26 @@ describe("Hero Section & Narrative Sequence Configuration", () => {
   const compPath = path.resolve("src/components/ArchitecturalCanvasSequence.tsx");
   const content = fs.readFileSync(compPath, "utf-8");
 
-  test("Component contains all 6 architectural stages", () => {
-    assert.match(content, /id:\s*"stage-1"/);
-    assert.match(content, /id:\s*"stage-2"/);
-    assert.match(content, /id:\s*"stage-3"/);
-    assert.match(content, /id:\s*"stage-4"/);
-    assert.match(content, /id:\s*"stage-5"/);
-    assert.match(content, /id:\s*"stage-6"/);
+  test("Component contains all 5 architectural stages", () => {
+    for (let i = 1; i <= 5; i++) {
+      assert.match(content, new RegExp(`id:\\s*"stage-${i}"`), `stage-${i} must be defined`);
+    }
+    assert.doesNotMatch(content, /id:\s*"stage-6"/, "The hero has exactly 5 stages");
   });
 
-  test("Hero Stage 1 contains revised architectural text and proof-point metrics", () => {
-    assert.match(content, /Where Vision Meets/);
-    assert.match(content, /Structural Reality\./);
-    assert.match(content, /₹2,500\+\s*Cr/);
+  test("Hero Stage 1 contains the headline, heritage tag and service tiles", () => {
+    assert.match(content, /Where Vision Meets Structural Reality\./);
     assert.match(content, /20\+\s*Years/);
-    assert.match(content, /Cat A & B/);
-    assert.match(content, /PropTech/);
+    // Service tiles on the first hero card, each linking to its page
+    assert.match(content, /value: "PropTech",[^}]*href: "\/proptech"/);
+    assert.match(content, /value: "Mandates",[^}]*href: "\/mandate"/);
+    assert.match(content, /value: "AI Voice Bot",[^}]*href: "\/ai-voice-bot"/);
+    assert.match(content, /value: "Fintech",[^}]*href: "\/fintech"/);
   });
 
   test("Hero contains interactive physics components and touch support", () => {
     assert.match(content, /MagneticPhysicsWrapper/);
-    assert.match(content, /WobblyCard/);
+    assert.doesNotMatch(content, /WobblyCard/);
     assert.match(content, /handleTouchMove/);
     assert.match(content, /handleTouchEnd/);
   });
@@ -72,15 +71,10 @@ describe("Design System & Global Tokens", () => {
 });
 
 describe("Wobbly Card Physics & Sparkle Background", () => {
-  test("WobblyCard component exists and implements elastic spring physics", () => {
-    const wobblyPath = path.resolve("src/components/WobblyCard.tsx");
-    assert.equal(fs.existsSync(wobblyPath), true, "WobblyCard.tsx must exist");
-    const content = fs.readFileSync(wobblyPath, "utf-8");
-    assert.match(content, /useSpring/);
-    assert.match(content, /rotateX/);
-    assert.match(content, /rotateY/);
-    assert.match(content, /rotateZ/);
-    assert.match(content, /wobbleIntensity/);
+  test("Wobbly tilt effect is only applied to image cards", () => {
+    assert.equal(fs.existsSync(path.resolve("src/components/WobblyCard.tsx")), false, "WobblyCard.tsx must be removed");
+    const about = fs.readFileSync(path.resolve("src/components/AboutSection.tsx"), "utf-8");
+    assert.match(about, /<Card3DTilt[\s\S]*<Image/);
   });
 
   test("SparkleBackground component exists and implements mouse interaction across website", () => {
@@ -112,11 +106,11 @@ describe("Careers Page & Human Capital Systems", () => {
     assert.match(pageContent, /ThreeArchitecturalBackground/);
   });
 
-  test("CareersClient contains role listings, WobblyCard physics, and application modal", () => {
+  test("CareersClient contains role listings and application modal", () => {
     const compPath = path.resolve("src/components/careers/CareersClient.tsx");
     assert.equal(fs.existsSync(compPath), true, "CareersClient.tsx must exist");
     const content = fs.readFileSync(compPath, "utf-8");
-    assert.match(content, /WobblyCard/);
+    assert.doesNotMatch(content, /WobblyCard/);
     assert.match(content, /Developer Sole Selling Mandates/);
     assert.match(content, /Commercial Advisory/);
     assert.match(content, /PropTech & Engineering/);
@@ -173,7 +167,7 @@ describe("Navigation Dropdown Menus & Research Page", () => {
     const compPath = path.resolve("src/components/research/ResearchClient.tsx");
     assert.equal(fs.existsSync(compPath), true, "ResearchClient.tsx must exist");
     const content = fs.readFileSync(compPath, "utf-8");
-    assert.match(content, /WobblyCard/);
+    assert.doesNotMatch(content, /WobblyCard/);
     assert.match(content, /Know the Market/);
     assert.match(content, /See the Opportunity/);
     assert.match(content, /Make Better Decisions/);
@@ -304,7 +298,7 @@ describe("Mandate Page & Sole Selling Developer Partnerships", () => {
     assert.match(content, /Coordinate Sales Execution/);
     assert.match(content, /Show More \+/);
     assert.match(content, /KEY BENEFITS/);
-    assert.match(content, /Benefits of Appointing Avodah &amp; Khen a Sole Selling Partner/);
+    assert.match(content, /Benefits of Appointing Avodah a Sole Selling Partner/);
     assert.match(content, /Unified Brand Positioning/);
     assert.match(content, /Strong Pricing Discipline/);
     assert.match(content, /Faster Inventory Absorption/);
@@ -383,7 +377,7 @@ describe("Leasing & Investment Advisory Page & Institutional Capital", () => {
     assert.match(content, /Identify/);
     assert.match(content, /Advise/);
     assert.match(content, /Execute/);
-    assert.match(content, /WHY AVODAH (&amp;|&) KHEN/);
+    assert.match(content, /WHY AVODAH/);
     assert.match(content, /Market Understanding/);
     assert.match(content, /Data-Led Analysis/);
     assert.match(content, /Strategic Perspective/);

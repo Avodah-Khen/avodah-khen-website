@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sun, Moon, Sparkles, Clock } from "lucide-react";
+import { Sun, Moon, Clock } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 
 interface ThemeToggleSwitchProps {

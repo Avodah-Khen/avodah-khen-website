@@ -1,17 +1,14 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   PhoneCall,
-  PhoneIncoming,
   Mic,
-  Volume2,
   Play,
   Pause,
   RotateCcw,
-  Sparkles,
   ChevronRight,
   CheckCircle2,
   Clock,
@@ -20,19 +17,16 @@ import {
   Bot,
   Calendar,
   MessageSquare,
-  Building2,
-  ArrowUpRight,
   BarChart3,
   Database,
-  Sliders,
   Send,
   Plus,
   Minus,
   Sparkle,
   PhoneForwarded,
 } from "lucide-react";
-import Card3DTilt from "@/components/Card3DTilt";
-import WobblyCard from "@/components/WobblyCard";
+import { contactRequestSchema, firstIssue, HONEYPOT_FIELD, readHoneypot } from "@/lib/validation";
+import HoneypotField from "@/components/HoneypotField";
 
 interface CallDialogue {
   speaker: "ai" | "buyer";
@@ -125,7 +119,7 @@ const SCENARIOS: Scenario[] = [
         speaker: "ai",
         name: "Aria (Avodah AI)",
         time: "00:02",
-        text: "Hello Ananya, this is Aria from Avodah & Khen Commercial Advisory. I received your inquiry regarding prime office space in the BKC corridor. Is your team seeking bare-shell or fully fitted floorplates?",
+        text: "Hello Ananya, this is Aria from Avodah Commercial Advisory. I received your inquiry regarding prime office space in the BKC corridor. Is your team seeking bare-shell or fully fitted floorplates?",
       },
       {
         speaker: "buyer",
@@ -222,6 +216,7 @@ export default function VoiceBotClient() {
   const [formProject, setFormProject] = useState("");
   const [formSubmitting, setFormSubmitting] = useState(false);
   const [formSuccess, setFormSuccess] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
 
   // Call simulation playback timer
   useEffect(() => {
@@ -268,28 +263,39 @@ export default function VoiceBotClient() {
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formEmail || !formPhone) return;
+    const honeypot = readHoneypot(e.currentTarget as HTMLFormElement);
+    setFormError(null);
+
+    const parsed = contactRequestSchema.safeParse({
+      fullName: formName.trim() || "Developer Prospect",
+      email: formEmail,
+      phone: formPhone,
+      service: "AI Voice Bot",
+      organization: formCompany,
+      message: `Interested in AI Voice Bot Deployment for project: ${formProject || "General Inquiry"}. Estimated Leads: ${leadVolume}/month`,
+      source: "ai-voice-bot-page",
+    });
+    if (!parsed.success) {
+      setFormError(firstIssue(parsed.error));
+      return;
+    }
 
     setFormSubmitting(true);
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formName || "Developer Prospect",
-          email: formEmail,
-          phone: formPhone,
-          company: formCompany,
-          message: `Interested in AI Voice Bot Deployment for project: ${formProject || "General Inquiry"}. Estimated Leads: ${leadVolume}/month`,
-          source: "ai-voice-bot-page",
-        }),
+        body: JSON.stringify({ ...parsed.data, [HONEYPOT_FIELD]: honeypot }),
       });
 
-      if (res.ok) {
-        setFormSuccess(true);
+      const data = await res.json();
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || "Failed to submit request.");
       }
+      setFormSuccess(true);
     } catch (err) {
       console.error("Voice bot inquiry submit failed:", err);
+      setFormError(err instanceof Error ? err.message : "Submission failed. Please try again.");
     } finally {
       setFormSubmitting(false);
     }
@@ -934,6 +940,7 @@ export default function VoiceBotClient() {
             </motion.div>
           ) : (
             <form onSubmit={handleFormSubmit} className="max-w-xl mx-auto space-y-4">
+              <HoneypotField />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-[11px] font-mono uppercase text-[var(--theme-text-muted)] mb-1.5">
@@ -1005,6 +1012,12 @@ export default function VoiceBotClient() {
                   className="w-full px-4 py-3 rounded-lg border border-[var(--theme-border)] bg-[var(--theme-surface-glass)] text-xs text-[var(--theme-text)] focus:outline-none focus:border-[var(--theme-accent)] transition-colors"
                 />
               </div>
+
+              {formError && (
+                <div className="p-3 bg-red-500/10 border border-red-500/30 rounded-lg text-xs text-red-400">
+                  {formError}
+                </div>
+              )}
 
               <button
                 type="submit"

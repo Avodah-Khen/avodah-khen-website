@@ -13,7 +13,6 @@ import {
   ArrowRight,
   ArrowUpRight,
 } from "lucide-react";
-import Card3DTilt from "./Card3DTilt";
 
 interface CapabilityItem {
   id: string;
@@ -125,7 +124,7 @@ export default function ServicesSection() {
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: idx * 0.08 }}
                 className="h-full"
               >
-                <Card3DTilt intensity={12} className="h-full">
+                <div className="h-full">
                   <div className="h-full flex flex-col justify-between p-8 rounded-2xl bg-[var(--theme-surface-glass)] border border-[var(--theme-border)] hover:border-[var(--theme-accent)] transition-all duration-300 relative group shadow-[var(--theme-card-shadow)] hover:shadow-xl hover:-translate-y-1">
                     {/* Top subtle golden highlight */}
                     <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[var(--theme-accent)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-2xl" />
@@ -169,7 +168,7 @@ export default function ServicesSection() {
                       </span>
                     </div>
                   </div>
-                </Card3DTilt>
+                </div>
               </motion.div>
             );
           })}

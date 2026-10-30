@@ -24,7 +24,8 @@ import {
   FileText,
   AlertCircle
 } from "lucide-react";
-import WobblyCard from "@/components/WobblyCard";
+import { careerApplicationSchema, firstIssue, HONEYPOT_FIELD, readHoneypot } from "@/lib/validation";
+import HoneypotField from "@/components/HoneypotField";
 
 interface JobRole {
   id: string;
@@ -52,7 +53,7 @@ const JOB_ROLES: JobRole[] = [
     compensation: "Top-Tier Base + Sole Mandate Success Carry",
     tagline: "Direct exclusive Category A developer projects exceeding ₹500 Cr+ GDV with institutional velocity.",
     overview:
-      "As Senior Vice President of Sole Selling Mandates at Avodah & Khen LLP, you will hold executive accountability for developer mandate acquisitions, sales velocity orchestration, and high-performance go-to-market execution across South Mumbai and Western Suburbs.",
+      "As Senior Vice President of Sole Selling Mandates at Avodah, you will hold executive accountability for developer mandate acquisitions, sales velocity orchestration, and high-performance go-to-market execution across South Mumbai and Western Suburbs.",
     responsibilities: [
       "Originate, structure, and execute Category A & B developer sole selling partnerships with projected project GDVs ranging from ₹250 Cr to ₹1,500 Cr.",
       "Lead a dedicated team of mandate directors, sales managers, and digital performance analysts.",
@@ -81,7 +82,7 @@ const JOB_ROLES: JobRole[] = [
     compensation: "Executive Base + Transaction Advisory Split",
     tagline: "Advise Fortune 500 corporations, GCCs, and BFSI leaders on large-format prime commercial leases.",
     overview:
-      "Avodah & Khen's Commercial Advisory practice guides multinational enterprises, global capability centers (GCCs), and institutional asset owners through prime office acquisitions, consolidations, and strategic lease restructurings.",
+      "Avodah's Commercial Advisory practice guides multinational enterprises, global capability centers (GCCs), and institutional asset owners through prime office acquisitions, consolidations, and strategic lease restructurings.",
     responsibilities: [
       "Originate and advise on Grade-A corporate office leasing transactions exceeding 50,000 to 500,000+ sq. ft.",
       "Provide corporate occupiers with spatial efficiency underwriting, green building certification advisory (LEED/WELL), and financial lease modeling.",
@@ -194,7 +195,7 @@ const JOB_ROLES: JobRole[] = [
     compensation: "Competitive Base + Creative Project Milestones",
     tagline: "Craft ultra-luxury interactive digital twin experiences and spatial architectural storyboards.",
     overview:
-      "Avodah & Khen LLP represents the pinnacle of luxury architectural real estate. You will translate blueprints, BIM files, and architectural concepts into hyper-photorealistic digital twins, walkthroughs, and interactive web visualizers.",
+      "Avodah represents the pinnacle of luxury architectural real estate. You will translate blueprints, BIM files, and architectural concepts into hyper-photorealistic digital twins, walkthroughs, and interactive web visualizers.",
     responsibilities: [
       "Transform CAD and Revit architectural models into optimized, photo-real 3D assets for interactive web and cinematic presentations.",
       "Produce cinematic architectural renders, lighting simulations, and material palettes for ultra-luxury penthouses and commercial developments.",
@@ -302,8 +303,21 @@ export default function CareersClient() {
 
   const handleSubmitApplication = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.fullName.trim() || !formData.email.trim() || !formData.phone.trim()) {
-      setFormError("Please fill in your name, email, and phone number.");
+    const honeypot = readHoneypot(e.currentTarget as HTMLFormElement);
+    const parsed = careerApplicationSchema.safeParse({
+      fullName: formData.fullName,
+      email: formData.email,
+      phone: formData.phone,
+      department: activeRole?.department || "General Application",
+      roleTitle: activeRole?.title || "Spontaneous Application",
+      experience: formData.experience,
+      currentCompany: formData.currentOrg,
+      noticePeriod: formData.noticePeriod,
+      linkedinUrl: formData.linkedin,
+      message: formData.message,
+    });
+    if (!parsed.success) {
+      setFormError(firstIssue(parsed.error));
       return;
     }
 
@@ -314,18 +328,7 @@ export default function CareersClient() {
       const res = await fetch("/api/careers", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          fullName: formData.fullName.trim(),
-          email: formData.email.trim(),
-          phone: formData.phone.trim(),
-          department: activeRole?.department || "General Application",
-          roleTitle: activeRole?.title || "Spontaneous Application",
-          experience: formData.experience.trim(),
-          currentCompany: formData.currentOrg.trim(),
-          noticePeriod: formData.noticePeriod,
-          linkedinUrl: formData.linkedin.trim(),
-          message: formData.message.trim(),
-        }),
+        body: JSON.stringify({ ...parsed.data, [HONEYPOT_FIELD]: honeypot }),
       });
 
       const data = await res.json();
@@ -345,8 +348,17 @@ export default function CareersClient() {
 
   const handleSpontaneousSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!spontaneousData.fullName.trim() || !spontaneousData.email.trim()) {
-      setSpontaneousError("Please enter your name and email.");
+    const honeypot = readHoneypot(e.currentTarget as HTMLFormElement);
+    const parsed = careerApplicationSchema.safeParse({
+      fullName: spontaneousData.fullName,
+      email: spontaneousData.email,
+      phone: spontaneousData.phone.trim() || "+91 99999 99999",
+      department: "VIP Talent Network",
+      roleTitle: spontaneousData.areaOfMastery,
+      message: `Open Executive Candidacy submitted for: ${spontaneousData.areaOfMastery}`,
+    });
+    if (!parsed.success) {
+      setSpontaneousError(firstIssue(parsed.error));
       return;
     }
 
@@ -357,14 +369,7 @@ export default function CareersClient() {
       const res = await fetch("/api/careers", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          fullName: spontaneousData.fullName.trim(),
-          email: spontaneousData.email.trim(),
-          phone: spontaneousData.phone.trim() || "+91 99999 99999",
-          department: "VIP Talent Network",
-          roleTitle: spontaneousData.areaOfMastery,
-          message: `Open Executive Candidacy submitted for: ${spontaneousData.areaOfMastery}`,
-        }),
+        body: JSON.stringify({ ...parsed.data, [HONEYPOT_FIELD]: honeypot }),
       });
 
       const data = await res.json();
@@ -408,7 +413,7 @@ export default function CareersClient() {
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--theme-border-accent)] bg-[var(--theme-surface-glass)]/90 backdrop-blur-md mb-6">
             <Sparkles className="w-3.5 h-3.5 text-[var(--theme-accent)]" />
             <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-[var(--theme-accent)] font-semibold">
-              CAREERS AT AVODAH &amp; KHEN LLP
+              CAREERS AT AVODAH
             </span>
           </div>
 
@@ -520,7 +525,7 @@ export default function CareersClient() {
           </div>
         </div>
 
-        {/* Roles Listing Grid with WobblyCard Physics */}
+        {/* Roles Listing Grid */}
         {filteredRoles.length === 0 ? (
           <div className="text-center py-16 px-6 border border-dashed border-[var(--theme-border)] rounded-2xl bg-[var(--theme-surface-glass)]/40">
             <AlertCircle className="w-10 h-10 mx-auto text-[var(--theme-accent)] mb-3 opacity-80" />
@@ -540,10 +545,9 @@ export default function CareersClient() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-20">
             {filteredRoles.map((role) => (
-              <WobblyCard
+              <div
                 key={role.id}
-                wobbleIntensity={8}
-                className="p-6 sm:p-8 flex flex-col justify-between h-full bg-[var(--theme-card-bg)] border border-[var(--theme-border)] hover:border-[var(--theme-accent)]/60 rounded-2xl transition-colors duration-300 shadow-md group relative overflow-hidden"
+                className="relative p-6 sm:p-8 flex flex-col justify-between h-full bg-[var(--theme-card-bg)] border border-[var(--theme-border)] hover:border-[var(--theme-accent)]/60 rounded-2xl transition-colors duration-300 shadow-md group relative overflow-hidden"
               >
                 <div>
                   {/* Top Metadata Badges */}
@@ -604,7 +608,7 @@ export default function CareersClient() {
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
-              </WobblyCard>
+              </div>
             ))}
           </div>
         )}
@@ -616,7 +620,7 @@ export default function CareersClient() {
               OUR HUMAN CAPITAL PHILOSOPHY
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl font-light text-[var(--theme-text)] mb-4">
-              Why Extraordinary Minds Choose Avodah &amp; Khen
+              Why Extraordinary Minds Choose Avodah
             </h2>
             <p className="text-xs sm:text-sm text-[var(--theme-text-muted)] font-light leading-relaxed">
               We reject rigid corporate bureaucracy in favor of sovereign deal ownership, high-trust autonomy, and uncapped remuneration.
@@ -754,7 +758,7 @@ export default function CareersClient() {
                 <ArrowRight className="w-4 h-4" />
               </button>
               <a
-                href="mailto:careers@avodahgroup.co?subject=Confidential%20Executive%20Candidacy%20—%20Avodah%20%26%20Khen%20LLP"
+                href="mailto:careers@avodahgroup.co?subject=Confidential%20Executive%20Candidacy%20—%20Avodah"
                 className="w-full sm:w-auto px-6 py-3 border border-[var(--theme-border)] hover:border-[var(--theme-accent)] bg-[var(--theme-surface-glass)] text-[var(--theme-text)] font-semibold text-xs uppercase tracking-widest rounded transition-all cursor-pointer text-center"
               >
                 Direct Partner Email
@@ -863,6 +867,7 @@ export default function CareersClient() {
 
                   {/* Application Form */}
                   <form onSubmit={handleSubmitApplication} className="border-t border-[var(--theme-border)] pt-6">
+                    <HoneypotField />
                     <h3 className="font-serif text-xl font-light text-[var(--theme-text)] mb-4">
                       Submit Confidential Application
                     </h3>
@@ -1122,6 +1127,7 @@ export default function CareersClient() {
                 </div>
               ) : (
                 <form onSubmit={handleSpontaneousSubmit} className="space-y-4">
+                  <HoneypotField />
                   {spontaneousError && (
                     <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-xs">
                       {spontaneousError}

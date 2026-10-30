@@ -7,9 +7,10 @@ import ResearchClient from "@/components/research/ResearchClient";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Research & Insights — AVODAH & KHEN LLP | Know the Market. See the Opportunity.",
+  title: "Research & Insights — AVODAH | Know the Market. See the Opportunity.",
   description:
-    "Real estate decisions are driven by data—but meaningful insights come from understanding what the data is telling you. Turning property data into meaningful market intelligence.",
+    "Real estate research and market intelligence for Mumbai. We turn property data into clear insights so you can spot opportunities and decide better.",
+  alternates: { canonical: "/research" },
   keywords: [
     "Real Estate Market Research",
     "Location Intelligence Mumbai",
@@ -17,10 +18,10 @@ export const metadata: Metadata = {
     "Project & Competitor Intelligence",
     "Buyer & Demand Insights",
     "Project Positioning Strategy",
-    "Avodah & Khen Research",
+    "Avodah Research",
   ],
   openGraph: {
-    title: "RESEARCH & INSIGHTS — AVODAH & KHEN LLP",
+    title: "RESEARCH & INSIGHTS — AVODAH",
     description:
       "Know the Market. See the Opportunity. Make Better Decisions. Turning property data into meaningful market intelligence.",
     type: "website",

@@ -96,7 +96,7 @@ export default function Navigation() {
   const [mobileExpandedGroup, setMobileExpandedGroup] = useState<string | null>("Services");
 
   const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -123,7 +123,7 @@ export default function Navigation() {
             <div className="relative flex items-center shrink-0">
               <Image
                 src="/assets/avodah-khen-logo.png"
-                alt="AVODAH & KHEN LLP Logo"
+                alt="AVODAH Logo"
                 width={200}
                 height={70}
                 className={`w-auto object-contain transition-all duration-300 group-hover:scale-105 ${scrolled ? "h-8 sm:h-9 md:h-10" : "h-10 sm:h-11 md:h-12"

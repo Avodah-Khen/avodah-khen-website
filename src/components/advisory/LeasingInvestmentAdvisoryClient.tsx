@@ -25,7 +25,6 @@ import {
   BadgeCheck,
   Compass
 } from "lucide-react";
-import WobblyCard from "@/components/WobblyCard";
 
 interface ServiceItem {
   id: string;
@@ -114,7 +113,7 @@ export default function LeasingInvestmentAdvisoryClient() {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--theme-surface-glass)] border border-[var(--theme-border-accent)] mb-6 shadow-sm">
               <Sparkles className="w-3.5 h-3.5 text-[var(--theme-accent)]" />
               <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-[var(--theme-accent)] font-semibold">
-                AVODAH &amp; KHEN • CAPITAL &amp; ASSET ADVISORY
+                AVODAH • CAPITAL &amp; ASSET ADVISORY
               </span>
             </div>
 
@@ -244,7 +243,7 @@ export default function LeasingInvestmentAdvisoryClient() {
               <div className="relative aspect-[3/4] sm:aspect-[4/5] lg:aspect-auto lg:h-full lg:min-h-[560px] w-full overflow-hidden bg-black/40">
                 <Image
                   src="/assets/advisory/investment-advisory-lounge.jpg"
-                  alt="Avodah & Khen Executive Investment Advisory Boardroom"
+                  alt="Avodah Executive Investment Advisory Boardroom"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -401,11 +400,11 @@ export default function LeasingInvestmentAdvisoryClient() {
           </div>
         </section>
 
-        {/* SECTION 4: WHY AVODAH & KHEN */}
+        {/* SECTION 4: WHY AVODAH */}
         <section className="mb-24 sm:mb-32">
           <div className="max-w-3xl mb-12">
             <span className="text-[11px] font-mono tracking-[0.22em] uppercase text-[var(--theme-accent)] font-semibold mb-2 block">
-              WHY AVODAH &amp; KHEN
+              WHY AVODAH
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[var(--theme-text)] mb-4">
               Intelligence that supports better real estate decisions.
@@ -512,7 +511,7 @@ export default function LeasingInvestmentAdvisoryClient() {
             ].map((client, idx) => {
               const Icon = client.icon;
               return (
-                <WobblyCard key={idx} wobbleIntensity={5} className="h-full">
+                <div key={idx} className="relative h-full">
                   <div className="p-7 rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface-glass)] backdrop-blur-xl h-full flex flex-col justify-between">
                     <div>
                       <div className="w-12 h-12 rounded-xl bg-[var(--theme-tag-bg)] border border-[var(--theme-tag-border)] flex items-center justify-center text-[var(--theme-accent)] mb-6 shadow-sm">
@@ -530,7 +529,7 @@ export default function LeasingInvestmentAdvisoryClient() {
                       <Check className="w-3.5 h-3.5" />
                     </div>
                   </div>
-                </WobblyCard>
+                </div>
               );
             })}
           </div>
