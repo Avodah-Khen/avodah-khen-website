@@ -7,12 +7,13 @@ import ContactClient from "@/components/contact/ContactClient";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Get in Touch & Advisory Consultations — AVODAH & KHEN LLP",
+  title: "Get in Touch & Advisory Consultations — AVODAH",
   description:
-    "Initiate a confidential strategic dialogue with AVODAH & KHEN LLP in Mumbai. Structured sole selling developer mandates, corporate commercial leasing, and institutional real estate investment consultations.",
+    "Book a confidential consultation with AVODAH in Mumbai for sole selling mandates, commercial leasing and real estate investment advisory.",
+  alternates: { canonical: "/contact" },
   keywords: [
-    "Get in Touch Avodah Khen",
-    "Contact Avodah & Khen Mumbai",
+    "Get in Touch Avodah",
+    "Contact Avodah Mumbai",
     "Real Estate Mandate Consultation",
     "Developer Sales Partnership Inquiry",
     "Commercial Corporate Leasing Mumbai",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     "Bandra Kurla Complex Advisory Chambers",
   ],
   openGraph: {
-    title: "Get in Touch — AVODAH & KHEN LLP | Real Estate & Architectural Advisory",
+    title: "Get in Touch — AVODAH | Real Estate & Architectural Advisory",
     description:
       "Connect directly with our advisory principals for developer sole selling mandates, commercial leasing, and institutional capital sourcing across Mumbai.",
     type: "website",

@@ -7,11 +7,12 @@ import WhoWeAreClient from "@/components/whoweare/WhoWeAreClient";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Who We Are — AVODAH & KHEN LLP | Real Estate. Technology. Intelligence.",
+  title: "Who We Are — AVODAH | Real Estate. Technology. Intelligence.",
   description:
-    "A technology-led real estate company built around one connected ecosystem. Bridging property discovery, mandates, sales execution, CRM and AI-powered market intelligence across Mumbai.",
+    "A technology-led real estate company in Mumbai connecting property discovery, mandates, sales execution, CRM and AI-powered market intelligence.",
+  alternates: { canonical: "/who-we-are" },
   keywords: [
-    "Who We Are Avodah & Khen",
+    "Who We Are Avodah",
     "Real Estate Technology Mumbai",
     "Sole Selling Mandates",
     "Connected Real Estate Ecosystem",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     "AI Real Estate Intelligence",
   ],
   openGraph: {
-    title: "Who We Are — AVODAH & KHEN LLP | Real Estate. Technology. Intelligence.",
+    title: "Who We Are — AVODAH | Real Estate. Technology. Intelligence.",
     description:
       "A connected platform for property discovery, mandates, sales, CRM, data and AI-powered real estate in Mumbai.",
     type: "website",

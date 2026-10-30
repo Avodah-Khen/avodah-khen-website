@@ -2,7 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import Card3DTilt from "./Card3DTilt";
 
 export default function ResearchSection() {
   const reports = [
@@ -63,7 +62,7 @@ export default function ResearchSection() {
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: idx * 0.12 }}
               className="h-full"
             >
-              <Card3DTilt intensity={10} className="h-full">
+              <div className="h-full">
                 <div className="h-full flex flex-col justify-between p-8 rounded-sm bg-[var(--theme-surface-glass)] border border-[var(--theme-border)] hover:border-[var(--theme-accent)] shadow-[var(--theme-card-shadow)] hover:shadow-[var(--theme-shadow)] transition-all duration-300">
                   <div>
                     <span className="text-[11px] font-bold tracking-[0.2em] text-[var(--theme-accent)] uppercase block mb-3">
@@ -83,7 +82,7 @@ export default function ResearchSection() {
                     </span>
                   </div>
                 </div>
-              </Card3DTilt>
+              </div>
             </motion.div>
           ))}
         </div>

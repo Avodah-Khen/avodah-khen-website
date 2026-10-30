@@ -37,7 +37,7 @@ describe("Get in Touch & Advisory Contact System", () => {
     assert.match(content, /Commercial Leasing/i, "Must include Commercial Leasing pillar");
     assert.match(content, /Investment & Capital/i, "Must include Investment pillar");
     assert.match(content, /Bandra Kurla Complex/i, "Must reference Mumbai micro-markets");
-    assert.match(content, /Card3DTilt/, "Must use Card3DTilt container for luxury form");
+    assert.doesNotMatch(content, /Card3DTilt/, "Form card must not tilt");
     assert.match(content, /handleSubmit/, "Must have interactive form submission handler");
   });
 

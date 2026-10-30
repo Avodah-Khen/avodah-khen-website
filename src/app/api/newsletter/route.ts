@@ -1,28 +1,28 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { requireAdmin } from "@/lib/admin-auth";
+import { rateLimit } from "@/lib/rate-limit";
+import { newsletterSchema } from "@/lib/validation";
+import { parseJsonBody } from "@/lib/api-validation";
 
 export async function POST(req: NextRequest) {
+  // 10 submissions per IP every 10 minutes
+  const limited = rateLimit(req, "newsletter", 10, 10 * 60_000);
+  if (limited) return limited;
+
   try {
-    const body = await req.json();
-    const { email, source } = body;
-
-    if (!email || typeof email !== "string" || !email.includes("@")) {
-      return NextResponse.json(
-        { success: false, error: "A valid email address is required." },
-        { status: 400 }
-      );
-    }
-
-    const cleanEmail = email.trim().toLowerCase();
+    const parsed = await parseJsonBody(req, newsletterSchema);
+    if (parsed.response) return parsed.response;
+    const { email, source } = parsed.data;
 
     const sub = await prisma.newsletter_subscribers.upsert({
-      where: { email: cleanEmail },
+      where: { email },
       update: {
         active: true,
         source: source || "footer",
       },
       create: {
-        email: cleanEmail,
+        email,
         source: source || "footer",
         active: true,
       },
@@ -32,21 +32,23 @@ export async function POST(req: NextRequest) {
       {
         success: true,
         id: sub.id,
-        message: "Subscribed to Avodah & Khen market intelligence and advisory dispatches.",
+        message: "Subscribed to Avodah market intelligence and advisory dispatches.",
       },
       { status: 201 }
     );
   } catch (error: unknown) {
     console.error("[API_NEWSLETTER_ERROR]", error);
-    const message = error instanceof Error ? error.message : "Internal Server Error";
     return NextResponse.json(
-      { success: false, error: "Failed to subscribe to intelligence reports.", details: message },
+      { success: false, error: "Failed to subscribe to intelligence reports." },
       { status: 500 }
     );
   }
 }
 
-export async function GET() {
+export async function GET(req: NextRequest) {
+  const denied = requireAdmin(req);
+  if (denied) return denied;
+
   try {
     const subscriberCount = await prisma.newsletter_subscribers.count({
       where: { active: true },

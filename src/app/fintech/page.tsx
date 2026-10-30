@@ -6,19 +6,20 @@ import Navigation from "@/components/Navigation";
 import LaunchingSoonClient from "@/components/launching-soon/LaunchingSoonClient";
 
 export const metadata: Metadata = {
-  title: "FinTech Capital Engine — Launching Soon — AVODAH & KHEN LLP",
+  title: "FinTech Capital Engine — Launching Soon — AVODAH",
   description:
-    "Algorithmic real estate capital & underwriting intelligence. Machine-speed risk profiling, fractional institutional syndication rails, and automated milestone escrow liquidity.",
+    "AVODAH FinTech, launching soon: one digital destination that simplifies access to real estate loans and financial products, with smarter underwriting.",
+  alternates: { canonical: "/fintech" },
   keywords: [
     "FinTech Real Estate India",
     "Real Estate Capital Syndication",
     "Algorithmic Underwriting",
     "RERA Smart Escrow",
     "Institutional Mezzanine Debt",
-    "Avodah & Khen FinTech",
+    "Avodah FinTech",
   ],
   openGraph: {
-    title: "FinTech Capital Engine — Launching Soon — AVODAH & KHEN LLP",
+    title: "FinTech Capital Engine — Launching Soon — AVODAH",
     description:
       "Transforming real estate capital through machine-speed underwriting, institutional syndication rails, and milestone-linked liquidity.",
     type: "website",

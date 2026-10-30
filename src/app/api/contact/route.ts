@@ -1,70 +1,44 @@
 import { NextRequest, NextResponse } from "next/server";
+import { z } from "zod";
 import { prisma } from "@/lib/prisma";
+import { requireAdmin } from "@/lib/admin-auth";
+import { rateLimit } from "@/lib/rate-limit";
+import { contactRequestSchema } from "@/lib/validation";
+import { parseJsonBody, parseSearchParams } from "@/lib/api-validation";
+
+const contactsQuerySchema = z.object({
+  limit: z.coerce.number().int().min(1).catch(50).transform((n) => Math.min(n, 100)),
+  service: z.string().trim().min(1).optional().catch(undefined),
+});
 
 export async function POST(req: NextRequest) {
+  // 5 submissions per IP every 10 minutes
+  const limited = rateLimit(req, "contact", 5, 10 * 60_000);
+  if (limited) return limited;
+
   try {
-    const body = await req.json();
-    const {
-      fullName,
-      email,
-      phone,
-      organization,
-      service,
-      city,
-      microMarket,
-      message,
-      source,
-    } = body;
-
-    // Basic Validation
-    if (!fullName || typeof fullName !== "string" || !fullName.trim()) {
-      return NextResponse.json(
-        { success: false, error: "Full Name is required." },
-        { status: 400 }
-      );
-    }
-
-    if (!email || typeof email !== "string" || !email.includes("@")) {
-      return NextResponse.json(
-        { success: false, error: "A valid corporate or personal email is required." },
-        { status: 400 }
-      );
-    }
-
-    if (!phone || typeof phone !== "string" || !phone.trim()) {
-      return NextResponse.json(
-        { success: false, error: "Contact phone number is required." },
-        { status: 400 }
-      );
-    }
-
-    if (!service || typeof service !== "string" || !service.trim()) {
-      return NextResponse.json(
-        { success: false, error: "Service selection is required." },
-        { status: 400 }
-      );
-    }
+    const parsed = await parseJsonBody(req, contactRequestSchema);
+    if (parsed.response) return parsed.response;
+    const { fullName, email, phone, organization, service, city, microMarket, message, source } =
+      parsed.data;
 
     // Generate unique reference code
     const year = new Date().getFullYear();
     const randomSuffix = Math.floor(1000 + Math.random() * 9000);
     const referenceCode = `AK-${year}-${randomSuffix}`;
 
-    // Determine city / market
-    const resolvedCity = (city || microMarket || "Mumbai").trim();
-
     // Save to Neon DB contacts table
     const contact = await prisma.contacts.create({
       data: {
-        name: fullName.trim(),
-        work_email: email.trim().toLowerCase(),
-        city: resolvedCity,
-        phone: phone.trim(),
-        service: service.trim(),
-        organization: organization?.trim() || null,
-        message: message?.trim() || null,
+        name: fullName,
+        work_email: email,
+        city: city || microMarket || "Mumbai",
+        phone,
+        service,
+        organization: organization || null,
+        message: message || null,
         reference_code: referenceCode,
-        source: source?.trim() || "homepage",
+        source: source || "homepage",
         status: "PENDING",
       },
     });
@@ -80,19 +54,19 @@ export async function POST(req: NextRequest) {
     );
   } catch (error: unknown) {
     console.error("[API_CONTACT_ERROR]", error);
-    const message = error instanceof Error ? error.message : "Internal Server Error";
     return NextResponse.json(
-      { success: false, error: "Failed to record inquiry. Please try again.", details: message },
+      { success: false, error: "Failed to record inquiry. Please try again." },
       { status: 500 }
     );
   }
 }
 
 export async function GET(req: NextRequest) {
+  const denied = requireAdmin(req);
+  if (denied) return denied;
+
   try {
-    const { searchParams } = new URL(req.url);
-    const limit = Math.min(parseInt(searchParams.get("limit") || "50", 10), 100);
-    const service = searchParams.get("service");
+    const { limit, service } = parseSearchParams(req, contactsQuerySchema);
 
     const contactsList = await prisma.contacts.findMany({
       where: service ? { service: { contains: service, mode: "insensitive" } } : undefined,

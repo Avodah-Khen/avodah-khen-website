@@ -1,21 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { requireAdmin } from "@/lib/admin-auth";
+import { rateLimit } from "@/lib/rate-limit";
+import { waitlistSchema } from "@/lib/validation";
+import { parseJsonBody } from "@/lib/api-validation";
 
 export async function POST(req: NextRequest) {
+  // 10 submissions per IP every 10 minutes
+  const limited = rateLimit(req, "waitlist", 10, 10 * 60_000);
+  if (limited) return limited;
+
   try {
-    const body = await req.json();
-    const { email, type, interest } = body;
-
-    if (!email || typeof email !== "string" || !email.includes("@")) {
-      return NextResponse.json(
-        { success: false, error: "A valid email address is required." },
-        { status: 400 }
-      );
-    }
-
-    const platformType =
-      type === "fintech" ? "fintech" : type === "voicebot" ? "voicebot" : "proptech";
-    const cleanEmail = email.trim().toLowerCase();
+    const parsed = await parseJsonBody(req, waitlistSchema);
+    if (parsed.response) return parsed.response;
+    const { email: cleanEmail, type: platformType, interest } = parsed.data;
 
     // Find existing or create
     const existing = await prisma.waitlists.findFirst({
@@ -56,15 +54,17 @@ export async function POST(req: NextRequest) {
     );
   } catch (error: unknown) {
     console.error("[API_WAITLIST_ERROR]", error);
-    const message = error instanceof Error ? error.message : "Internal Server Error";
     return NextResponse.json(
-      { success: false, error: "Failed to join early access list.", details: message },
+      { success: false, error: "Failed to join early access list." },
       { status: 500 }
     );
   }
 }
 
-export async function GET() {
+export async function GET(req: NextRequest) {
+  const denied = requireAdmin(req);
+  if (denied) return denied;
+
   try {
     const [proptechCount, fintechCount, totalCount] = await Promise.all([
       prisma.waitlists.count({ where: { platform_type: "proptech" } }),

@@ -31,7 +31,7 @@ export default function Footer() {
               <div className="relative flex items-center shrink-0">
                 <Image
                   src="/assets/avodah-khen-logo.png"
-                  alt="AVODAH & KHEN LLP"
+                  alt="AVODAH"
                   width={140}
                   height={48}
                   className={`h-9 sm:h-10 w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
@@ -42,7 +42,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-xs sm:text-sm text-[var(--theme-text-muted)] leading-relaxed max-w-sm mb-6 font-light">
-              AVODAH &amp; KHEN LLP provides technology-driven real estate solutions, structured sole selling developer mandates, commercial leasing advisory, and institutional market intelligence across Mumbai.
+              AVODAH provides technology-driven real estate solutions, structured sole selling developer mandates, commercial leasing advisory, and institutional market intelligence across Mumbai.
             </p>
 
             <span className="text-[11px] font-mono tracking-widest text-[var(--theme-accent)] uppercase">
@@ -112,6 +112,7 @@ export default function Footer() {
               <p>Mon — Fri: 09:30 - 18:30</p>
             </div>
 
+            {/* Newsletter subscription — hidden for now
             <h4 className="text-[10px] font-bold tracking-[0.2em] text-[var(--theme-accent)] uppercase mb-2">
               Market Intelligence
             </h4>
@@ -132,7 +133,7 @@ export default function Footer() {
                     throw new Error(data.error || "Subscription failed.");
                   }
                   emailInput.value = "";
-                  alert("Thank you for subscribing to Avodah & Khen market dispatches.");
+                  alert("Thank you for subscribing to Avodah market dispatches.");
                 } catch (err: unknown) {
                   alert(err instanceof Error ? err.message : "Subscription failed. Please try again.");
                 }
@@ -153,6 +154,7 @@ export default function Footer() {
                 Subscribe
               </button>
             </form>
+            */}
 
             <div className="pt-3">
               <Link
@@ -169,7 +171,7 @@ export default function Footer() {
         {/* Bottom Colophon */}
         <div className="border-t border-[var(--theme-border)] pt-8 flex flex-col sm:flex-row items-center justify-between gap-6">
           <p className="text-xs text-[var(--theme-text-muted)] tracking-wider font-light">
-            &copy; 2026 AVODAH &amp; KHEN LLP. All rights reserved. Registered Real Estate Advisory Firm.
+            &copy; 2026 AVODAH. All rights reserved. Registered Real Estate Advisory Firm.
           </p>
 
           <div className="flex items-center gap-6">

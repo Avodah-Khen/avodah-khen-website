@@ -7,19 +7,20 @@ import LeasingInvestmentAdvisoryClient from "@/components/advisory/LeasingInvest
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Leasing & Investment Advisory — AVODAH & KHEN LLP",
+  title: "Leasing & Investment Advisory — AVODAH",
   description:
-    "Strategic real estate decisions, backed by market intelligence. We help businesses, investors and property owners make informed real estate decisions across leasing, investment and portfolio opportunities in Mumbai.",
+    "Strategic leasing and investment advisory in Mumbai. We help businesses, investors and property owners decide with confidence, backed by market data.",
+  alternates: { canonical: "/leasing-and-investment-advisory" },
   keywords: [
     "Commercial Leasing Advisory Mumbai",
     "Real Estate Investment Advisory India",
     "Portfolio Advisory Mumbai",
     "Grade A Office Leasing",
     "Corporate Real Estate Strategy",
-    "Avodah & Khen Advisory",
+    "Avodah Advisory",
   ],
   openGraph: {
-    title: "Leasing & Investment Advisory — AVODAH & KHEN LLP",
+    title: "Leasing & Investment Advisory — AVODAH",
     description:
       "Strategic real estate decisions, backed by market intelligence. We help businesses, investors and property owners make informed real estate decisions.",
     type: "website",

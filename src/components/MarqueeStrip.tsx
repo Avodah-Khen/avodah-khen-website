@@ -19,7 +19,7 @@ export default function MarqueeStrip() {
 
   return (
     <div
-      aria-label="Avodah Khen Focus Areas"
+      aria-label="Avodah Focus Areas"
       className="w-full bg-[var(--theme-surface)] border-y border-[var(--theme-border)] py-4 sm:py-5 overflow-hidden select-none relative z-10 transition-colors duration-300"
     >
       {/* Specular Edge Gradient Masks for luxury fade-in/fade-out */}

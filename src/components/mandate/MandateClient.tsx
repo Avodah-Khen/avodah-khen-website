@@ -27,7 +27,6 @@ import {
   Compass,
   Briefcase
 } from "lucide-react";
-import WobblyCard from "@/components/WobblyCard";
 
 interface StepItem {
   id: string;
@@ -116,7 +115,7 @@ export default function MandateClient() {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--theme-surface-glass)] border border-[var(--theme-border-accent)] mb-6 shadow-sm">
               <Sparkles className="w-3.5 h-3.5 text-[var(--theme-accent)]" />
               <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-[var(--theme-accent)] font-semibold">
-                AVODAH &amp; KHEN • SOLE SELLING PARTNER
+                AVODAH • SOLE SELLING PARTNER
               </span>
             </div>
 
@@ -134,7 +133,7 @@ export default function MandateClient() {
             </p>
 
             <p className="text-sm sm:text-base text-[var(--theme-text-muted)] font-light leading-relaxed border-l-2 border-[var(--theme-accent)] pl-4 italic">
-              At Avodah &amp; Khen, backed by 20+ years of experience in sales &amp; brand mandates, we support developers across Mumbai with structured exclusive mandate models.
+              At Avodah, backed by 20+ years of experience in sales &amp; brand mandates, we support developers across Mumbai with structured exclusive mandate models.
             </p>
           </div>
 
@@ -290,7 +289,7 @@ export default function MandateClient() {
               <div className="relative aspect-[3/4] sm:aspect-[4/5] lg:aspect-auto lg:h-full lg:min-h-[560px] w-full overflow-hidden bg-black/40">
                 <Image
                   src="/assets/mandate/mandate-strategy-boardroom.jpg"
-                  alt="Avodah & Khen Strategic Sales Mandate Boardroom"
+                  alt="Avodah Strategic Sales Mandate Boardroom"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -378,7 +377,7 @@ export default function MandateClient() {
               KEY BENEFITS
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[var(--theme-text)] mb-4">
-              Benefits of Appointing Avodah &amp; Khen a Sole Selling Partner
+              Benefits of Appointing Avodah a Sole Selling Partner
             </h2>
             <p className="text-xs sm:text-sm text-[var(--theme-text-muted)] font-light leading-relaxed">
               Transforming fragmented channel chaos into a disciplined, high-absorption institutional sales machine.
@@ -420,7 +419,7 @@ export default function MandateClient() {
             ].map((benefit, idx) => {
               const Icon = benefit.icon;
               return (
-                <WobblyCard key={idx} wobbleIntensity={5} className="h-full">
+                <div key={idx} className="relative h-full">
                   <div className="p-7 sm:p-8 rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-surface-glass)] backdrop-blur-xl h-full flex flex-col justify-between">
                     <div>
                       <div className="w-12 h-12 rounded-xl bg-[var(--theme-tag-bg)] border border-[var(--theme-tag-border)] flex items-center justify-center text-[var(--theme-accent)] mb-6 shadow-sm">
@@ -438,7 +437,7 @@ export default function MandateClient() {
                       <Check className="w-3.5 h-3.5" />
                     </div>
                   </div>
-                </WobblyCard>
+                </div>
               );
             })}
           </div>
@@ -452,7 +451,7 @@ export default function MandateClient() {
                 THE RIGHT MOMENT
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[var(--theme-text)]">
-                When Should You Appoint Avodah &amp; Khen As Your Sole Selling Partner?
+                When Should You Appoint Avodah As Your Sole Selling Partner?
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-[var(--theme-text-muted)] font-light max-w-md">
@@ -611,11 +610,11 @@ export default function MandateClient() {
           </div>
         </section>
 
-        {/* SECTION 6: AVODAH & KHEN SALES EXPERTISE (6 PILLARS + EXPERIENCE CENTER PHOTO) */}
+        {/* SECTION 6: AVODAH SALES EXPERTISE (6 PILLARS + EXPERIENCE CENTER PHOTO) */}
         <section className="mb-24 sm:mb-32">
           <div className="max-w-3xl mb-12">
             <span className="text-[11px] font-mono tracking-[0.22em] uppercase text-[var(--theme-accent)] font-semibold mb-2 block">
-              AVODAH &amp; KHEN
+              AVODAH
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[var(--theme-text)] mb-3">
               Sales Expertise. Delivered Strategically.
@@ -850,14 +849,14 @@ export default function MandateClient() {
               Ready to appoint us as your Sole Selling Partner?
             </h2>
             <p className="text-xs sm:text-sm text-[var(--theme-text-muted)] font-light leading-relaxed mb-6">
-              Partner with AVODAH &amp; KHEN to bring structure, accountability and strategic direction to your project sales.
+              Partner with AVODAH to bring structure, accountability and strategic direction to your project sales.
             </p>
 
             <div className="space-y-1.5 text-xs text-[var(--theme-text-muted)] font-light mb-8 max-w-lg mx-auto">
               <p>Planning a new project launch?</p>
               <p>Looking for structured sales execution in Mumbai?</p>
               <p className="font-normal text-[var(--theme-text)]">
-                Connect with AVODAH &amp; KHEN to discuss your project and explore an exclusive sales mandate and brand-mandate approach.
+                Connect with AVODAH to discuss your project and explore an exclusive sales mandate and brand-mandate approach.
               </p>
             </div>
 

@@ -7,28 +7,20 @@ import {
   Mail,
   Phone,
   MapPin,
-  Clock,
-  ShieldCheck,
   Building2,
   TrendingUp,
   Compass,
-  Send,
   CheckCircle2,
   ArrowRight,
-  Globe,
-  Calendar,
-  MessageSquare,
-  Sparkles,
   ChevronDown,
   Layers,
   Lock,
   Briefcase,
-  HelpCircle,
   Copy,
   Check
 } from "lucide-react";
-import Card3DTilt from "@/components/Card3DTilt";
-import WobblyCard from "@/components/WobblyCard";
+import { contactRequestSchema, firstIssue, HONEYPOT_FIELD, readHoneypot } from "@/lib/validation";
+import HoneypotField from "@/components/HoneypotField";
 
 interface FormData {
   fullName: string;
@@ -118,7 +110,7 @@ const MICRO_MARKETS = [
 
 const FAQS = [
   {
-    q: "How quickly does Avodah & Khen onboard a developer sole selling mandate?",
+    q: "How quickly does Avodah onboard a developer sole selling mandate?",
     a: "Our typical underwriting and mandate onboarding lifecycle spans 10 to 14 business days. This includes a quantitative micro-market absorption audit, unit mix recalibration, pricing tiering, and channel partner network choreography before formal launch.",
   },
   {
@@ -157,25 +149,25 @@ export default function ContactClient() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    const honeypot = readHoneypot(e.currentTarget as HTMLFormElement);
     setFormError(null);
 
+    const parsed = contactRequestSchema.safeParse({
+      ...formData,
+      city: formData.microMarket,
+      source: "contact_page",
+    });
+    if (!parsed.success) {
+      setFormError(firstIssue(parsed.error));
+      return;
+    }
+
+    setIsSubmitting(true);
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          fullName: formData.fullName.trim(),
-          email: formData.email.trim(),
-          phone: formData.phone.trim(),
-          organization: formData.organization.trim(),
-          service: formData.service.trim(),
-          city: formData.microMarket.trim(),
-          microMarket: formData.microMarket.trim(),
-          message: formData.message.trim(),
-          ndaRequested: formData.ndaRequested,
-          source: "contact_page",
-        }),
+        body: JSON.stringify({ ...parsed.data, ndaRequested: formData.ndaRequested, [HONEYPOT_FIELD]: honeypot }),
       });
 
       const data = await res.json();
@@ -310,7 +302,7 @@ export default function ContactClient() {
           
           {/* Left Column: Comprehensive Interactive Form */}
           <div className="lg:col-span-7">
-            <Card3DTilt intensity={6}>
+            <div>
               <div className="p-8 sm:p-12 rounded-sm bg-[var(--theme-surface-glass)] border border-[var(--theme-border)] shadow-[var(--theme-card-shadow)] relative backdrop-blur-xl">
                 
                 <AnimatePresence mode="wait">
@@ -340,6 +332,7 @@ export default function ContactClient() {
                       )}
 
                       <form onSubmit={handleSubmit} className="space-y-6">
+                        <HoneypotField />
                         {/* Row 1: Full Name & Organization */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                           <div>
@@ -599,7 +592,7 @@ export default function ContactClient() {
                 </AnimatePresence>
 
               </div>
-            </Card3DTilt>
+            </div>
           </div>
 
           {/* Right Column: Direct Advisory Desks & Concierge Details */}
@@ -665,10 +658,10 @@ export default function ContactClient() {
                       Direct Advisory Concierge
                     </span>
                     <a
-                      href="tel:+919820084721"
+                      href="tel:+917507607744"
                       className="text-base font-medium text-[var(--theme-text)] hover:text-[var(--theme-accent)] transition-colors block"
                     >
-                      +91 98200 84721
+                      +91 75076 07744
                     </a>
                     <span className="text-xs text-[var(--theme-text-muted)] font-light mt-0.5 block">
                       Monday to Saturday • 09:30 – 19:30 IST
@@ -688,7 +681,7 @@ export default function ContactClient() {
                       Executive Chambers
                     </span>
                     <span className="text-sm font-medium text-[var(--theme-text)] block">
-                      AVODAH &amp; KHEN LLP
+                      AVODAH
                     </span>
                     <span className="text-xs text-[var(--theme-text-muted)] font-light mt-0.5 block leading-relaxed">
                       Mumbai Metropolitan Region (MMR), Maharashtra, India
@@ -753,7 +746,7 @@ export default function ContactClient() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {MICRO_MARKETS.map((market, idx) => (
-              <WobblyCard key={market.region} className="p-6 rounded-sm bg-[var(--theme-surface-glass)] border border-[var(--theme-border)] flex flex-col justify-between">
+              <div key={market.region} className="relative p-6 rounded-sm bg-[var(--theme-surface-glass)] border border-[var(--theme-border)] flex flex-col justify-between">
                 <div>
                   <span className="text-[10px] font-mono text-[var(--theme-accent)] tracking-widest uppercase block mb-2">
                     CORRIDOR 0{idx + 1}
@@ -769,7 +762,7 @@ export default function ContactClient() {
                   <span>{market.footprint}</span>
                   <Compass className="w-3.5 h-3.5 opacity-80" />
                 </div>
-              </WobblyCard>
+              </div>
             ))}
           </div>
         </div>

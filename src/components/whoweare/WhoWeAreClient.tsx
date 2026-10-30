@@ -25,7 +25,6 @@ import {
   Calendar,
   ChevronLeft
 } from "lucide-react";
-import WobblyCard from "@/components/WobblyCard";
 
 interface CapabilityItem {
   id: string;
@@ -169,7 +168,7 @@ export default function WhoWeAreClient() {
       aspect: "aspect-[16/10]",
       date: "Diwali 2025",
       location: "Avodah Experience Center",
-      desc: "The Avodah & Khen family gathering for auspicious beginnings, traditional pooja, and holiday cheer.",
+      desc: "The Avodah family gathering for auspicious beginnings, traditional pooja, and holiday cheer.",
     },
     {
       src: "/assets/diwali/diwali-team-2.jpg.jpeg",
@@ -271,7 +270,7 @@ export default function WhoWeAreClient() {
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--theme-border-accent)] bg-[var(--theme-surface-glass)]/90 backdrop-blur-md mb-6">
             <Sparkles className="w-3.5 h-3.5 text-[var(--theme-accent)]" />
             <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-[var(--theme-accent)] font-semibold">
-              AVODAH &amp; KHEN
+              AVODAH
             </span>
           </div>
 
@@ -388,9 +387,8 @@ export default function WhoWeAreClient() {
 
           {/* 4 Challenges Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <WobblyCard
-              wobbleIntensity={6}
-              className="p-6 rounded-2xl border border-[var(--theme-border)] hover:border-[var(--theme-accent)]/60 bg-[var(--theme-surface-glass)]/90 backdrop-blur-md transition-colors duration-300 flex flex-col justify-between h-full group"
+            <div
+              className="relative p-6 rounded-2xl border border-[var(--theme-border)] hover:border-[var(--theme-accent)]/60 bg-[var(--theme-surface-glass)]/90 backdrop-blur-md transition-colors duration-300 flex flex-col justify-between h-full group"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -408,11 +406,10 @@ export default function WhoWeAreClient() {
                   Buyers navigate disconnected listings and channels with inconsistent information and verified pricing.
                 </p>
               </div>
-            </WobblyCard>
+            </div>
 
-            <WobblyCard
-              wobbleIntensity={6}
-              className="p-6 rounded-2xl border border-[var(--theme-border)] hover:border-[var(--theme-accent)]/60 bg-[var(--theme-surface-glass)]/90 backdrop-blur-md transition-colors duration-300 flex flex-col justify-between h-full group"
+            <div
+              className="relative p-6 rounded-2xl border border-[var(--theme-border)] hover:border-[var(--theme-accent)]/60 bg-[var(--theme-surface-glass)]/90 backdrop-blur-md transition-colors duration-300 flex flex-col justify-between h-full group"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -430,11 +427,10 @@ export default function WhoWeAreClient() {
                   Enquiries can get lost across teams, spreadsheets and messaging, creating delayed follow-ups and lost revenue.
                 </p>
               </div>
-            </WobblyCard>
+            </div>
 
-            <WobblyCard
-              wobbleIntensity={6}
-              className="p-6 rounded-2xl border border-[var(--theme-border)] hover:border-[var(--theme-accent)]/60 bg-[var(--theme-surface-glass)]/90 backdrop-blur-md transition-colors duration-300 flex flex-col justify-between h-full group"
+            <div
+              className="relative p-6 rounded-2xl border border-[var(--theme-border)] hover:border-[var(--theme-accent)]/60 bg-[var(--theme-surface-glass)]/90 backdrop-blur-md transition-colors duration-300 flex flex-col justify-between h-full group"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -452,11 +448,10 @@ export default function WhoWeAreClient() {
                   Decisions often lack a single view of demand, pricing, inventory absorption, and competitor performance.
                 </p>
               </div>
-            </WobblyCard>
+            </div>
 
-            <WobblyCard
-              wobbleIntensity={6}
-              className="p-6 rounded-2xl border border-[var(--theme-border)] hover:border-[var(--theme-accent)]/60 bg-[var(--theme-surface-glass)]/90 backdrop-blur-md transition-colors duration-300 flex flex-col justify-between h-full group"
+            <div
+              className="relative p-6 rounded-2xl border border-[var(--theme-border)] hover:border-[var(--theme-accent)]/60 bg-[var(--theme-surface-glass)]/90 backdrop-blur-md transition-colors duration-300 flex flex-col justify-between h-full group"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -474,7 +469,7 @@ export default function WhoWeAreClient() {
                   Mandates, channel partners and customer follow-ups require constant manual coordination and alignment.
                 </p>
               </div>
-            </WobblyCard>
+            </div>
           </div>
 
           {/* The Opportunity Banner */}
@@ -509,10 +504,9 @@ export default function WhoWeAreClient() {
             {CAPABILITIES.map((cap) => {
               const isExpanded = expandedCapability === cap.id;
               return (
-                <WobblyCard
+                <div
                   key={cap.id}
-                  wobbleIntensity={8}
-                  className="p-6 sm:p-7 rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-card-bg)] hover:border-[var(--theme-accent)]/60 transition-all duration-300 flex flex-col justify-between h-full shadow-sm"
+                  className="relative p-6 sm:p-7 rounded-2xl border border-[var(--theme-border)] bg-[var(--theme-card-bg)] hover:border-[var(--theme-accent)]/60 transition-all duration-300 flex flex-col justify-between h-full shadow-sm"
                 >
                   <div>
                     <span className="text-[10px] font-mono tracking-widest text-[var(--theme-accent)] uppercase font-semibold block mb-2">
@@ -568,7 +562,7 @@ export default function WhoWeAreClient() {
                       )}
                     </button>
                   </div>
-                </WobblyCard>
+                </div>
               );
             })}
           </div>
