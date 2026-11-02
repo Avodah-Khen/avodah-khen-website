@@ -18,6 +18,9 @@ export default function ThreeArchitecturalBackground() {
     const container = containerRef.current;
     if (!container) return;
 
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     // Scene, Camera, Renderer
     const scene = new THREE.Scene();
     sceneRef.current = scene;
@@ -42,7 +45,7 @@ export default function ThreeArchitecturalBackground() {
       powerPreference: "high-performance",
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     container.appendChild(renderer.domElement);
 
     // 1. 3D Architectural Blueprint Perspective Grid (pushed backward into deep space)
@@ -69,80 +72,87 @@ export default function ThreeArchitecturalBackground() {
     const wireMat = new THREE.LineBasicMaterial({
       color: isLight ? 0x8c6d41 : 0xc9a97c,
       transparent: true,
-      opacity: isLight ? 0.22 : 0.30,
+      opacity: isLight ? 0.22 : 0.26,
     });
     wireMatRef.current = wireMat;
 
     const wireframes: THREE.LineSegments[] = [];
-    for (let i = 0; i < 4; i++) {
+    const positions = [
+      { x: -5.0, y: -0.6, z: -8.0 },
+      { x: 5.0, y: 1.2, z: -9.5 },
+      { x: 0.0, y: -2.0, z: -11.0 },
+      { x: -3.8, y: 2.4, z: -12.5 },
+      { x: 3.8, y: -1.0, z: -10.0 },
+    ];
+
+    positions.forEach((pos) => {
       const edges = new THREE.EdgesGeometry(boxGeo);
-      const wireframe = new THREE.LineSegments(edges, wireMat.clone());
-      // Placed backward along negative Z (deep behind any foreground content)
-      wireframe.position.set(
-        (i % 2 === 0 ? 1 : -1) * 4.2,
-        i * 1.5 - 2,
-        -5 - i * 1.8
-      );
-      group.add(wireframe);
-      wireframes.push(wireframe);
-    }
+      const line = new THREE.LineSegments(edges, wireMat);
+      line.position.set(pos.x, pos.y, pos.z);
+      group.add(line);
+      wireframes.push(line);
+    });
     scene.add(group);
 
-    // 3. Ambient 3D Architectural Dust Particles (kept strictly in negative Z depth)
-    const particleCount = 120;
+    // 3. Subtle ambient architectural particle field
+    const particleCount = prefersReducedMotion ? 40 : 120;
     const particleGeo = new THREE.BufferGeometry();
-    const positions = new Float32Array(particleCount * 3);
+    const particlePos = new Float32Array(particleCount * 3);
 
     for (let i = 0; i < particleCount * 3; i += 3) {
-      positions[i] = (Math.random() - 0.5) * 28;
-      positions[i + 1] = (Math.random() - 0.5) * 16;
-      positions[i + 2] = -Math.random() * 22 - 3; // Kept at Z between -3 and -25 (deep background)
+      particlePos[i] = (Math.random() - 0.5) * 35;
+      particlePos[i + 1] = (Math.random() - 0.5) * 20;
+      particlePos[i + 2] = -Math.random() * 25 - 2;
     }
-
-    particleGeo.setAttribute(
-      "position",
-      new THREE.BufferAttribute(positions, 3)
-    );
+    particleGeo.setAttribute("position", new THREE.BufferAttribute(particlePos, 3));
 
     const particleMat = new THREE.PointsMaterial({
-      color: isLight ? 0x8c6d41 : 0xa8875b,
+      color: isLight ? 0xa8875b : 0xe8d5b5,
       size: 0.05,
       transparent: true,
-      opacity: isLight ? 0.30 : 0.45,
-      blending: isLight ? THREE.NormalBlending : THREE.AdditiveBlending,
+      opacity: isLight ? 0.25 : 0.45,
     });
     particleMatRef.current = particleMat;
 
     const particles = new THREE.Points(particleGeo, particleMat);
     scene.add(particles);
 
-    // Mouse Tracking for 3D Camera Parallax
+    // Window Resize Handling
+    const handleResize = () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    };
+    window.addEventListener("resize", handleResize);
+
+    // Mouse Tracking for Gentle Parallax
     let targetMouseX = 0;
     let targetMouseY = 0;
     let currentMouseX = 0;
     let currentMouseY = 0;
 
     const handleMouseMove = (e: MouseEvent) => {
-      targetMouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-      targetMouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+      targetMouseX = (e.clientX / window.innerWidth - 0.5) * 1.2;
+      targetMouseY = (e.clientY / window.innerHeight - 0.5) * 1.2;
     };
-
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
 
-    // Window Resize Handler
-    const handleResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    // Animation Render Loop
+    // Render loop with pause when tab is hidden
     let animationId: number;
+    let isPaused = false;
     const startTime = performance.now();
 
+    const handleVisibility = () => {
+      isPaused = document.visibilityState === "hidden";
+      if (!isPaused && !prefersReducedMotion) {
+        animationId = requestAnimationFrame(animate);
+      }
+    };
+    document.addEventListener("visibilitychange", handleVisibility);
+
     const animate = () => {
+      if (isPaused) return;
+
       const elapsedTime = (performance.now() - startTime) * 0.001;
 
       // Smooth camera lerp
@@ -153,23 +163,33 @@ export default function ThreeArchitecturalBackground() {
       camera.position.y = 1.8 - currentMouseY * 0.6;
       camera.lookAt(0, 0, -6);
 
-      // Subtle rotation of wireframe modules
-      group.rotation.y = elapsedTime * 0.06;
-      wireframes.forEach((wf, idx) => {
-        wf.rotation.y = Math.sin(elapsedTime * 0.25 + idx) * 0.12;
-      });
+      if (!prefersReducedMotion) {
+        // Subtle rotation of wireframe modules
+        group.rotation.y = elapsedTime * 0.06;
+        wireframes.forEach((wf, idx) => {
+          wf.rotation.y = Math.sin(elapsedTime * 0.25 + idx) * 0.12;
+        });
 
-      // Drifting particles
-      particles.rotation.y = elapsedTime * 0.015;
+        // Drifting particles
+        particles.rotation.y = elapsedTime * 0.015;
+      }
 
       renderer.render(scene, camera);
-      animationId = requestAnimationFrame(animate);
+
+      if (!prefersReducedMotion) {
+        animationId = requestAnimationFrame(animate);
+      }
     };
 
-    animate();
+    if (prefersReducedMotion) {
+      renderer.render(scene, camera);
+    } else {
+      animate();
+    }
 
     return () => {
       cancelAnimationFrame(animationId);
+      document.removeEventListener("visibilitychange", handleVisibility);
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("resize", handleResize);
       if (container && renderer.domElement) {

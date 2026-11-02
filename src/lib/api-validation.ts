@@ -1,6 +1,40 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { firstIssue, HONEYPOT_FIELD } from "@/lib/validation";
+import { verifyEmailDomain } from "@/lib/email-check";
+
+function isOriginAllowed(origin: string | null): boolean {
+  if (!origin) return true; // Direct non-browser requests / same-origin without header
+  try {
+    const originUrl = new URL(origin);
+    const host = originUrl.hostname.toLowerCase();
+
+    // Local dev origins
+    if (host === "localhost" || host === "127.0.0.1" || host === "192.168.137.1") {
+      return true;
+    }
+
+    // Configured site URL
+    const siteEnv = process.env.NEXT_PUBLIC_SITE_URL;
+    if (siteEnv) {
+      try {
+        const siteUrl = new URL(siteEnv);
+        if (originUrl.origin === siteUrl.origin) return true;
+      } catch {}
+    }
+
+    if (host === "avodahgroup.co" || host.endsWith(".avodahgroup.co")) {
+      return true;
+    }
+
+    if (host.endsWith(".vercel.app")) {
+      return true;
+    }
+  } catch {
+    return false;
+  }
+  return false;
+}
 
 function isHoneypotTripped(body: unknown): boolean {
   if (typeof body !== "object" || body === null) return false;
@@ -12,11 +46,33 @@ type ParseResult<T> =
   | { data: T; response?: never }
   | { data?: never; response: NextResponse };
 
-/** Reads the JSON body and validates it; on failure returns a ready 400 response. */
+/** Reads the JSON body, verifies Content-Type and Origin, and validates schema & MX domain. */
 export async function parseJsonBody<S extends z.ZodType>(
   req: NextRequest,
   schema: S
 ): Promise<ParseResult<z.output<S>>> {
+  // 1. Content-Type check (reject non-JSON with 415)
+  const contentType = req.headers.get("content-type") || "";
+  if (!contentType.toLowerCase().includes("application/json")) {
+    return {
+      response: NextResponse.json(
+        { success: false, error: "Content-Type must be application/json." },
+        { status: 415 }
+      ),
+    };
+  }
+
+  // 2. Origin check (reject cross-site post from foreign origins with 403)
+  const origin = req.headers.get("origin");
+  if (origin && !isOriginAllowed(origin)) {
+    return {
+      response: NextResponse.json(
+        { success: false, error: "Cross-site request forbidden." },
+        { status: 403 }
+      ),
+    };
+  }
+
   let body: unknown;
   try {
     body = await req.json();
@@ -29,8 +85,7 @@ export async function parseJsonBody<S extends z.ZodType>(
     };
   }
 
-  // Honeypot filled in: almost certainly a bot. Pretend it worked so it moves on,
-  // but never save anything.
+  // Honeypot check
   if (isHoneypotTripped(body)) {
     console.warn("[API_HONEYPOT] Dropped submission with filled honeypot field");
     return { response: NextResponse.json({ success: true }, { status: 201 }) };
@@ -45,6 +100,26 @@ export async function parseJsonBody<S extends z.ZodType>(
       ),
     };
   }
+
+  // 3. Server-side MX/DNS lookup on email field
+  const data = result.data as Record<string, unknown>;
+  const emailCandidate = data?.email || data?.work_email || data?.email_address;
+  if (typeof emailCandidate === "string" && emailCandidate.includes("@")) {
+    const mxResult = await verifyEmailDomain(emailCandidate);
+    if (!mxResult.valid) {
+      return {
+        response: NextResponse.json(
+          {
+            success: false,
+            error: mxResult.error || "The email domain cannot receive mail.",
+            hint: mxResult.hint || undefined,
+          },
+          { status: 400 }
+        ),
+      };
+    }
+  }
+
   return { data: result.data };
 }
 

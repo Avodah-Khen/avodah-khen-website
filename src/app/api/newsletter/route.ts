@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
     if (parsed.response) return parsed.response;
     const { email, source } = parsed.data;
 
-    const sub = await prisma.newsletter_subscribers.upsert({
+    await prisma.newsletter_subscribers.upsert({
       where: { email },
       update: {
         active: true,
@@ -31,7 +31,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(
       {
         success: true,
-        id: sub.id,
         message: "Subscribed to Avodah market intelligence and advisory dispatches.",
       },
       { status: 201 }

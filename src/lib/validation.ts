@@ -1,4 +1,5 @@
 import { z } from "zod";
+export { getEmailTypoHint } from "@/lib/email-typo";
 
 // Shared zod schemas for every form on the site. Imported by the client forms
 // (to validate before submitting) and by the API routes (to validate requests),
@@ -34,16 +35,26 @@ export const phoneField = z
   .min(1, "Phone number is required.")
   .regex(/^\+?[\d\s()-]{7,20}$/, "Please enter a valid phone number.");
 
+export const optionalPhoneField = z
+  .union([
+    z.literal(""),
+    z.string().trim().regex(/^\+?[\d\s()-]{7,20}$/, "Please enter a valid phone number."),
+  ])
+  .optional()
+  .transform((val) => val || "");
+
 export const contactRequestSchema = z.object({
   fullName: requiredText("Full name", 150),
   email: emailField,
-  phone: phoneField,
+  phone: optionalPhoneField,
   service: requiredText("Service", 150),
   organization: optionalText("Organization", 150),
   city: optionalText("City", 150),
   microMarket: optionalText("Micro-market", 150),
   message: optionalText("Message", 5000),
   source: optionalText("Source", 50),
+  ndaRequested: z.boolean().optional(),
+  valuationScale: optionalText("Valuation scale", 150),
 });
 export type ContactRequest = z.infer<typeof contactRequestSchema>;
 
@@ -53,7 +64,7 @@ export const careerApplicationSchema = z
     firstName: optionalText("First name", 100),
     lastName: optionalText("Last name", 100),
     email: emailField,
-    phone: phoneField,
+    phone: optionalPhoneField,
     department: optionalText("Department", 50),
     roleTitle: optionalText("Role", 150),
     experience: optionalText("Experience", 50),

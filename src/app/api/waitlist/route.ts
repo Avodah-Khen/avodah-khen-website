@@ -46,7 +46,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(
       {
         success: true,
-        id: entry.id,
         type: entry.platform_type,
         message: `Priority whitelist reservation confirmed for ${platformType.toUpperCase()}.`,
       },

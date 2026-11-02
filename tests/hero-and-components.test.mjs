@@ -53,8 +53,8 @@ describe("Assets & Static Integrity Verification", () => {
   test("Architectural sequence video frames exist", () => {
     const framesDir = path.resolve("public/assets/video-frames");
     assert.equal(fs.existsSync(framesDir), true, "Video frames directory must exist");
-    const frame1 = path.join(framesDir, "ezgif-frame-001.jpg");
-    const frame25 = path.join(framesDir, "ezgif-frame-025.jpg");
+    const frame1 = path.join(framesDir, fs.existsSync(path.join(framesDir, "frame-001.webp")) ? "frame-001.webp" : "ezgif-frame-001.jpg");
+    const frame25 = path.join(framesDir, fs.existsSync(path.join(framesDir, "frame-025.webp")) ? "frame-025.webp" : "ezgif-frame-025.jpg");
     assert.equal(fs.existsSync(frame1), true, "Initial frame 001 must exist");
     assert.equal(fs.existsSync(frame25), true, "Priority frame 025 must exist");
   });

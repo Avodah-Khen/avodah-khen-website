@@ -101,7 +101,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Direct Channels & Market Intelligence Newsletter */}
+          {/* Direct Channels & Market Intelligence */}
           <div className="lg:col-span-2">
             <h4 className="text-xs font-bold tracking-[0.22em] text-[var(--theme-accent)] uppercase mb-4">
               Headquarters
@@ -111,50 +111,6 @@ export default function Footer() {
               <p>Mumbai, Maharashtra, India</p>
               <p>Mon — Fri: 09:30 - 18:30</p>
             </div>
-
-            {/* Newsletter subscription — hidden for now
-            <h4 className="text-[10px] font-bold tracking-[0.2em] text-[var(--theme-accent)] uppercase mb-2">
-              Market Intelligence
-            </h4>
-            <form
-              onSubmit={async (e) => {
-                e.preventDefault();
-                const form = e.currentTarget;
-                const emailInput = form.elements.namedItem("footerEmail") as HTMLInputElement;
-                if (!emailInput?.value) return;
-                try {
-                  const res = await fetch("/api/newsletter", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ email: emailInput.value.trim().toLowerCase(), source: "footer" }),
-                  });
-                  const data = await res.json();
-                  if (!res.ok || !data.success) {
-                    throw new Error(data.error || "Subscription failed.");
-                  }
-                  emailInput.value = "";
-                  alert("Thank you for subscribing to Avodah market dispatches.");
-                } catch (err: unknown) {
-                  alert(err instanceof Error ? err.message : "Subscription failed. Please try again.");
-                }
-              }}
-              className="flex flex-col gap-2"
-            >
-              <input
-                type="email"
-                name="footerEmail"
-                required
-                placeholder="Corporate Email"
-                className="w-full px-3 py-1.5 bg-[var(--theme-surface)] border border-[var(--theme-border)] rounded-sm text-xs text-[var(--theme-text)] placeholder:text-[var(--theme-text-muted)] focus:border-[var(--theme-accent)] outline-none"
-              />
-              <button
-                type="submit"
-                className="w-full py-1.5 bg-[var(--theme-accent)] text-white dark:text-[#0c0d0c] font-bold text-[10px] uppercase tracking-widest rounded-sm hover:brightness-110 transition-colors shadow-sm cursor-pointer"
-              >
-                Subscribe
-              </button>
-            </form>
-            */}
 
             <div className="pt-3">
               <Link
@@ -183,7 +139,7 @@ export default function Footer() {
             >
               Reference Portal
             </a>
-            <Link href="#contact" className="text-xs text-[var(--theme-text-muted)] hover:text-[var(--theme-accent)] transition-colors">
+            <Link href="/privacy" className="text-xs text-[var(--theme-text-muted)] hover:text-[var(--theme-accent)] transition-colors">
               Privacy Notice
             </Link>
             <Link href="#contact" className="text-xs text-[var(--theme-text-muted)] hover:text-[var(--theme-accent)] transition-colors">
