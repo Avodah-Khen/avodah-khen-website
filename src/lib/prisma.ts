@@ -28,8 +28,7 @@ const pool =
   globalForPrisma.pool ??
   new Pool({
     connectionString: currentUrl,
-    ssl: { rejectUnauthorized: false },
-    max: 10,
+    max: 4,
   });
 
 globalForPrisma.pool = pool;

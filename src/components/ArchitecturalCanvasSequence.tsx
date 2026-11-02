@@ -6,13 +6,12 @@ import Link from "next/link";
 import { ArrowRight, ChevronDown, Sparkles, FileCheck, Wallet, PhoneCall } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 
-const TOTAL_FRAMES = 300;
-const FRAME_PREFIX = "/assets/video-frames/ezgif-frame-";
-const FRAME_EXT = ".jpg";
+const TOTAL_FRAMES = 150;
 
-// Helper: Format frame filename (001 ... 300)
+// Helper: Format frame filename (001 ... 150) in WebP format
 const formatFrameIdx = (num: number) => String(num).padStart(3, "0");
-const getFrameSrc = (num: number) => `${FRAME_PREFIX}${formatFrameIdx(num)}${FRAME_EXT}`;
+const getFrameSrc = (num: number, isMobile = false) =>
+  `/assets/video-frames/${isMobile ? "frame-m-" : "frame-"}${formatFrameIdx(num)}.webp`;
 
 /**
  * Magnetic Physics Wrapper: Smoothly attracts element towards mouse with spring physics
@@ -169,9 +168,11 @@ export default function ArchitecturalCanvasSequence() {
   // Loading & Frame Telemetry
   const [loadProgress, setLoadProgress] = useState(0);
   const [isPreloaderDismissed, setIsPreloaderDismissed] = useState(false);
-  const [currentFrameNum, setCurrentFrameNum] = useState(1);
   const [activeStage, setActiveStage] = useState<StageInfo>(STAGES[0]);
-  const [scrollPct, setScrollPct] = useState(0);
+  const activeStageRef = useRef<StageInfo>(STAGES[0]);
+  const progressBarRef = useRef<HTMLDivElement>(null);
+  const frameCounterRef = useRef<HTMLSpanElement>(null);
+  const isMobileRef = useRef<boolean>(false);
 
   // 3D Canvas Perspective Tilt on Mouse Movement
   const [mouseTilt, setMouseTilt] = useState({ rotateX: 0, rotateY: 0 });
@@ -264,63 +265,82 @@ export default function ArchitecturalCanvasSequence() {
     drawFrame(Math.round(currentFrameRef.current));
   }, [drawFrame]);
 
-  // Two-Tier Progressive Preloader for 300 Frames
+  // On-Demand Progressive Frame Loader with Cinematic Animated Preloader
   useEffect(() => {
-    let loadedCount = 0;
-    const PRIORITY_BATCH = 25;
+    isMobileRef.current = window.innerWidth < 768;
 
+    let currentVal = 0;
+    let targetVal = 20;
+    let isDismissed = false;
+
+    // Smooth counter ticker for the luxury preloader
+    const progressInterval = setInterval(() => {
+      if (currentVal < targetVal) {
+        currentVal = Math.min(targetVal, currentVal + 2);
+        setLoadProgress(currentVal);
+      }
+      if (currentVal >= 100 && !isDismissed) {
+        isDismissed = true;
+        clearInterval(progressInterval);
+        setTimeout(() => {
+          setIsPreloaderDismissed(true);
+        }, 220);
+      }
+    }, 20);
+
+    let initialLoaded = 0;
     const loadSingle = (idx: number, callback?: () => void) => {
+      if (idx < 1 || idx > TOTAL_FRAMES) {
+        callback?.();
+        return;
+      }
       if (imagesRef.current[idx - 1]) {
+        if (idx === 1) drawFrame(1);
         callback?.();
         return;
       }
       const img = new Image();
-      img.src = getFrameSrc(idx);
+      img.src = getFrameSrc(idx, isMobileRef.current);
       img.onload = () => {
         imagesRef.current[idx - 1] = img;
         loadedFlagsRef.current[idx - 1] = true;
-        loadedCount++;
-        const pct = Math.min(100, Math.round((loadedCount / TOTAL_FRAMES) * 100));
-        setLoadProgress(pct);
-
+        initialLoaded++;
         if (idx === 1) {
           drawFrame(1);
+          targetVal = Math.max(targetVal, 60);
+        } else {
+          targetVal = Math.min(100, Math.max(targetVal, 40 + initialLoaded * 12));
+        }
+        if (initialLoaded >= 5) {
+          targetVal = 100;
         }
         callback?.();
       };
       img.onerror = () => {
-        loadedCount++;
+        initialLoaded++;
+        if (idx === 1) targetVal = Math.max(targetVal, 60);
         callback?.();
       };
     };
 
-    // 1. Priority initial batch for instant interactivity
-    let priorityDone = 0;
-    for (let i = 1; i <= PRIORITY_BATCH; i++) {
-      loadSingle(i, () => {
-        priorityDone++;
-        if (priorityDone === PRIORITY_BATCH) {
-          setTimeout(() => setIsPreloaderDismissed(true), 350);
-
-          // 2. Stream remainder in small non-blocking chunks
-          let nextIdx = PRIORITY_BATCH + 1;
-          const streamNext = () => {
-            if (nextIdx > TOTAL_FRAMES) return;
-            const end = Math.min(TOTAL_FRAMES, nextIdx + 15);
-            for (let j = nextIdx; j <= end; j++) {
-              loadSingle(j);
-            }
-            nextIdx += 16;
-            setTimeout(streamNext, 60);
-          };
-          streamNext();
-        }
-      });
+    // Load initial 6 frames for hero interactivity
+    for (let i = 1; i <= 6; i++) {
+      loadSingle(i);
     }
+
+    // Safety fallback: guaranteed completion to 100% within 1.2s max
+    const maxTimer = setTimeout(() => {
+      targetVal = 100;
+    }, 1000);
 
     handleResize();
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+
+    return () => {
+      clearInterval(progressInterval);
+      clearTimeout(maxTimer);
+      window.removeEventListener("resize", handleResize);
+    };
   }, [drawFrame, handleResize]);
 
   // Re-draw on theme change
@@ -328,42 +348,69 @@ export default function ArchitecturalCanvasSequence() {
     drawFrame(Math.round(currentFrameRef.current));
   }, [isLight, drawFrame]);
 
-  // Scroll Progress Orchestration & Smooth Momentum Lerp Loop
+  // Scroll Progress Orchestration & Smooth Momentum Lerp Loop (Refs only, no state churn)
   useEffect(() => {
+    const loadSingleAhead = (idx: number) => {
+      if (idx < 1 || idx > TOTAL_FRAMES || imagesRef.current[idx - 1]) return;
+      const img = new Image();
+      img.src = getFrameSrc(idx, isMobileRef.current);
+      img.onload = () => {
+        imagesRef.current[idx - 1] = img;
+        loadedFlagsRef.current[idx - 1] = true;
+      };
+    };
+
+    const loadWindowAhead = (centerFrame: number) => {
+      const start = Math.max(1, centerFrame - 2);
+      const end = Math.min(TOTAL_FRAMES, centerFrame + 10);
+      for (let i = start; i <= end; i++) {
+        loadSingleAhead(i);
+      }
+    };
+
     const handleScroll = () => {
       const container = containerRef.current;
       if (!container) return;
 
       const rect = container.getBoundingClientRect();
       const scrollableHeight = rect.height - window.innerHeight;
-
       if (scrollableHeight <= 0) return;
 
       const scrolled = -rect.top;
       const progress = Math.max(0, Math.min(1, scrolled / scrollableHeight));
-      setScrollPct(progress);
 
-      // Map progress to frame index [1, 300]
+      // Direct DOM update for progress bar (no React re-render)
+      if (progressBarRef.current) {
+        progressBarRef.current.style.width = `${progress * 100}%`;
+      }
+
+      // Map progress to frame index [1, 150]
       const frameIndex = 1 + Math.round(progress * (TOTAL_FRAMES - 1));
       targetFrameRef.current = frameIndex;
 
-      // Update active narrative stage
+      // Stream frames just ahead of scroll position
+      loadWindowAhead(frameIndex);
+
+      // Update active stage only when boundary crossed
       const currentStage = STAGES.find((s) => progress >= s.min && progress <= s.max);
-      if (currentStage) {
+      if (currentStage && currentStage.id !== activeStageRef.current.id) {
+        activeStageRef.current = currentStage;
         setActiveStage(currentStage);
       }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
 
-    // Smooth Lerp Animation Loop (Physics-based momentum)
+    // Physics Lerp Animation Loop with direct DOM updates
     let animId: number;
     const loop = () => {
       const diff = targetFrameRef.current - currentFrameRef.current;
       if (Math.abs(diff) > 0.05) {
         currentFrameRef.current += diff * 0.16;
         const rounded = Math.max(1, Math.min(TOTAL_FRAMES, Math.round(currentFrameRef.current)));
-        setCurrentFrameNum(rounded);
+        if (frameCounterRef.current) {
+          frameCounterRef.current.textContent = `FRAME ${formatFrameIdx(rounded)} / ${TOTAL_FRAMES}`;
+        }
         drawFrame(rounded);
       }
       animId = requestAnimationFrame(loop);
@@ -429,9 +476,10 @@ export default function ArchitecturalCanvasSequence() {
         <AnimatePresence>
           {!isPreloaderDismissed && (
             <motion.div
+              key="hero-preloader"
               initial={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
               className="absolute inset-0 z-50 bg-[var(--theme-bg)] flex flex-col items-center justify-center gap-6"
             >
               <div className="w-12 h-12 rounded-full border border-[var(--theme-accent)]/20 border-t-[var(--theme-accent)] animate-spin" />
@@ -503,8 +551,8 @@ export default function ArchitecturalCanvasSequence() {
               <span className="text-[8px] sm:text-[9px] tracking-[0.22em] text-[var(--theme-text-muted)] uppercase font-semibold">
                 TELEMETRY
               </span>
-              <span className="font-mono text-xs sm:text-sm font-bold tracking-wider text-[var(--theme-accent)]">
-                FRAME {formatFrameIdx(currentFrameNum)} / {TOTAL_FRAMES}
+              <span ref={frameCounterRef} className="font-mono text-xs sm:text-sm font-bold tracking-wider text-[var(--theme-accent)]">
+                FRAME 001 / {TOTAL_FRAMES}
               </span>
             </div>
 
@@ -515,7 +563,7 @@ export default function ArchitecturalCanvasSequence() {
               <div className="w-full h-[2px] bg-[var(--theme-border)] relative rounded-full overflow-hidden">
                 <div
                   className="absolute top-0 left-0 h-full bg-gradient-to-r from-[var(--theme-accent)] to-[var(--theme-accent-light)] transition-all duration-75"
-                  style={{ width: `${scrollPct * 100}%` }}
+                  ref={progressBarRef} style={{ width: "0%" }}
                 />
               </div>
             </div>

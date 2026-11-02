@@ -43,7 +43,7 @@ export default function ResearchClient() {
     const parsed = contactRequestSchema.safeParse({
       fullName: researchForm.fullName,
       email: researchForm.email,
-      phone: researchForm.phone.trim() || "+91 99999 99999",
+      phone: researchForm.phone.trim() || undefined,
       service: "Investment Advisory",
       organization: "Market Research Desk",
       message: `Inquiry for Market Intelligence: ${researchForm.areaOfInterest}`,
@@ -631,6 +631,12 @@ export default function ResearchClient() {
                         {isSubmittingResearch ? "Submitting..." : "Submit Request"}
                       </button>
                     </div>
+                    <p className="text-[11px] text-center text-[var(--theme-text-muted)] mt-2">
+                      Protected under our{" "}
+                      <Link href="/privacy" className="text-[var(--theme-accent)] hover:underline">
+                        Privacy Notice
+                      </Link>.
+                    </p>
                   </form>
                 </>
               ) : (

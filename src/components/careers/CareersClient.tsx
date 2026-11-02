@@ -12,7 +12,6 @@ import {
   CheckCircle2,
   Building2,
   Sparkles,
-  Upload,
   X,
   Award,
   TrendingUp,
@@ -251,7 +250,6 @@ export default function CareersClient() {
   const [spontaneousSuccess, setSpontaneousSuccess] = useState<string | null>(null);
   const [spontaneousError, setSpontaneousError] = useState<string | null>(null);
 
-  const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [applicationRef, setApplicationRef] = useState("");
@@ -289,19 +287,7 @@ export default function CareersClient() {
     setFormError("");
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      const file = e.target.files[0];
-      if (file.size > 10 * 1024 * 1024) {
-        setFormError("File size exceeds 10MB limit. Please upload a lighter PDF/DOCX.");
-        return;
-      }
-      setResumeFile(file);
-      setFormError("");
-    }
-  };
-
-  const handleSubmitApplication = async (e: React.FormEvent) => {
+    const handleSubmitApplication = async (e: React.FormEvent) => {
     e.preventDefault();
     const honeypot = readHoneypot(e.currentTarget as HTMLFormElement);
     const parsed = careerApplicationSchema.safeParse({
@@ -352,7 +338,7 @@ export default function CareersClient() {
     const parsed = careerApplicationSchema.safeParse({
       fullName: spontaneousData.fullName,
       email: spontaneousData.email,
-      phone: spontaneousData.phone.trim() || "+91 99999 99999",
+      phone: spontaneousData.phone.trim() || undefined,
       department: "VIP Talent Network",
       roleTitle: spontaneousData.areaOfMastery,
       message: `Open Executive Candidacy submitted for: ${spontaneousData.areaOfMastery}`,
@@ -970,34 +956,18 @@ export default function CareersClient() {
                       </div>
                     </div>
 
-                    {/* Resume Upload Box */}
+                    {/* Resume / CV Dossier */}
                     <div className="mb-4">
                       <label className="block text-[11px] font-mono text-[var(--theme-text-muted)] uppercase mb-1">
-                        Resume / CV Dossier (PDF, DOCX up to 10MB)
+                        Resume / CV Dossier (Direct Submission to Partners)
                       </label>
-                      <div className="border border-dashed border-[var(--theme-border)] hover:border-[var(--theme-accent)] rounded-xl p-4 text-center bg-[var(--theme-surface-glass)]/50 transition-colors">
-                        <input
-                          type="file"
-                          id="resume-file"
-                          accept=".pdf,.doc,.docx"
-                          onChange={handleFileChange}
-                          className="hidden"
-                        />
-                        <label
-                          htmlFor="resume-file"
-                          className="cursor-pointer flex flex-col items-center justify-center gap-1.5"
-                        >
-                          <Upload className="w-5 h-5 text-[var(--theme-accent)]" />
-                          <span className="text-xs text-[var(--theme-text)] font-medium">
-                            {resumeFile ? resumeFile.name : "Click to select or drop resume dossier"}
-                          </span>
-                          <span className="text-[10px] text-[var(--theme-text-muted)]">
-                            {resumeFile
-                              ? `${(resumeFile.size / (1024 * 1024)).toFixed(2)} MB attached`
-                              : "Encrypted & treated with strict partner confidentiality"}
-                          </span>
-                        </label>
-                      </div>
+                      <p className="text-xs text-[var(--theme-text-muted)] bg-[var(--theme-surface-glass)]/50 border border-[var(--theme-border)] rounded-lg p-3">
+                        Please email your confidential CV / Resume dossier directly to{" "}
+                        <a href="mailto:careers@avodahgroup.co" className="text-[var(--theme-accent)] font-semibold hover:underline">
+                          careers@avodahgroup.co
+                        </a>{" "}
+                        referencing your application code upon transmission.
+                      </p>
                     </div>
 
                     {/* Note to the Partners */}
@@ -1023,6 +993,12 @@ export default function CareersClient() {
                       >
                         Cancel
                       </button>
+                    <p className="text-[11px] text-[var(--theme-text-muted)] text-center mb-3">
+                      Candidate credentials protected under our{" "}
+                      <Link href="/privacy" className="text-[var(--theme-accent)] hover:underline">
+                        Privacy Notice
+                      </Link>.
+                    </p>
                       <button
                         type="submit"
                         disabled={isSubmitting}
@@ -1215,6 +1191,12 @@ export default function CareersClient() {
                     >
                       Cancel
                     </button>
+                  <p className="text-[11px] text-[var(--theme-text-muted)] text-center mb-2">
+                    Submissions treated with executive confidentiality per our{" "}
+                    <Link href="/privacy" className="text-[var(--theme-accent)] hover:underline">
+                      Privacy Notice
+                    </Link>.
+                  </p>
                     <button
                       type="submit"
                       disabled={isSpontaneousSubmitting}

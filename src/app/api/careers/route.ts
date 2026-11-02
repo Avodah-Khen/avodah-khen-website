@@ -1,3 +1,4 @@
+import { randomBytes } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
@@ -45,14 +46,14 @@ export async function POST(req: NextRequest) {
     }
 
     const year = new Date().getFullYear();
-    const randomSuffix = Math.floor(1000 + Math.random() * 9000);
-    const referenceCode = `AVK-${year}-${randomSuffix}`;
+    const uniqueSuffix = randomBytes(4).toString("hex").toUpperCase();
+    const referenceCode = `AVK-${year}-${uniqueSuffix}`;
 
     const application = await prisma.career_applications.create({
       data: {
         first_name: resolvedFirstName,
         last_name: resolvedLastName || resolvedFirstName,
-        contact_number: phone,
+        contact_number: phone || "",
         email_address: email,
         department: department || "General Advisory",
         job_applied_for: roleTitle || "Spontaneous Application",
@@ -70,7 +71,6 @@ export async function POST(req: NextRequest) {
       {
         success: true,
         referenceCode: application.reference_code,
-        id: application.id,
         message: "Confidential dossier received. An advisory partner will review your credentials.",
       },
       { status: 201 }

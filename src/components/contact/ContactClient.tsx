@@ -533,6 +533,13 @@ export default function ContactClient() {
                             </>
                           )}
                         </button>
+                        <p className="text-[11px] text-center text-[var(--theme-text-muted)] mt-3">
+                          By submitting, you agree to our{" "}
+                          <Link href="/privacy" className="text-[var(--theme-accent)] hover:underline">
+                            Privacy Notice
+                          </Link>{" "}
+                          and institutional confidentiality terms.
+                        </p>
                       </form>
                     </motion.div>
                   ) : (

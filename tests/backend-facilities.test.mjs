@@ -15,7 +15,6 @@ describe("Neon Database & Prisma Backend Integration Suite", () => {
     assert.ok(process.env.DATABASE_URL, "DATABASE_URL must be defined in environment");
     pool = new Pool({
       connectionString: process.env.DATABASE_URL,
-      ssl: { rejectUnauthorized: false },
     });
     const adapter = new PrismaPg(pool);
     prisma = new PrismaClient({ adapter });

@@ -1,3 +1,4 @@
+import { randomBytes } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
@@ -19,13 +20,37 @@ export async function POST(req: NextRequest) {
   try {
     const parsed = await parseJsonBody(req, contactRequestSchema);
     if (parsed.response) return parsed.response;
-    const { fullName, email, phone, organization, service, city, microMarket, message, source } =
-      parsed.data;
+    const {
+      fullName,
+      email,
+      phone,
+      organization,
+      service,
+      city,
+      microMarket,
+      message,
+      source,
+      ndaRequested,
+      valuationScale,
+    } = parsed.data;
 
-    // Generate unique reference code
+    // Generate collision-resistant institutional reference code
     const year = new Date().getFullYear();
-    const randomSuffix = Math.floor(1000 + Math.random() * 9000);
-    const referenceCode = `AK-${year}-${randomSuffix}`;
+    const uniqueSuffix = randomBytes(4).toString("hex").toUpperCase();
+    const referenceCode = `AK-${year}-${uniqueSuffix}`;
+
+    // Append optional valuation & NDA metadata to message for advisory desk
+    let enrichedMessage = message || "";
+    if (valuationScale) {
+      enrichedMessage = enrichedMessage
+        ? `${enrichedMessage}\n[Valuation Scale: ${valuationScale}]`
+        : `[Valuation Scale: ${valuationScale}]`;
+    }
+    if (ndaRequested) {
+      enrichedMessage = enrichedMessage
+        ? `${enrichedMessage}\n[Mutual NDA Requested]`
+        : `[Mutual NDA Requested]`;
+    }
 
     // Save to Neon DB contacts table
     const contact = await prisma.contacts.create({
@@ -33,10 +58,10 @@ export async function POST(req: NextRequest) {
         name: fullName,
         work_email: email,
         city: city || microMarket || "Mumbai",
-        phone,
+        phone: phone || null,
         service,
         organization: organization || null,
-        message: message || null,
+        message: enrichedMessage || null,
         reference_code: referenceCode,
         source: source || "homepage",
         status: "PENDING",
@@ -47,7 +72,6 @@ export async function POST(req: NextRequest) {
       {
         success: true,
         referenceCode: contact.reference_code,
-        id: contact.id,
         message: "Your advisory consultation request has been recorded in our institutional registry.",
       },
       { status: 201 }
