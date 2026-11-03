@@ -28,12 +28,13 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "AVODAH — Luxury Real Estate & Architectural Advisory",
+  title: "AVODAH — Top Real Estate PropTech Company in India",
   description:
-    "AVODAH delivers technology-driven real estate across Mumbai: sole selling mandates, leasing & investment advisory, PropTech and property intelligence.",
+    "Top real estate proptech company in India. AVODAH delivers technology-driven real estate across Mumbai: sole selling mandates, leasing & investment advisory, PropTech and property intelligence.",
   alternates: { canonical: "/" },
   keywords: [
     "Avodah",
+    "Top Real Estate PropTech Company in India",
     "Mumbai Real Estate Mandates",
     "Sole Selling Partner",
     "Commercial Leasing Advisory",
@@ -42,9 +43,9 @@ export const metadata: Metadata = {
     "Architectural Real Estate",
   ],
   openGraph: {
-    title: "AVODAH — Architectural Real Estate & Advisory",
+    title: "AVODAH — Top Real Estate PropTech Company in India",
     description:
-      "Where Vision Becomes Reality. Discover a considered approach to real estate, design, and connected property ecosystems.",
+      "Top real estate proptech company in India. AVODAH delivers technology-driven real estate across Mumbai: sole selling mandates, leasing & investment advisory, PropTech and property intelligence.",
     type: "website",
   },
 };

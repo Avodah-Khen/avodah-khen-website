@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useEffect, useState, useCallback } from "react";
-import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, ChevronDown, Sparkles, FileCheck, Wallet, PhoneCall } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
@@ -34,48 +34,17 @@ const cancelIdleWork = (handle: number) => {
 };
 
 /**
- * Magnetic Physics Wrapper: Smoothly attracts element towards mouse with spring physics
+ * Magnetic Physics Wrapper: Clean container (magnet physics removed per request)
  */
 function MagneticPhysicsWrapper({
   children,
   className = "",
-  strength = 0.25,
 }: {
   children: React.ReactNode;
   className?: string;
   strength?: number;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const smoothX = useSpring(x, { stiffness: 240, damping: 18, mass: 0.4 });
-  const smoothY = useSpring(y, { stiffness: 240, damping: 18, mass: 0.4 });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!ref.current) return;
-    const rect = ref.current.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    x.set((e.clientX - centerX) * strength);
-    y.set((e.clientY - centerY) * strength);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
-
-  return (
-    <motion.div
-      ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{ x: smoothX, y: smoothY }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
+  return <div className={className}>{children}</div>;
 }
 
 interface StageInfo {
@@ -183,21 +152,17 @@ export default function ArchitecturalCanvasSequence() {
   const { theme } = useTheme();
   const isLight = theme === "light";
 
-  // Loading & Frame Telemetry
+  // Loading & Telemetry
   const [loadProgress, setLoadProgress] = useState(0);
   const [isPreloaderDismissed, setIsPreloaderDismissed] = useState(false);
   const [activeStage, setActiveStage] = useState<StageInfo>(STAGES[0]);
   const activeStageRef = useRef<StageInfo>(STAGES[0]);
   const progressBarRef = useRef<HTMLDivElement>(null);
-  const frameCounterRef = useRef<HTMLSpanElement>(null);
 
   // Responsive device state & frame counts
   const isMobileRef = useRef<boolean>(false);
   const totalFramesRef = useRef<number>(DESKTOP_FRAMES);
   const prefersReducedMotionRef = useRef<boolean>(false);
-
-  // 3D Canvas Perspective Tilt on Mouse Movement (Desktop only)
-  const [mouseTilt, setMouseTilt] = useState({ rotateX: 0, rotateY: 0 });
 
   // Frame Cache Refs (1-indexed for clarity: index 1 to 300)
   const imagesRef = useRef<(HTMLImageElement | null)[]>(new Array(DESKTOP_FRAMES + 1).fill(null));
@@ -299,9 +264,6 @@ export default function ArchitecturalCanvasSequence() {
     isMobileRef.current = isMobile;
     const total = isMobile ? MOBILE_FRAMES : DESKTOP_FRAMES;
     totalFramesRef.current = total;
-    if (frameCounterRef.current) {
-      frameCounterRef.current.textContent = `FRAME 001 / ${total}`;
-    }
 
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     prefersReducedMotionRef.current = prefersReducedMotion;
@@ -391,7 +353,7 @@ export default function ArchitecturalCanvasSequence() {
     drawFrame(Math.round(currentFrameRef.current));
   }, [isLight, drawFrame]);
 
-  // Scroll Progress Orchestration & Smooth Momentum Lerp Loop (Refs only, stops when idle)
+  // Scroll Progress Orchestration & Smooth Momentum Lerp Loop (Stops when idle)
   useEffect(() => {
     const loadSingleAhead = (idx: number) => {
       const maxFrames = totalFramesRef.current;
@@ -420,23 +382,18 @@ export default function ArchitecturalCanvasSequence() {
 
     // Physics loop only runs while actively lerping; stops when resting (0% idle CPU)
     const tick = () => {
-      const total = totalFramesRef.current;
       const diff = targetFrameRef.current - currentFrameRef.current;
 
       if (Math.abs(diff) > 0.04) {
         currentFrameRef.current += diff * 0.18;
+        const total = totalFramesRef.current;
         const rounded = Math.max(1, Math.min(total, Math.round(currentFrameRef.current)));
-        if (frameCounterRef.current) {
-          frameCounterRef.current.textContent = `FRAME ${formatFrameIdx(rounded)} / ${total}`;
-        }
         drawFrame(rounded);
         animId = requestAnimationFrame(tick);
       } else {
         currentFrameRef.current = targetFrameRef.current;
+        const total = totalFramesRef.current;
         const rounded = Math.max(1, Math.min(total, Math.round(currentFrameRef.current)));
-        if (frameCounterRef.current) {
-          frameCounterRef.current.textContent = `FRAME ${formatFrameIdx(rounded)} / ${total}`;
-        }
         drawFrame(rounded);
         animId = null; // Idle: stop RAF loop completely
       }
@@ -496,35 +453,9 @@ export default function ArchitecturalCanvasSequence() {
     };
   }, [drawFrame]);
 
-  // 3D Mouse Parallax Tilt across Viewport (Desktop only, skipped on mobile)
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (isMobileRef.current || prefersReducedMotionRef.current) return;
-    const normX = e.clientX / window.innerWidth - 0.5;
-    const normY = e.clientY / window.innerHeight - 0.5;
-    setMouseTilt({
-      rotateX: -normY * 4.5,
-      rotateY: normX * 4.5,
-    });
-  };
-
-  const handleMouseLeave = () => {
-    setMouseTilt({ rotateX: 0, rotateY: 0 });
-  };
-
-  // 3D Touch Tilt for Mobile Devices
-  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    if (prefersReducedMotionRef.current || !e.touches[0]) return;
-    const normX = e.touches[0].clientX / window.innerWidth - 0.5;
-    const normY = e.touches[0].clientY / window.innerHeight - 0.5;
-    setMouseTilt({
-      rotateX: -normY * 4.0,
-      rotateY: normX * 4.0,
-    });
-  };
-
-  const handleTouchEnd = () => {
-    setMouseTilt({ rotateX: 0, rotateY: 0 });
-  };
+  // Touch handlers for mobile devices
+  const handleTouchMove = () => {};
+  const handleTouchEnd = () => {};
 
   // Smooth jump to specific narrative chapter
   const scrollToStage = (stage: StageInfo) => {
@@ -544,13 +475,11 @@ export default function ArchitecturalCanvasSequence() {
     <section
       ref={containerRef}
       id="hero"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
       className="relative w-full h-[580vh] bg-[var(--theme-bg)] transition-colors duration-300"
     >
-      <div className="sticky top-0 left-0 w-screen h-screen overflow-hidden flex items-center justify-center perspective-1200">
+      <div className="sticky top-0 left-0 w-screen h-screen overflow-hidden flex items-center justify-center">
         {/* Cinematic Preloader: Disappears immediately once frame 1 is ready */}
         <AnimatePresence>
           {!isPreloaderDismissed && (
@@ -580,16 +509,8 @@ export default function ArchitecturalCanvasSequence() {
           )}
         </AnimatePresence>
 
-        {/* 3D Tilted Canvas Container */}
-        <motion.div
-          animate={{
-            rotateX: mouseTilt.rotateX,
-            rotateY: mouseTilt.rotateY,
-          }}
-          transition={{ type: "spring", damping: 25, stiffness: 120 }}
-          style={{ transformStyle: "preserve-3d" }}
-          className="absolute inset-0 w-full h-full"
-        >
+        {/* Clean Stable Canvas Container (Parallax tilt removed) */}
+        <div className="absolute inset-0 w-full h-full">
           {/* HTML5 Canvas Rendering Synchronized High-Res Frames */}
           <canvas ref={canvasRef} className="absolute inset-0 w-full h-full block z-[1]" />
 
@@ -610,7 +531,7 @@ export default function ArchitecturalCanvasSequence() {
                 : `linear-gradient(to top, var(--theme-bg), transparent)`,
             }}
           />
-        </motion.div>
+        </div>
 
         {/* 3D Architectural Telemetry HUD */}
         <div className="absolute inset-0 z-20 pointer-events-none p-4 sm:p-8 md:p-10 flex flex-col justify-between">
@@ -624,17 +545,8 @@ export default function ArchitecturalCanvasSequence() {
             </div>
           </div>
 
-          {/* HUD Bottom Bar */}
-          <div className="flex items-end justify-between">
-            <div className="flex flex-col gap-0.5">
-              <span className="text-[8px] sm:text-[9px] tracking-[0.22em] text-[var(--theme-text-muted)] uppercase font-semibold">
-                TELEMETRY
-              </span>
-              <span ref={frameCounterRef} className="font-mono text-xs sm:text-sm font-bold tracking-wider text-[var(--theme-accent)]">
-                FRAME 001 / {DESKTOP_FRAMES}
-              </span>
-            </div>
-
+          {/* HUD Bottom Bar (Frames counter removed per user request) */}
+          <div className="flex items-end justify-end">
             <div className="flex flex-col items-end gap-1.5 w-32 sm:w-52">
               <span className="text-[8px] sm:text-[9px] tracking-[0.22em] text-[var(--theme-text-muted)] uppercase font-medium">
                 SCROLL TO NAVIGATE
@@ -668,7 +580,7 @@ export default function ArchitecturalCanvasSequence() {
                     <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[var(--theme-accent)] to-transparent opacity-85" />
 
                     <div className="relative z-20 flex flex-col items-center text-center">
-                      <MagneticPhysicsWrapper strength={0.12} className="mb-2">
+                      <MagneticPhysicsWrapper className="mb-2">
                         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-[var(--theme-border)] bg-[var(--theme-surface-glass)] shadow-xs backdrop-blur-md">
                           <span className="relative flex h-2 w-2 shrink-0">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--theme-accent)] opacity-75" />
@@ -700,7 +612,7 @@ export default function ArchitecturalCanvasSequence() {
                         ].map((stat, i) => {
                           const Icon = stat.icon;
                           return (
-                            <MagneticPhysicsWrapper key={i} strength={0.12} className="w-full">
+                            <MagneticPhysicsWrapper key={i} className="w-full">
                               <Link
                                 href={stat.href}
                                 className="flex flex-col items-center justify-center py-1.5 px-1 rounded-md border border-[var(--theme-border)] bg-[var(--theme-surface-glass)]/90 backdrop-blur-md shadow-xs group hover:border-[var(--theme-accent)] hover:shadow-xs transition-all duration-200 cursor-pointer block"
@@ -721,7 +633,7 @@ export default function ArchitecturalCanvasSequence() {
                       </div>
 
                       <div className="flex flex-col sm:flex-row items-center justify-center gap-2 w-full sm:w-auto mb-2.5">
-                        <MagneticPhysicsWrapper strength={0.2} className="w-full sm:w-auto">
+                        <MagneticPhysicsWrapper className="w-full sm:w-auto">
                           <Link
                             href="/contact"
                             className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-5 py-2.5 bg-[var(--theme-accent)] text-white dark:text-[#0c0d0c] text-[10px] sm:text-[11px] font-bold tracking-[0.16em] uppercase rounded-sm hover:brightness-110 transition-all duration-200 shadow-md shadow-[var(--theme-accent)]/20 hover:-translate-y-0.5 cursor-pointer"
@@ -731,7 +643,7 @@ export default function ArchitecturalCanvasSequence() {
                           </Link>
                         </MagneticPhysicsWrapper>
 
-                        <MagneticPhysicsWrapper strength={0.2} className="w-full sm:w-auto">
+                        <MagneticPhysicsWrapper className="w-full sm:w-auto">
                           <Link
                             href="/proptech"
                             className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-5 py-2.5 bg-[var(--theme-surface-glass)] border border-[var(--theme-border)] text-[var(--theme-text)] hover:border-[var(--theme-accent)] hover:text-[var(--theme-accent)] text-[10px] sm:text-[11px] font-semibold tracking-[0.16em] uppercase rounded-sm transition-all duration-200 backdrop-blur-md hover:-translate-y-0.5 shadow-xs"
@@ -797,13 +709,6 @@ export default function ArchitecturalCanvasSequence() {
                   <div className="p-4 sm:p-7 md:p-8 rounded-2xl bg-[var(--theme-surface-glass)]/92 backdrop-blur-2xl border border-[var(--theme-border)] shadow-[var(--theme-shadow)] relative group hover:border-[var(--theme-accent)]/50 transition-all duration-300">
                     <div className="absolute top-0 left-0 w-14 h-[2px] bg-[var(--theme-accent)]" />
 
-                    <div className="inline-flex items-center gap-2 mb-2 sm:mb-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[var(--theme-accent)]" />
-                      <span className="text-[9px] sm:text-[10px] font-semibold tracking-[0.2em] uppercase text-[var(--theme-accent)]">
-                        AVODAH • STAGE {activeStage.phaseNumber}
-                      </span>
-                    </div>
-
                     <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-normal text-[var(--theme-text)] leading-[1.12] mb-3 tracking-tight whitespace-pre-line">
                       {activeStage.title}
                     </h2>
@@ -835,7 +740,7 @@ export default function ArchitecturalCanvasSequence() {
                       }`}
                     >
                       {activeStage.primaryCtaText && (
-                        <MagneticPhysicsWrapper strength={0.2}>
+                        <MagneticPhysicsWrapper>
                           <Link
                             href={activeStage.primaryCtaHref || "#contact"}
                             className="inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 sm:py-2.5 bg-[var(--theme-accent)] text-white dark:text-[#0c0d0c] text-[10px] sm:text-[11px] font-bold tracking-[0.16em] uppercase rounded-sm hover:brightness-110 transition-all duration-200 shadow-md shadow-[var(--theme-accent)]/20 hover:-translate-y-0.5"
@@ -847,7 +752,7 @@ export default function ArchitecturalCanvasSequence() {
                       )}
 
                       {activeStage.secondaryCtaText && (
-                        <MagneticPhysicsWrapper strength={0.2}>
+                        <MagneticPhysicsWrapper>
                           <Link
                             href={activeStage.secondaryCtaHref || "#services"}
                             className="inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 sm:py-2.5 bg-transparent border border-[var(--theme-border)] text-[var(--theme-text)] text-[10px] sm:text-[11px] font-medium tracking-[0.16em] uppercase rounded-sm hover:border-[var(--theme-accent)] hover:text-[var(--theme-accent)] transition-all duration-200 hover:-translate-y-0.5"

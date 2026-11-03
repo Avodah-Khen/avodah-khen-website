@@ -40,8 +40,9 @@ export default function ThreeArchitecturalBackground() {
       0.1,
       100
     );
-    // Camera positioned to view deep into the architectural background
+    // Camera positioned steadily without mouse parallax sway
     camera.position.set(0, 1.8, 12);
+    camera.lookAt(0, 0, -6);
 
     const renderer = new THREE.WebGLRenderer({
       alpha: true,
@@ -129,20 +130,6 @@ export default function ThreeArchitecturalBackground() {
     };
     window.addEventListener("resize", handleResize);
 
-    // Mouse Tracking for Gentle Parallax (Desktop only, skip on touch/mobile)
-    let targetMouseX = 0;
-    let targetMouseY = 0;
-    let currentMouseX = 0;
-    let currentMouseY = 0;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      targetMouseX = (e.clientX / window.innerWidth - 0.5) * 1.2;
-      targetMouseY = (e.clientY / window.innerHeight - 0.5) * 1.2;
-    };
-    if (!isTouchOrMobile) {
-      window.addEventListener("mousemove", handleMouseMove, { passive: true });
-    }
-
     // Render loop with pause when tab is hidden or when scrolled off-screen
     let animationId: number;
     let isIntersecting = true;
@@ -154,15 +141,6 @@ export default function ThreeArchitecturalBackground() {
       if (!isRunning) return;
 
       const elapsedTime = (performance.now() - startTime) * 0.001;
-
-      // Smooth camera lerp (active when mouse moves on desktop)
-      if (!isTouchOrMobile) {
-        currentMouseX += (targetMouseX - currentMouseX) * 0.05;
-        currentMouseY += (targetMouseY - currentMouseY) * 0.05;
-        camera.position.x = currentMouseX * 1.0;
-        camera.position.y = 1.8 - currentMouseY * 0.6;
-        camera.lookAt(0, 0, -6);
-      }
 
       if (!prefersReducedMotion) {
         // Subtle rotation of wireframe modules
@@ -224,9 +202,6 @@ export default function ThreeArchitecturalBackground() {
       cancelAnimationFrame(animationId);
       observer?.disconnect();
       document.removeEventListener("visibilitychange", handleVisibility);
-      if (!isTouchOrMobile) {
-        window.removeEventListener("mousemove", handleMouseMove);
-      }
       window.removeEventListener("resize", handleResize);
       if (container && renderer.domElement) {
         container.removeChild(renderer.domElement);
