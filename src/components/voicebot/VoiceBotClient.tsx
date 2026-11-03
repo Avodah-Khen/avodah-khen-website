@@ -318,16 +318,6 @@ export default function VoiceBotClient() {
 
         {/* SECTION 1: HERO HEADER */}
         <section className="relative mb-16 sm:mb-24">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--theme-border-accent)] bg-[var(--theme-surface-glass)]/90 backdrop-blur-md mb-6 shadow-sm">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-            </span>
-            <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-[var(--theme-accent)] font-semibold">
-              AUTONOMOUS VOICE AGENT • 24/7 CALLING
-            </span>
-          </div>
-
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-[var(--theme-text)] leading-[1.08] max-w-5xl mb-6">
             Autonomous Voice Agents That{" "}
             <span className="italic font-normal text-[var(--theme-accent)]">

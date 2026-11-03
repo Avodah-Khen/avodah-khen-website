@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Sparkles,
   ChevronRight,
   ArrowUpRight,
   CheckCircle2,
@@ -110,13 +109,6 @@ export default function LeasingInvestmentAdvisoryClient() {
         {/* HERO SECTION */}
         <section className="mb-24 sm:mb-32">
           <div className="max-w-4xl mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--theme-surface-glass)] border border-[var(--theme-border-accent)] mb-6 shadow-sm">
-              <Sparkles className="w-3.5 h-3.5 text-[var(--theme-accent)]" />
-              <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-[var(--theme-accent)] font-semibold">
-                AVODAH • CAPITAL &amp; ASSET ADVISORY
-              </span>
-            </div>
-
             <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light tracking-tight text-[var(--theme-text)] leading-[1.12] mb-6">
               Leasing &amp; Investment Advisory
             </h1>

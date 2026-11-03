@@ -25,6 +25,11 @@ export default function CustomCursor() {
   const isInitialized = useRef(false);
 
   useEffect(() => {
+    // Touch devices: completely disable mousemove listener and RAF loop
+    if (typeof window === "undefined" || !window.matchMedia("(pointer: fine)").matches) {
+      return;
+    }
+
     const onMouseMove = (e: MouseEvent) => {
       mousePos.current.x = e.clientX;
       mousePos.current.y = e.clientY;

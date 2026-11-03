@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Sun, Moon, Clock } from "lucide-react";
+import React from "react";
+import { motion } from "framer-motion";
+import { Sun, Moon } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 
 interface ThemeToggleSwitchProps {
@@ -13,22 +13,10 @@ interface ThemeToggleSwitchProps {
 
 export default function ThemeToggleSwitch({
   className = "",
-  variant = "header",
   showScheduleHint = false,
 }: ThemeToggleSwitchProps) {
-  const { theme, toggleTheme, isAutoSchedule, schedulePeriod, nextTransitionTime } = useTheme();
-  const [isHovered, setIsHovered] = useState(false);
-
+  const { theme, toggleTheme, isAutoSchedule } = useTheme();
   const isLight = theme === "light";
-
-  // Format next transition time for human display (e.g. "7:00 PM" or "7:00 AM")
-  const transitionLabel = nextTransitionTime
-    ? nextTransitionTime.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })
-    : schedulePeriod === "day"
-    ? "7:00 PM"
-    : "7:00 AM";
-
-  const nextModeLabel = schedulePeriod === "day" ? "Dark Mode" : "Light Mode";
 
   return (
     <div className={`relative inline-flex items-center gap-2.5 ${className}`}>
@@ -39,8 +27,6 @@ export default function ThemeToggleSwitch({
         aria-checked={!isLight}
         aria-label={`Toggle appearance. Currently ${isLight ? "Light Mode" : "Dark Mode"}. Auto schedule: 7 AM to 7 PM Light, 7 PM to 7 AM Dark.`}
         onClick={toggleTheme}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
         className="group relative inline-flex items-center justify-between w-[58px] h-[30px] p-[3px] rounded-full cursor-pointer select-none transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--theme-accent)] focus-visible:ring-offset-2 active:scale-95"
         style={{
           background: isLight
@@ -109,45 +95,6 @@ export default function ThemeToggleSwitch({
           </motion.div>
         </motion.div>
       </button>
-
-      {/* Desktop Hover Tooltip (Explains the 7am-7pm schedule + current mode) */}
-      {variant === "header" && (
-        <AnimatePresence>
-          {isHovered && (
-            <motion.div
-              initial={{ opacity: 0, y: 8, scale: 0.96 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 4, scale: 0.96 }}
-              transition={{ duration: 0.18, ease: "easeOut" }}
-              className="absolute top-full mt-2.5 right-0 z-50 pointer-events-none whitespace-nowrap px-3.5 py-2 rounded-lg bg-[var(--theme-surface)]/95 backdrop-blur-xl border border-[var(--theme-border-hover)] shadow-2xl text-[11px] font-sans text-[var(--theme-text)]"
-            >
-              <div className="flex items-center gap-2 mb-1">
-                <span
-                  className={`w-1.5 h-1.5 rounded-full ${
-                    isAutoSchedule
-                      ? "bg-emerald-500 shadow-[0_0_6px_rgba(16,185,129,0.8)]"
-                      : "bg-[#D4AF37] shadow-[0_0_6px_rgba(212,175,55,0.8)]"
-                  }`}
-                />
-                <span className="font-semibold text-[var(--theme-accent)] uppercase tracking-wider text-[10px]">
-                  {isAutoSchedule ? "Auto Scheduled" : "Manual Override"}
-                </span>
-                <span className="text-[var(--theme-text-faint)]">•</span>
-                <span className="capitalize font-medium">{isLight ? "Light Mode" : "Dark Mode"}</span>
-              </div>
-              <div className="flex items-center gap-1.5 text-[10px] text-[var(--theme-text-muted)] font-mono">
-                <Clock className="w-3 h-3 text-[var(--theme-accent)]" />
-                <span>7 AM – 7 PM Light • 7 PM – 7 AM Dark</span>
-              </div>
-              <p className="text-[9.5px] text-[var(--theme-text-faint)] mt-1 border-t border-[var(--theme-border)]/50 pt-1">
-                {isAutoSchedule
-                  ? `Next auto-switch to ${nextModeLabel} at ${transitionLabel}`
-                  : `Overrides schedule until next transition (${transitionLabel})`}
-              </p>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      )}
 
       {/* Drawer / Mobile Full Details Layout */}
       {showScheduleHint && (

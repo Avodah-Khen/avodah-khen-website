@@ -11,7 +11,6 @@ import {
   Search,
   CheckCircle2,
   Building2,
-  Sparkles,
   X,
   Award,
   TrendingUp,
@@ -396,13 +395,6 @@ export default function CareersClient() {
 
         {/* Hero Section */}
         <div className="relative mb-16 sm:mb-24">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--theme-border-accent)] bg-[var(--theme-surface-glass)]/90 backdrop-blur-md mb-6">
-            <Sparkles className="w-3.5 h-3.5 text-[var(--theme-accent)]" />
-            <span className="text-[11px] font-mono tracking-[0.2em] uppercase text-[var(--theme-accent)] font-semibold">
-              CAREERS AT AVODAH
-            </span>
-          </div>
-
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-[var(--theme-text)] leading-[1.08] max-w-5xl mb-6">
             Shape the Skyline of{" "}
             <span className="italic font-normal text-[var(--theme-accent)]">

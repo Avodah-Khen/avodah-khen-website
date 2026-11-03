@@ -6,6 +6,7 @@ import { useTheme } from "@/context/ThemeContext";
 
 export default function ThreeArchitecturalBackground() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const sentinelRef = useRef<HTMLDivElement>(null);
   const { theme } = useTheme();
 
   // Keep references to scene objects to update colors dynamically on theme change
@@ -18,8 +19,11 @@ export default function ThreeArchitecturalBackground() {
     const container = containerRef.current;
     if (!container) return;
 
-    // Check for reduced motion preference
+    // Check for reduced motion preference & touch/mobile devices
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isTouchOrMobile =
+      typeof window !== "undefined" &&
+      (!window.matchMedia("(pointer: fine)").matches || window.innerWidth < 768);
 
     // Scene, Camera, Renderer
     const scene = new THREE.Scene();
@@ -36,16 +40,17 @@ export default function ThreeArchitecturalBackground() {
       0.1,
       100
     );
-    // Camera positioned to view deep into the architectural background
+    // Camera positioned steadily without mouse parallax sway
     camera.position.set(0, 1.8, 12);
+    camera.lookAt(0, 0, -6);
 
     const renderer = new THREE.WebGLRenderer({
       alpha: true,
-      antialias: true,
+      antialias: !isTouchOrMobile,
       powerPreference: "high-performance",
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+    renderer.setPixelRatio(isTouchOrMobile ? 1 : Math.min(window.devicePixelRatio, 1.5));
     container.appendChild(renderer.domElement);
 
     // 1. 3D Architectural Blueprint Perspective Grid (pushed backward into deep space)
@@ -94,8 +99,8 @@ export default function ThreeArchitecturalBackground() {
     });
     scene.add(group);
 
-    // 3. Subtle ambient architectural particle field
-    const particleCount = prefersReducedMotion ? 40 : 120;
+    // 3. Ambient architectural particle field (lighter on mobile: 30 particles vs 120 on desktop)
+    const particleCount = prefersReducedMotion ? 40 : (isTouchOrMobile ? 30 : 120);
     const particleGeo = new THREE.BufferGeometry();
     const particlePos = new Float32Array(particleCount * 3);
 
@@ -125,43 +130,17 @@ export default function ThreeArchitecturalBackground() {
     };
     window.addEventListener("resize", handleResize);
 
-    // Mouse Tracking for Gentle Parallax
-    let targetMouseX = 0;
-    let targetMouseY = 0;
-    let currentMouseX = 0;
-    let currentMouseY = 0;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      targetMouseX = (e.clientX / window.innerWidth - 0.5) * 1.2;
-      targetMouseY = (e.clientY / window.innerHeight - 0.5) * 1.2;
-    };
-    window.addEventListener("mousemove", handleMouseMove, { passive: true });
-
-    // Render loop with pause when tab is hidden
+    // Render loop with pause when tab is hidden or when scrolled off-screen
     let animationId: number;
-    let isPaused = false;
+    let isIntersecting = true;
+    let isTabVisible = typeof document !== "undefined" ? document.visibilityState !== "hidden" : true;
+    let isRunning = false;
     const startTime = performance.now();
 
-    const handleVisibility = () => {
-      isPaused = document.visibilityState === "hidden";
-      if (!isPaused && !prefersReducedMotion) {
-        animationId = requestAnimationFrame(animate);
-      }
-    };
-    document.addEventListener("visibilitychange", handleVisibility);
-
     const animate = () => {
-      if (isPaused) return;
+      if (!isRunning) return;
 
       const elapsedTime = (performance.now() - startTime) * 0.001;
-
-      // Smooth camera lerp
-      currentMouseX += (targetMouseX - currentMouseX) * 0.05;
-      currentMouseY += (targetMouseY - currentMouseY) * 0.05;
-
-      camera.position.x = currentMouseX * 1.0;
-      camera.position.y = 1.8 - currentMouseY * 0.6;
-      camera.lookAt(0, 0, -6);
 
       if (!prefersReducedMotion) {
         // Subtle rotation of wireframe modules
@@ -181,16 +160,48 @@ export default function ThreeArchitecturalBackground() {
       }
     };
 
+    const updatePlayState = () => {
+      const shouldRun = isIntersecting && isTabVisible && !prefersReducedMotion;
+      if (shouldRun && !isRunning) {
+        isRunning = true;
+        animationId = requestAnimationFrame(animate);
+      } else if (!shouldRun && isRunning) {
+        isRunning = false;
+        cancelAnimationFrame(animationId);
+      }
+    };
+
+    const handleVisibility = () => {
+      isTabVisible = document.visibilityState !== "hidden";
+      updatePlayState();
+    };
+    document.addEventListener("visibilitychange", handleVisibility);
+
+    // Pause rendering when hero/top area is scrolled off-screen
+    let observer: IntersectionObserver | null = null;
+    if (sentinelRef.current && "IntersectionObserver" in window) {
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          isIntersecting = entry.isIntersecting;
+          updatePlayState();
+        },
+        { threshold: 0 }
+      );
+      observer.observe(sentinelRef.current);
+    }
+
     if (prefersReducedMotion) {
       renderer.render(scene, camera);
     } else {
+      isRunning = true;
       animate();
     }
 
     return () => {
+      isRunning = false;
       cancelAnimationFrame(animationId);
+      observer?.disconnect();
       document.removeEventListener("visibilitychange", handleVisibility);
-      window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("resize", handleResize);
       if (container && renderer.domElement) {
         container.removeChild(renderer.domElement);
@@ -204,11 +215,19 @@ export default function ThreeArchitecturalBackground() {
   }, [theme]);
 
   return (
-    <div
-      ref={containerRef}
-      className="fixed inset-0 pointer-events-none -z-10 overflow-hidden opacity-45 select-none"
-      style={{ zIndex: -10 }}
-      aria-hidden="true"
-    />
+    <>
+      {/* Off-screen sentinel: spans top 150vh to pause WebGL when user scrolls to deeper sections */}
+      <div
+        ref={sentinelRef}
+        className="absolute top-0 left-0 w-full h-[150vh] pointer-events-none -z-20"
+        aria-hidden="true"
+      />
+      <div
+        ref={containerRef}
+        className="fixed inset-0 pointer-events-none -z-10 overflow-hidden opacity-45 select-none"
+        style={{ zIndex: -10 }}
+        aria-hidden="true"
+      />
+    </>
   );
 }

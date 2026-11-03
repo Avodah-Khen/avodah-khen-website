@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Terminal, ArrowRight, CheckCircle2, ChevronRight } from "lucide-react";
+import { ArrowRight, CheckCircle2, ChevronRight } from "lucide-react";
 import FeralBlobShowcase, { FeralTheme } from "@/components/feral/FeralBlobShowcase";
 import { type JellyBlobMood } from "feral-blob";
 import { waitlistSchema, firstIssue, HONEYPOT_FIELD, readHoneypot } from "@/lib/validation";
@@ -137,13 +137,6 @@ export default function LaunchingSoonClient({ type }: LaunchingSoonClientProps) 
                 FinTech Capital Engine
               </Link>
             </div>
-
-            {/* Status Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--theme-tag-bg)] border border-[var(--theme-tag-border)] text-[10px] sm:text-[11px] font-mono tracking-widest text-[var(--theme-accent)] mb-2.5 sm:mb-3">
-              <Terminal className="w-3 h-3 shrink-0" />
-              <span>{content.badge}</span>
-            </div>
-
             {/* Main Headline */}
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-light tracking-tight leading-[1.12] mb-2 sm:mb-3 max-w-2xl text-[var(--theme-text)]">
               {content.title}
