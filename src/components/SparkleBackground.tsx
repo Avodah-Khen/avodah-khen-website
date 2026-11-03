@@ -25,6 +25,15 @@ export default function SparkleBackground() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    // Touch devices and reduced motion: disable particles and 60fps RAF loop entirely
+    const isTouchOrMobile =
+      window.innerWidth < 768 ||
+      window.matchMedia("(pointer: coarse)").matches ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (isTouchOrMobile) {
+      return;
+    }
+
     const ctx = canvas.getContext("2d", { alpha: true });
     if (!ctx) return;
 
