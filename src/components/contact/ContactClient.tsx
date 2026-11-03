@@ -207,13 +207,6 @@ export default function ContactClient() {
 
         {/* Hero Section */}
         <div className="max-w-3xl mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--theme-tag-bg)] border border-[var(--theme-tag-border)] mb-6 shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-[var(--theme-accent)] animate-pulse" />
-            <span className="text-[10px] sm:text-[11px] font-mono tracking-widest uppercase text-[var(--theme-accent)] font-semibold">
-              INSTITUTIONAL ADVISORY CHANNELS
-            </span>
-          </div>
-
           <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-normal text-[var(--theme-text)] tracking-tight leading-[1.08] mb-6">
             Initiate a <span className="italic text-[var(--theme-accent)]">Strategic</span> Dialogue.
           </h1>
