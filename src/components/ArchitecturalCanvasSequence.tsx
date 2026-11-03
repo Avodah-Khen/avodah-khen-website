@@ -717,23 +717,6 @@ export default function ArchitecturalCanvasSequence() {
                       {activeStage.subtitle}
                     </p>
 
-                    {activeStage.tags && activeStage.tags.length > 0 && (
-                      <div
-                        className={`flex flex-wrap gap-1.5 mb-4 sm:mb-5 ${
-                          activeStage.alignment === "center" ? "justify-center" : ""
-                        }`}
-                      >
-                        {activeStage.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="text-[8.5px] sm:text-[9.5px] font-semibold tracking-[0.14em] uppercase px-2.5 py-1 bg-[var(--theme-tag-bg)] border border-[var(--theme-tag-border)] rounded-sm text-[var(--theme-accent)]"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-
                     <div
                       className={`flex flex-wrap items-center gap-2.5 sm:gap-3 ${
                         activeStage.alignment === "center" ? "justify-center" : ""
